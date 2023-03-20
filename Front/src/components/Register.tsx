@@ -1,6 +1,6 @@
 import { Button, TextField, Typography } from "@mui/material"
 import { Container } from "@mui/system"
-import { useState} from "react"
+import { useEffect, useState} from "react"
 import { useNavigate } from 'react-router-dom'
 import {KeyboardArrowRight} from '@mui/icons-material/'
 
@@ -17,9 +17,6 @@ function Register() {
   const [password, setPassword] = useState<string>('')
   const [passwordAgain, setPasswordAgain] = useState<string>('')
 
-
-
-
   //errorStates
   const [firstnameErr, setFirstnameErr] = useState<boolean>(false)
   const [lastnameErr, setLastnameErr] = useState<boolean>(false)
@@ -27,6 +24,24 @@ function Register() {
   const [emailErr, setEmailErr] = useState<boolean>(false)
   const [passwordErr, setPasswordErr] = useState<boolean>(false)
   const [passwordAgainErr, setPasswordAgainErr] = useState<boolean>(false)
+
+
+  //this one doesn't break the page ? still freezes the page
+
+  const fetchAccount = async () => {
+    const settings = {
+      method: 'POST',
+      headers: { "Content-Type": "application/json",
+    },
+    body: JSON.stringify({firstname, lastname, username, email, password})
+    };
+    try {
+      const response = await fetch('https://apilogin.herokuapp.com/api/auth/signup', settings); 
+    } catch (err){
+      console.log(err);
+    }
+    navigate('/login')
+  }
 
 
 const handleSubmit = (e:any) => {
@@ -63,19 +78,31 @@ const handleSubmit = (e:any) => {
     if (passwordAgain === '') {
       setPasswordAgainErr(true)
     }
-    // still passes when passwords aren't the same
     if (firstname && lastname && email && password && passwordAgain) {
       console.log('user created')
 
+        fetchAccount()
+    
+      
+      
+      
+      //still breaking page ?, localhost get request is getting blocked ?
+      //something wrong with the api endpoint ,?
+      // async try problems ?
 
-      // why is the fetch breaking my page ?
 
-      fetch('https://apilogin.herokuapp.com/api/auth/signup', {
-        method: 'POST',
-        headers: {"Content-type": "application/json"},
-        body: JSON.stringify({ firstname, lastname, username, email, password})
-      }).then(() => navigate('/'))
+      // fetch('https://apilogin.herokuapp.com/api/auth/signup', {
+      //   method: 'POST',
+      //   headers: {"Content-type": "application/json"},
+      //   body: JSON.stringify({ firstname, lastname, username, email, password})
+      // }).then(() => navigate('/login')).then(() => console.log(firstname, lastname, username, email, password))
+      // .catch((error) => console.log(error))
+    
     }
+
+  
+
+
   }
 
 
