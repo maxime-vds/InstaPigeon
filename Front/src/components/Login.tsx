@@ -1,5 +1,4 @@
-import { Button, TextField, Typography } from "@mui/material"
-import { Container } from "@mui/system"
+import { Button, TextField, Typography, Container } from "@mui/material"
 import { useState} from "react"
 import { useNavigate } from 'react-router-dom'
 import {KeyboardArrowRight} from '@mui/icons-material/'
@@ -8,75 +7,40 @@ function Login() {
 
   const navigate = useNavigate()
 
-
-  //inputStates
-  const [firstname, setFirstname] = useState<string>('')
-  const [lastname, setLastname] = useState<string>('')
+  //inputState
   const [username, setUsername] = useState<string>('')
-  const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
-  const [passwordAgain, setPasswordAgain] = useState<string>('')
-
-
-
 
   //errorStates
-  const [firstnameErr, setFirstnameErr] = useState<boolean>(false)
-  const [lastnameErr, setLastnameErr] = useState<boolean>(false)
   const [usernameErr, setUsernameErr] = useState<boolean>(false)
-  const [emailErr, setEmailErr] = useState<boolean>(false)
   const [passwordErr, setPasswordErr] = useState<boolean>(false)
-  const [passwordAgainErr, setPasswordAgainErr] = useState<boolean>(false)
 
 
 const handleSubmit = (e:any) => {
     e.preventDefault()
-    setFirstnameErr(false) 
-    setLastnameErr(false)
     setUsernameErr(false)
-    setEmailErr(false)
     setPasswordErr(false)
-    setPasswordAgainErr(false)
 
 // form validation
 
-    if (firstname === '') {
-      setFirstnameErr(true)
-    }
-    if (lastname === '') {
-      setLastnameErr(true)
-    }
+    
     if (username === '') {
       setUsernameErr(true)
     }
     if (password === '') {
       setPasswordErr(true)
     }
-    if (email === '') {
-      setEmailErr(true)
-    }
-    if (password === '' || password !== passwordAgain) {
-      setPassword('')
-      setPasswordAgain('')
-      setPasswordErr(true)
-    }
-    if (passwordAgain === '') {
-      setPasswordAgainErr(true)
-    }
-    // still passes when passwords aren't the same
-    if (firstname && lastname && email && password && passwordAgain) {
-      console.log('user created')
 
-
-      // why is the fetch breaking my page ?
-
-      fetch('https://apilogin.herokuapp.com/api/auth/signup', {
+      
+      fetch('https://apilogin.herokuapp.com/api/auth/signin', {
         method: 'POST',
         headers: {"Content-type": "application/json"},
-        body: JSON.stringify({ firstname, lastname, username, email, password})
-      }).then(() => navigate('/'))
+        body: JSON.stringify({ username, password})
+      }).then(() =>  navigate('/succes'))
+      .then(() => console.log('account logged in'))
+      .catch(err => console.log(err))
     }
-  }
+  
 
 
   return (<>
@@ -92,22 +56,6 @@ const handleSubmit = (e:any) => {
 <Container maxWidth='xs' >
     <form style={{display:"flex", flexDirection:"column"}}>
 
-    <TextField
-      sx={{mb:2}}
-      onChange={(e) => setFirstname(e.target.value)}
-      label='firstname'
-      variant='outlined'
-      required
-      error={firstnameErr}
-    />  
-    <TextField
-      sx={{mb:2}}
-      onChange={(e) => setLastname(e.target.value)}
-      label='lastname'
-      variant='outlined'
-      required
-      error={lastnameErr}
-    /> 
      <TextField
       sx={{mb:2}}
       onChange={(e) => setUsername(e.target.value)}
@@ -118,14 +66,6 @@ const handleSubmit = (e:any) => {
     />   
     <TextField
       sx={{mb:2}}
-      onChange={(e) => setEmail(e.target.value)}
-      label='email'
-      variant='outlined'
-      required
-      error={emailErr}
-    />  
-    <TextField
-      sx={{mb:2}}
       onChange={(e) => setPassword(e.target.value)}
       label='password'
       type='password'
@@ -134,16 +74,7 @@ const handleSubmit = (e:any) => {
       error={passwordErr}
       // helperText="Incorrect entry."
     />  
-     <TextField
-      sx={{mb:2}}
-      onChange={(e) => setPasswordAgain(e.target.value)}
-      label='password'
-      type='password'
-      variant='outlined'
-      required
-      error={passwordAgainErr}
-    />  
-
+    
     <Button
       onClick={handleSubmit}
       type='submit'
