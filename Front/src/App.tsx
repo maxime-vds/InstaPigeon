@@ -4,6 +4,7 @@ import Register from "./components/Register"
 import Login from "./components/Login"
 import Landing from "./components/Landing"
 import {useEffect} from 'react'
+import { AuthProvider } from "./context/authContext"
 
 
 
@@ -50,7 +51,9 @@ function App() {
 
 
     return(
+        <AuthProvider>
         <RouterProvider router={router}/>
+        </AuthProvider>
     )
 }
 
