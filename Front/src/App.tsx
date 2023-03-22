@@ -1,5 +1,5 @@
 import { createRoutesFromElements, Route, createBrowserRouter, RouterProvider } from "react-router-dom"
-import RootLayout from "./layout/RootLayout"
+import RootLayout from "./components/Navbar"
 import Register from "./components/Register"
 import Login from "./components/Login"
 import Landing from "./components/Landing"
@@ -20,13 +20,25 @@ const router = createBrowserRouter(
         
         // Landing < register, login
         // how to change from landing page to register page/login
+        // based on userAutentication
         
-        <Route path="/" element={<RootLayout/>}>
-
+        <Route  element={<RootLayout/>}>
             <Route index element={<Landing/>}/>
             <Route path="/Register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
         </Route>
+
+ 
+            // once user is Authenticated, we can pass to this tree ?           
+
+
+         //<Route element={<HomeLayout/>}> 
+         //<Route index element={<Home>}
+         //
+         // <Route>   
+
+
+
     ))
     
     
