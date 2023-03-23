@@ -1,22 +1,38 @@
 import { NavLink, Outlet} from "react-router-dom"
+import {useEffect, useState} from "react"
+import { useAuthStore } from "../context/authStore"
+
+
+ const Paths = ["/", "Login", "nav","navUp", "landing", "grid"]
 
 export default function RootLayout() {
+      
+    const [showUserNavbar, setUserNavbar] = useState<boolean>(false)
+
+
+
     return(
-        <div className="root-layout">
+
+        <div className="RootLayout">
                 <header>
                     <nav>
-                        {/* <h1>Jobarouter</h1>
+                        <NavLink to={Paths[0]}>Home</NavLink>
+                        <NavLink to={Paths[1]}>Login</NavLink>
+                        <NavLink to={Paths[2]}>Nav-phone</NavLink>
+                        <NavLink to={Paths[3]}>Nav-pc</NavLink>
+                        <NavLink to={Paths[4]}>Landing</NavLink>
+                        <NavLink to={Paths[5]}>grid</NavLink>
+                      {/*select different components here   */}
                         <NavLink to="/">Home</NavLink>
-                        <NavLink to="about">About</NavLink>
-                        <NavLink to="help">Help</NavLink>
-                        <NavLink to="careers">Careers</NavLink> */}
+                        <NavLink to="Login">Login</NavLink>
+                        <NavLink to="Register">Register</NavLink>
                     </nav>
-            </header>
-            <main>
-                {/* render home or about in the main tags  */}
                 
-                <Outlet/>
-            </main>
+
+                </header>
+                    <main>
+                        <Outlet/>
+                    </main>
         </div>
     )
 }
