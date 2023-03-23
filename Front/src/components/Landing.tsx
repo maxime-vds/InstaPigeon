@@ -1,4 +1,4 @@
-
+import NavScreen from "../navbar/navscreen"
 
 function Landing() {
     return (  
@@ -6,7 +6,7 @@ function Landing() {
 
 
         <h2>InstaPigeon</h2>
-
+            <NavScreen />
         </div>
     );
 }
