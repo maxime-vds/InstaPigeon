@@ -6,18 +6,9 @@ import {useEffect, useState} from "react"
 
 
 export default function RootLayout() {
-       
-
-
-
+      
     const [showUserNavbar, setUserNavbar] = useState<boolean>(false)
     
-// select navbar based on user object in App ?
-    // const Function that check a prop for authentication {
-        // everything that toggle stuff when authenticated
-    // }
-
-
     return(
         <div className="RootLayout">
                 <header>

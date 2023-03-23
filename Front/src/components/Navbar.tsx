@@ -3,15 +3,6 @@ import {useEffect, useState} from "react"
 
 export default function RootLayout() {
 
-
-        useEffect(() => {
-            console.log(window.location.href)
-        },[])
-
-
-    const Paths = ["/", "Login", "Register"]
-
-
    
 
     return(
@@ -20,9 +11,9 @@ export default function RootLayout() {
                 <header>
 
                     <nav> 
-                        <NavLink to={Paths[0]}>Home</NavLink>
-                        <NavLink to={Paths[1]}>Login</NavLink>
-                        <NavLink to={Paths[2]}>Register</NavLink>
+                        <NavLink to={'/'}>Home</NavLink>
+                        <NavLink to={'Login'}>Login</NavLink>
+                        <NavLink to={'Register'}>Register</NavLink>
                     </nav>
 
             </header>

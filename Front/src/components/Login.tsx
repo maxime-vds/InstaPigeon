@@ -45,45 +45,45 @@ const handleSubmit = (e:any) => {
 
   return (<>
 
-<Typography
-    align="center"
-    variant='h6'
-    color='textSecondary'
-    gutterBottom
->instapigeon</Typography>
+  <Typography
+      align="center"
+      variant='h6'
+      color='textSecondary'
+      gutterBottom
+  >instapigeon</Typography>
 
 
-<Container maxWidth='xs' >
-    <form style={{display:"flex", flexDirection:"column"}}>
+  <Container maxWidth='xs' >
+      <form style={{display:"flex", flexDirection:"column"}}>
 
-     <TextField
-      sx={{mb:2}}
-      onChange={(e) => setUsername(e.target.value)}
-      label='username'
-      variant='outlined'
-      required
-      error={usernameErr}
-    />   
-    <TextField
-      sx={{mb:2}}
-      onChange={(e) => setPassword(e.target.value)}
-      label='password'
-      type='password'
-      variant='outlined'
-      required
-      error={passwordErr}
-      helperText="Incorrect entry."
-    />  
-    
-    <Button
-      onClick={handleSubmit}
-      type='submit'
-      color='primary'
-      variant='contained'
-      endIcon={<KeyboardArrowRight/>}
-      >
-      Submit
-    </Button>
+      <TextField
+        sx={{mb:2}}
+        onChange={(e) => setUsername(e.target.value)}
+        label='username'
+        variant='outlined'
+        required
+        error={usernameErr}
+      />   
+      <TextField
+        sx={{mb:2}}
+        onChange={(e) => setPassword(e.target.value)}
+        label='password'
+        type='password'
+        variant='outlined'
+        required
+        error={passwordErr}
+        helperText="Incorrect entry."
+      />  
+      
+      <Button
+        onClick={handleSubmit}
+        type='submit'
+        color='primary'
+        variant='contained'
+        endIcon={<KeyboardArrowRight/>}
+        >
+        Submit
+      </Button>
 
 
 

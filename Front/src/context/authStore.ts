@@ -2,14 +2,17 @@ import { useState } from "react"
 
 
 export interface IAuthContext {
-    loginUser: any,
-    setLoginUser: (loginUser: any) => void
+    loginUser: null,
+    setLoginUser: (loginUser: null) => void
 }
+// create interface for state
+
 
 export const initialContext = {
     loginUser: null,
     setLoginUser: () => null 
 }
+// ?? don't understand
 
 export const useAuthStore = () => {
     const [loginUser, setLoginUser] = useState<any>(null)
@@ -19,3 +22,4 @@ export const useAuthStore = () => {
         setLoginUser
     }
 }
+// export hook with state
