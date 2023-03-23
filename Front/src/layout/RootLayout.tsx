@@ -1,9 +1,6 @@
 import { NavLink, Outlet} from "react-router-dom"
 import {useEffect, useState} from "react"
-
-
-
-
+import { useAuthStore } from "../context/authStore"
 
 export default function RootLayout() {
       
@@ -27,12 +24,10 @@ export default function RootLayout() {
                     </nav>
                 }
 
-
-
                 </header>
-            <main>
-                <Outlet/>
-            </main>
-        </div>
+                    <main>
+                        <Outlet/>
+                    </main>
+                </div>
     )
 }

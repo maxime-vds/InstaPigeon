@@ -12,7 +12,7 @@ export const initialContext = {
     loginUser: null,
     setLoginUser: () => null 
 }
-// ?? don't understand
+// set initial values
 
 export const useAuthStore = () => {
     const [loginUser, setLoginUser] = useState<any>(null)

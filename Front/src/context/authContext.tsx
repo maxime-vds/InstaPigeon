@@ -12,7 +12,7 @@ interface IProviderProps {
 export const AuthContext = createContext<IAuthContext>(
    initialContext
 )
-// ??
+// create context and set initial values? 
 
 export const AuthProvider = ({children}:IProviderProps) => (
     <AuthContext.Provider value={useAuthStore()}>

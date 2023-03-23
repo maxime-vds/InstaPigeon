@@ -6,17 +6,13 @@ import Landing from "./components/Landing"
 import {useEffect, useState, useContext} from 'react'
 import { AuthContext, AuthProvider} from "./context/authContext"
 import { useAuthStore } from "./context/authStore"
+import { useSetLoginUser } from "./hooks"
 
 
     
 function App() {
 
-const getHook = useAuthStore()
-
-//causes infinite loop
-
-console.log(getHook.setLoginUser('yup'))
-console.log(getHook.loginUser);
+const {loginUser, setLoginUser} = useAuthStore()
 
 
 
@@ -26,7 +22,7 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         // <Routes>
             
-        <Route  element={<RootLayout/>}>
+        <Route path="/" element={<RootLayout/>}>
             {/* <Route element={<AuthProvider/>}> */}
             <Route index element={<Landing/>}/>
             {/* </Route> */}
@@ -38,7 +34,11 @@ const router = createBrowserRouter(
         ))
 
     return(
+
+        <AuthProvider>
         <RouterProvider router={router}/>
+        </AuthProvider>
+
         )
     }
 
