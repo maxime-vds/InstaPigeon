@@ -5,6 +5,8 @@ import Login from "./components/Login"
 import NavbarHeadersPc from "./navbar/navHeadPc"
 import NavbarBottomPhone from "./navbar/navBotPhone"
 import Landing from "./components/Landing"
+import RowAndColumnSpacing from "./components/test"
+import NestedGrid from "./components/test"
 
 
 
@@ -18,6 +20,8 @@ const router = createBrowserRouter(
             <Route path="/nav" element={<NavbarBottomPhone/>}/>
             <Route path="/navUp" element={<NavbarHeadersPc/>}/>
             <Route path="/landing" element={<Landing/>}/>
+            <Route path="/grid" element={<NestedGrid/>}/>
+
             
         </Route>
 
