@@ -2,6 +2,9 @@ import { createRoutesFromElements, Route, createBrowserRouter, RouterProvider } 
 import RootLayout from "./layout/RootLayout"
 import Register from "./components/Register"
 import Login from "./components/Login"
+import NavbarHeadersPc from "./navbar/navHeadPc"
+import NavbarBottomPhone from "./navbar/navBotPhone"
+import Landing from "./components/Landing"
 
 
 
@@ -12,6 +15,10 @@ const router = createBrowserRouter(
         <Route path="/" element={<RootLayout/>}>
             <Route index element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/nav" element={<NavbarBottomPhone/>}/>
+            <Route path="/navUp" element={<NavbarHeadersPc/>}/>
+            <Route path="/landing" element={<Landing/>}/>
+            
         </Route>
 
     ))

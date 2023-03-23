@@ -18,7 +18,7 @@ export default function RootLayout() {
 
     const[toggleNavbar, setToggleNavbar] = useState<boolean>(false)
 
-    const Paths = ["/", "Login", "Register", "nav","navUp"]
+    const Paths = ["/", "Login", "Register", "nav","navUp", "landing"]
 
 
 
@@ -63,8 +63,9 @@ export default function RootLayout() {
                         <NavLink to={Paths[0]}>Home</NavLink>
                         <NavLink to={Paths[1]}>Login</NavLink>
                         <NavLink to={Paths[2]}>Register</NavLink>
-                        <NavLink to={Paths[3]}>Nav-Bot</NavLink>
-                        <NavLink to={Paths[4]}>Nav-Head</NavLink>
+                        <NavLink to={Paths[3]}>Nav-phone</NavLink>
+                        <NavLink to={Paths[4]}>Nav-pc</NavLink>
+                        <NavLink to={Paths[5]}>Landing</NavLink>
                     </nav>
 
 
