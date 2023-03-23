@@ -2,36 +2,39 @@ import { createRoutesFromElements, Route, createBrowserRouter, RouterProvider, R
 import RootLayout from "./components/Navbar"
 import Register from "./components/Register"
 import Login from "./components/Login"
+import NavbarHeadersPc from "./navbar/navHeadPc"
+import NavbarBottomPhone from "./navbar/navBotPhone"
 import Landing from "./components/Landing"
-import {useEffect, useState, useContext} from 'react'
 import { AuthContext, AuthProvider} from "./context/authContext"
 import { useAuthStore } from "./context/authStore"
 import { useSetLoginUser } from "./hooks"
+import RowAndColumnSpacing from "./components/test"
+import NestedGrid from "./components/test"
 
 
     
 function App() {
 
-const {loginUser, setLoginUser} = useAuthStore()
-
-
-
-
 const router = createBrowserRouter(
-
     createRoutesFromElements(
-        // <Routes>
             
         <Route path="/" element={<RootLayout/>}>
-            {/* <Route element={<AuthProvider/>}> */}
+        
             <Route index element={<Landing/>}/>
-            {/* </Route> */}
             <Route path="/Register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/nav" element={<NavbarBottomPhone/>}/>
+            <Route path="/navUp" element={<NavbarHeadersPc/>}/>
+            <Route path="/landing" element={<Landing/>}/>
+            <Route path="/grid" element={<NestedGrid/>}/>
+            
         </Route>
 
-        // </Routes>
-        ))
+            )
+        )
+
+
+
 
     return(
 
