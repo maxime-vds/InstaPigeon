@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { TextField } from '@mui/material';
-
+import LogoutIcon from '@mui/icons-material/Logout';
 import { styled, alpha } from '@mui/material/styles';
 
 
@@ -58,11 +58,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-export default function NavbarHeaders() {
+export default function NavbarHeadersPc() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static"> 
-        <Toolbar>
+        <Toolbar sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
           <IconButton
             size="large"
             edge="start"
@@ -72,8 +72,12 @@ export default function NavbarHeaders() {
           >
             InstaPigeon
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 0.9}}>
-           </Typography>
+          
+          <Button color="inherit" size="large">Home</Button>
+          <Button color="inherit">Post</Button>
+          <Button color="inherit">Profile</Button>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 0.1,}}>
+           
 
            <Search>
               <SearchIconWrapper>
@@ -84,9 +88,10 @@ export default function NavbarHeaders() {
                 inputProps={{ 'aria-label': 'search' }}
               />
            </Search>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">Post</Button>
-          <Button color="inherit">Profile</Button>
+           </Typography>
+          
+           <Button color="inherit"> <LogoutIcon/></Button>
+         
         </Toolbar>
       </AppBar>
     </Box>

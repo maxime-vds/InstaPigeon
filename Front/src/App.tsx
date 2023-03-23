@@ -4,8 +4,8 @@ import Register from "./components/Register"
 import Login from "./components/Login"
 import Landing from "./components/Landing"
 import {useEffect} from 'react'
-import NavbarBottom from "./navbar/navBottom"
-import NavbarHeaders from "./navbar/navHeader"
+import NavbarBottomPhone from "./navbar/navBotPhone"
+import NavbarHeadersPc from "./navbar/navHeadPc"
 
 
 
@@ -15,7 +15,7 @@ const router = createBrowserRouter(
         //Home
         
         // I can use RootLayout to store the top Navbar for all pages, 
-        // then select different navbars and changes ?
+        // then select different navbar and changes ?
         // or have 2 pages basically, landing, register, login
         // then home, modals, account, etc
         
@@ -28,8 +28,8 @@ const router = createBrowserRouter(
             <Route index element={<Landing/>}/>
             <Route path="/Register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/nav" element={< NavbarBottom />}/>
-            <Route path="/navUp" element={< NavbarHeaders/>}/>
+            <Route path="/nav" element={< NavbarBottomPhone />}/>
+            <Route path="/navUp" element={< NavbarHeadersPc/>}/>
             
 
         </Route>

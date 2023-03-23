@@ -22,15 +22,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { Link } from 'react-router-dom';
-{/**
-icon : 
+import NavbarHeadersPhone from './navHeadPhone';
 
-home
-look
-post
-profile
-
-*/}
 {/** 
 const messages = [
   {
@@ -90,9 +83,10 @@ const StyledFab = styled(Fab)({
   margin: '0 auto',
 });
 
-export default function NavbarBottom() {
+export default function NavbarBottomPhone() {
   return (
     <React.Fragment>
+      <NavbarHeadersPhone/>
       {/**<CssBaseline />
       <Paper square sx={{ pb: '50px' }}>
         <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
