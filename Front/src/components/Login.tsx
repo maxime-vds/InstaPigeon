@@ -72,7 +72,7 @@ const handleSubmit = (e:any) => {
       variant='outlined'
       required
       error={passwordErr}
-      // helperText="Incorrect entry."
+      helperText="Incorrect entry."
     />  
     
     <Button
