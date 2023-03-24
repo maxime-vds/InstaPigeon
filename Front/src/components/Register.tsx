@@ -26,7 +26,6 @@ function Register() {
   const [passwordAgainErr, setPasswordAgainErr] = useState<boolean>(false)
 
 
-  //this one doesn't break the page ? still freezes the page
 
   const fetchAccount = async () => {
     const settings = {
@@ -81,14 +80,11 @@ const handleSubmit = (e:any) => {
     if (firstname && lastname && email && password && passwordAgain) {
       console.log('user created')
 
+
         fetchAccount()
 
     
     }
-
-  
-
-
   }
 
 

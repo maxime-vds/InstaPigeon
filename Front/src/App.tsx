@@ -12,6 +12,15 @@ import RowAndColumnSpacing from "./components/test"
 import NestedGrid from "./components/test"
 
 
+import { StyledEngineProvider } from '@mui/material/styles';
+
+
+
+
+
+
+
+
     
 function App() {
 
@@ -36,13 +45,11 @@ const router = createBrowserRouter(
 
 
 
-    return(
-
+    return (
         <AuthProvider>
-        <RouterProvider router={router}/>
+          <RouterProvider router={router} />
         </AuthProvider>
-
-        )
+    );
     }
 
 export default App
