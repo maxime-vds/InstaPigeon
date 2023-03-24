@@ -88,7 +88,6 @@ const StyledFab = styled(Fab)({
 export default function NavbarBottomPhone() {
   return (
     <>
-      <NavbarHeadersPhone />
       {/**<CssBaseline />
       <Paper square sx={{ pb: '50px' }}>
         <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
