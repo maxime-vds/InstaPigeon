@@ -7,13 +7,15 @@ import {
 import RootLayout from "./layout/RootLayout";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import NavbarHeadersPc from "./components/navbar/NavbarHeadersPc";
-import NavbarBottomPhone from "./components/navbar/NavbarBottomPhone";
+import NavbarHeadersPc from "./components/Navbar/NavbarHeadersPc";
+import NavbarBottomPhone from "./components/Navbar/NavbarBottomPhone";
 import Landing from "./components/Landing";
 import { AuthContext, AuthProvider } from "./context/authContext";
 import { useAuthStore } from "./context/authStore";
 import { useSetLoginUser } from "./hooks/useSetLoginUser";
 import Grid from "./components/Grid";
+import RecipeReviewCard from "./components/test";
+
 
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
@@ -36,15 +38,25 @@ function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route element={<RootLayout />}>
-        <Route index element={<Landing />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/Grid" element={<Grid />} />
 
-        {/* protected routes */}
-        {/* home, modals, dashboard,  */}
+
+      <Route element={<RootLayout/>}>
+          <Route index element={<Landing/>}/>
+          <Route path="/Register" element={<Register/>}/>
+          {/* <Route path="/Login" element={<Login/>}/> */}
+          <Route path="/Grid" element={<RecipeReviewCard />} /> 
+
+
       </Route>
+
+      // <Route element={<RootLayout />}>
+      //   <Route index element={<Landing />} />
+      //   <Route path="/Register" element={<Register />} />
+      //   <Route path="/login" element={<Login />} />
+      //   {/* <Route path="/Grid" element={<RecipeReviewCard />} /> */}
+      //   {/* protected routes */}
+      //   {/* home, modals, dashboard,  */}
+      // </Route>
     )
   );
   return (

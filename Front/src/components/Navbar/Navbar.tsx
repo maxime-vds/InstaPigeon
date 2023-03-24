@@ -1,7 +1,7 @@
 import { useMediaQuery } from "@mui/material";
-import NavbarBottomPhone from "./navbar/NavbarBottomPhone";
-import NavbarHeadersPc from "./navbar/NavbarHeadersPc";
-import NavbarHeadersPhone from "./navbar/NavbarHeadersPhone";
+import NavbarBottomPhone from "./NavbarBottomPhone";
+import NavbarHeadersPc from "./NavbarHeadersPc";
+import NavbarHeadersPhone from "./NavbarHeadersPhone";
 import React from "react";
 
 export default function Navbar() {
@@ -20,7 +20,9 @@ export default function Navbar() {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <header></header>
+          <header>
+            <NavbarHeadersPc />
+          </header>
           <footer></footer>
         </React.Fragment>
       )}

@@ -1,11 +1,11 @@
 import { useAuthStore } from "../context/authStore";
-import NavScreen from "./Navbar";
+import NavScreen from "./Navbar/Navbar";
 
 function Landing() {
-  const { loginUser, setLoginUser } = useAuthStore();
+  // const { loginUser, setLoginUser } = useAuthStore();
 
   const handleButtonClick = () => {
-    setLoginUser("User logged in ");
+    // setLoginUser("User logged in ");
   };
 
   return (

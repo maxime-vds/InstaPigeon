@@ -28,14 +28,14 @@ function Login() {
       setPasswordErr(true);
     }
 
-    fetch("https://apilogin.herokuapp.com/api/auth/signin", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({ username, password }),
-    })
-      .then(() => navigate("/succes"))
-      .then(() => console.log("account logged in"))
-      .catch((err) => console.log(err));
+    // fetch("https://apilogin.herokuapp.com/api/auth/signin", {
+    //   method: "POST",
+    //   headers: { "Content-type": "application/json" },
+    //   body: JSON.stringify({ username, password }),
+    // })
+    //   .then(() => navigate("/succes"))
+    //   .then(() => console.log("account logged in"))
+    //   .catch((err) => console.log(err));
   };
 
   return (

@@ -6,10 +6,15 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
+//userAuth= true 
+
 export default function NavbarHeadersPhone() {
   return (
     <Box>
-      <AppBar position="relative">
+      <AppBar 
+        position="static"
+        elevation={0}
+          >
         <Toolbar>
           <Typography
             variant="h6"
