@@ -43,8 +43,8 @@ function App() {
       <Route element={<RootLayout/>}>
           <Route index element={<Landing/>}/>
           <Route path="/Register" element={<Register/>}/>
-          {/* <Route path="/Login" element={<Login/>}/> */}
-          <Route path="/Grid" element={<RecipeReviewCard />} /> 
+          <Route path="/Login" element={<Login/>}/>
+          {/* <Route path="/Grid" element={<RecipeReviewCard />} />  */}
 
 
       </Route>
@@ -60,13 +60,13 @@ function App() {
     )
   );
   return (
-    // <StyledEngineProvider>
+    <StyledEngineProvider>
     <ThemeProvider theme={theme}>
       <AuthProvider>
         <RouterProvider router={router} />
       </AuthProvider>
     </ThemeProvider>
-    // </StyledEngineProvider>
+    </StyledEngineProvider>
   );
 }
 

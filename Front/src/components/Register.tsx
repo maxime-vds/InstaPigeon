@@ -1,8 +1,10 @@
-// import { Button, TextField, Typography } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
+import {Button} from "./Button/Button"
 import { Container } from "@mui/system";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { KeyboardArrowRight } from "@mui/icons-material/";
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 
 function Register() {
   const navigate = useNavigate();
@@ -23,22 +25,22 @@ function Register() {
   const [passwordErr, setPasswordErr] = useState<boolean>(false);
   const [passwordAgainErr, setPasswordAgainErr] = useState<boolean>(false);
 
-  // const fetchAccount = async () => {
-  //   const settings = {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ firstname, lastname, username, email, password }),
-  //   };
-  //   try {
-  //     const response = await fetch(
-  //       "https://apilogin.herokuapp.com/api/auth/signup",
-  //       settings
-  //     );
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  //   navigate("/login");
-  // };
+  const fetchAccount = async () => {
+    const settings = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ firstname, lastname, username, email, password }),
+    };
+    try {
+      const response = await fetch(
+        "https://apilogin.herokuapp.com/api/auth/signup",
+        settings
+      );
+    } catch (err) {
+      console.log(err);
+    }
+    navigate("/login");
+  };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -51,34 +53,34 @@ function Register() {
 
     // form validation
 
-  //   if (firstname === "") {
-  //     setFirstnameErr(true);
-  //   }
-  //   if (lastname === "") {
-  //     setLastnameErr(true);
-  //   }
-  //   if (username === "") {
-  //     setUsernameErr(true);
-  //   }
-  //   if (password === "") {
-  //     setPasswordErr(true);
-  //   }
-  //   if (email === "") {
-  //     setEmailErr(true);
-  //   }
-  //   if (password === "" || password !== passwordAgain) {
-  //     setPassword("");
-  //     setPasswordAgain("");
-  //     setPasswordErr(true);
-  //   }
-  //   if (passwordAgain === "") {
-  //     setPasswordAgainErr(true);
-  //   }
-  //   if (firstname && lastname && email && password && passwordAgain) {
-  //     console.log("user created");
+    if (firstname === "") {
+      setFirstnameErr(true);
+    }
+    if (lastname === "") {
+      setLastnameErr(true);
+    }
+    if (username === "") {
+      setUsernameErr(true);
+    }
+    if (password === "") {
+      setPasswordErr(true);
+    }
+    if (email === "") {
+      setEmailErr(true);
+    }
+    if (password === "" || password !== passwordAgain) {
+      setPassword("");
+      setPasswordAgain("");
+      setPasswordErr(true);
+    }
+    if (passwordAgain === "") {
+      setPasswordAgainErr(true);
+    }
+    if (firstname && lastname && email && password && passwordAgain) {
+      console.log("user created");
 
-  //     // fetchAccount();
-  //   }
+      // fetchAccount();
+    }
   };
 
   return (
@@ -148,13 +150,10 @@ function Register() {
 
           <Button
             onClick={handleSubmit}
-            type="submit"
-            color="primary"
-            variant="contained"
-            endIcon={<KeyboardArrowRight />}
-          >
-            Submit
-          </Button>
+            buttonText='submit'
+            backgroundColor="primary"
+            iconComponent={<AcUnitIcon/>}
+            />
         </form>
       </Container>
     </>
