@@ -4,7 +4,7 @@ import NavbarHeadersPc from "./navbar/NavbarHeadersPc";
 import NavbarHeadersPhone from "./navbar/NavbarHeadersPhone";
 import React from "react";
 
-export default function NavScreen() {
+export default function Navbar() {
   const isTabletScreen = useMediaQuery("(max-width: 1024px)");
 
   return (
