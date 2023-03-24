@@ -1,5 +1,4 @@
 import { StyledButton } from "./Button.styles";
-import { KeyboardArrowRight } from "@mui/icons-material";
 
 interface ButtonProps {
   onClick?: (e: any) => void;
@@ -13,11 +12,11 @@ export const Button = ({ onClick, backgroundColor, iconComponent, buttonText }: 
     <>
       <StyledButton
         onClick={onClick}
-        type="submit"
-        color="primary"
-        variant="contained"
-        endIcon={iconComponent}
         backgroundColor={backgroundColor}
+        endIcon={iconComponent}
+        type="submit"
+        variant="contained"
+        color="primary"
       >
         {buttonText}
       </StyledButton>

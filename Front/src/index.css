@@ -14,9 +14,9 @@
     font-family: worksans-light;
     src: url(../font/WorkSans-Light.ttf);
 }
-
-
-
+body {
+    margin: 0;
+}
 h2 {
-    font-family: 'Poppins'
+    font-family: 'poppins'
 }

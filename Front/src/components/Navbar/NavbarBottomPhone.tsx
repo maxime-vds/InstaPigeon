@@ -1,30 +1,31 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import Paper from '@mui/material/Paper';
-import Fab from '@mui/material/Fab';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
-import Avatar from '@mui/material/Avatar';
-import MenuIcon from '@mui/icons-material/Menu';
-import AddIcon from '@mui/icons-material/Add';
-import SearchIcon from '@mui/icons-material/Search';
-import MoreIcon from '@mui/icons-material/MoreVert';
-import HomeIcon from '@mui/icons-material/Home';
-import AddBoxIcon from '@mui/icons-material/AddBox';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import { Link } from 'react-router-dom';
-import NavbarHeadersPhone from './navHeadPhone';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import Paper from "@mui/material/Paper";
+import Fab from "@mui/material/Fab";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import ListItemText from "@mui/material/ListItemText";
+import ListSubheader from "@mui/material/ListSubheader";
+import Avatar from "@mui/material/Avatar";
+import MenuIcon from "@mui/icons-material/Menu";
+import AddIcon from "@mui/icons-material/Add";
+import SearchIcon from "@mui/icons-material/Search";
+import MoreIcon from "@mui/icons-material/MoreVert";
+import HomeIcon from "@mui/icons-material/Home";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import { Link } from "react-router-dom";
+import NavbarHeadersPhone from "./NavbarHeadersPhone";
 
-{/** 
+{
+  /** 
 const messages = [
   {
     id: 1,
@@ -72,21 +73,21 @@ const messages = [
       for my backyard and would love to fire up the grill.`,
     person: '/static/images/avatar/1.jpg',
   },
-];*/}
+];*/
+}
 
 const StyledFab = styled(Fab)({
-  position: 'absolute',
+  position: "absolute",
   zIndex: 1,
   top: -30,
   left: 0,
   right: 0,
-  margin: '0 auto',
+  margin: "0 auto",
 });
 
 export default function NavbarBottomPhone() {
   return (
-    <React.Fragment>
-      <NavbarHeadersPhone/>
+    <>
       {/**<CssBaseline />
       <Paper square sx={{ pb: '50px' }}>
         <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
@@ -115,10 +116,10 @@ export default function NavbarBottomPhone() {
           ))}
         </List>
       </Paper>*/}
-      <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
+      <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
         <Toolbar>
-        <Box sx={{ flexGrow: 0.1 }} />
-          <IconButton component={Link} to="/"  color="inherit" aria-label="home">
+          <Box sx={{ flexGrow: 0.1 }} />
+          <IconButton component={Link} to="/" color="inherit" aria-label="home">
             <HomeIcon />
           </IconButton>
           <Box sx={{ flexGrow: 0.25 }} />
@@ -127,16 +128,14 @@ export default function NavbarBottomPhone() {
           </IconButton>
           <Box sx={{ flexGrow: 0.3 }} />
           <IconButton component={Link} to="/" color="inherit">
-            <AddBoxIcon/>
+            <AddBoxIcon />
           </IconButton>
           <Box sx={{ flexGrow: 0.3 }} />
           <IconButton component={Link} to="/" color="inherit">
-            <AccountBoxIcon/>
+            <AccountBoxIcon />
           </IconButton>
-          
-         
         </Toolbar>
       </AppBar>
-    </React.Fragment>
+    </>
   );
 }

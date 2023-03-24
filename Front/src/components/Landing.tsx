@@ -1,22 +1,18 @@
 import { useAuthStore } from "../context/authStore";
-import NavScreen from "../navbar/navscreen"
+import NavScreen from "./Navbar/Navbar";
 
 function Landing() {
+  // const { loginUser, setLoginUser } = useAuthStore();
 
-const {loginUser, setLoginUser} = useAuthStore()
+  const handleButtonClick = () => {
+    // setLoginUser("User logged in ");
+  };
 
-const handleButtonClick = () => {
-    setLoginUser('user logged in')
-}
-
-    return (  
-        <div className="Landing">
-        <h2>InstaPigeon</h2>
-        <button onClick={handleButtonClick}>Set Login User</button>
-            <NavScreen />
-        </div>
-
-    );
+  return (
+    <div className="Landing">
+      {/* <button onClick={handleButtonClick}>Set Login User</button> */}
+    </div>
+  );
 }
 
 export default Landing;

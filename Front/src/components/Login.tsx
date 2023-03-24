@@ -2,6 +2,7 @@ import { TextField, Typography, Container } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { KeyboardArrowRight } from "@mui/icons-material/";
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 import { Button } from "./Button/Button";
 function Login() {
   const navigate = useNavigate();
@@ -67,9 +68,13 @@ function Login() {
             variant="outlined"
             required
             error={passwordErr}
-            helperText="Incorrect entry."
           />
-          <Button onClick={handleSubmit} buttonText='Submit' iconComponent={<KeyboardArrowRight/>} backgroundColor='secondary'
+          <Button
+            onClick={handleSubmit}
+            buttonText="Submit"
+            iconComponent={<AcUnitIcon />}
+            // iconComponent={<KeyboardArrowRight />}
+            // backgroundColor="secondary"
           />
         </form>
       </Container>
