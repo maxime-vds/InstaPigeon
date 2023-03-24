@@ -1,10 +1,10 @@
 import { TextField, Typography } from "@mui/material";
-import {Button} from "./Button/Button"
+import { Button } from "./Button/Button";
 import { Container } from "@mui/system";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { KeyboardArrowRight } from "@mui/icons-material/";
-import AcUnitIcon from '@mui/icons-material/AcUnit';
+import AcUnitIcon from "@mui/icons-material/AcUnit";
 
 function Register() {
   const navigate = useNavigate();
@@ -150,10 +150,10 @@ function Register() {
 
           <Button
             onClick={handleSubmit}
-            buttonText='submit'
+            buttonText="submit"
             // backgroundColor="primary"
-            iconComponent={<AcUnitIcon/>}
-            />
+            iconComponent={<AcUnitIcon />}
+          />
         </form>
       </Container>
     </>

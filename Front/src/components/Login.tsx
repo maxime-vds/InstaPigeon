@@ -34,6 +34,7 @@ function Login() {
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ username, password }),
     })
+      
       .then(() => navigate("/succes"))
       .then(() => console.log("account logged in"))
       .catch((err) => console.log(err));
