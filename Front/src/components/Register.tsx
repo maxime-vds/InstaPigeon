@@ -81,7 +81,9 @@ const handleSubmit = (e:any) => {
     if (firstname && lastname && email && password && passwordAgain) {
       console.log('user created')
 
-        fetchAccount()
+      
+
+        // fetchAccount()
     
       
       

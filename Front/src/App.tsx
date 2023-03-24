@@ -9,6 +9,15 @@ import { useAuthStore } from "./context/authStore"
 import { useSetLoginUser } from "./hooks"
 
 
+import { StyledEngineProvider } from '@mui/material/styles';
+
+
+
+
+
+
+
+
     
 function App() {
 
@@ -33,13 +42,11 @@ const router = createBrowserRouter(
         // </Routes>
         ))
 
-    return(
-
+    return (
         <AuthProvider>
-        <RouterProvider router={router}/>
+          <RouterProvider router={router} />
         </AuthProvider>
-
-        )
+    );
     }
 
 export default App
