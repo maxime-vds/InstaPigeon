@@ -79,7 +79,7 @@ function Register() {
     if (firstname && lastname && email && password && passwordAgain) {
       console.log("user created");
 
-      // fetchAccount();
+      fetchAccount();
     }
   };
 
@@ -151,7 +151,7 @@ function Register() {
           <Button
             onClick={handleSubmit}
             buttonText='submit'
-            backgroundColor="primary"
+            // backgroundColor="primary"
             iconComponent={<AcUnitIcon/>}
             />
         </form>

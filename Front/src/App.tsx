@@ -44,19 +44,11 @@ function App() {
           <Route index element={<Landing/>}/>
           <Route path="/Register" element={<Register/>}/>
           <Route path="/Login" element={<Login/>}/>
-          {/* <Route path="/Grid" element={<RecipeReviewCard />} />  */}
-
+          <Route path="/Grid" element={<RecipeReviewCard />} /> 
 
       </Route>
 
-      // <Route element={<RootLayout />}>
-      //   <Route index element={<Landing />} />
-      //   <Route path="/Register" element={<Register />} />
-      //   <Route path="/login" element={<Login />} />
-      //   {/* <Route path="/Grid" element={<RecipeReviewCard />} /> */}
-      //   {/* protected routes */}
-      //   {/* home, modals, dashboard,  */}
-      // </Route>
+
     )
   );
   return (
