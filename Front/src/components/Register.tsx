@@ -26,7 +26,6 @@ function Register() {
   const [passwordAgainErr, setPasswordAgainErr] = useState<boolean>(false)
 
 
-  //this one doesn't break the page ? still freezes the page
 
   const fetchAccount = async () => {
     const settings = {
@@ -81,30 +80,11 @@ const handleSubmit = (e:any) => {
     if (firstname && lastname && email && password && passwordAgain) {
       console.log('user created')
 
-      
 
-        // fetchAccount()
-    
-      
-      
-      
-      //still breaking page ?, localhost get request is getting blocked ?
-      //something wrong with the api endpoint ,?
-      // async try problems ?
+        fetchAccount()
 
-
-      // fetch('https://apilogin.herokuapp.com/api/auth/signup', {
-      //   method: 'POST',
-      //   headers: {"Content-type": "application/json"},
-      //   body: JSON.stringify({ firstname, lastname, username, email, password})
-      // }).then(() => navigate('/login')).then(() => console.log(firstname, lastname, username, email, password))
-      // .catch((error) => console.log(error))
     
     }
-
-  
-
-
   }
 
 
