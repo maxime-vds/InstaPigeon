@@ -69,7 +69,11 @@ function Login() {
             error={passwordErr}
             helperText="Incorrect entry."
           />
-          <Button onClick={handleSubmit} buttonText='Submit' iconComponent={<KeyboardArrowRight/>} backgroundColor='secondary'
+          <Button
+            onClick={handleSubmit}
+            buttonText="Submit"
+            iconComponent={<KeyboardArrowRight />}
+            backgroundColor="secondary"
           />
         </form>
       </Container>
