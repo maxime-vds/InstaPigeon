@@ -1,36 +1,31 @@
-import { useState } from "react";
-
+import { useState } from "react"
 export interface IAuthContext {
-  loginUser: boolean;
-  login(): Promise<void | null>;
-  logout(): Promise<void | null>;
+  authed: any
+  login(): void
+  logout(): void
 }
 // create interface for state
 
 export const initialContext: IAuthContext = {
-  loginUser: false || true,
+  authed: null,
   login: async () => null,
   logout: async () => null,
-};
+}
 // set initial values
 
 export const useAuthStore = () => {
-  const [loginUser, setLoginUser] = useState<any>(false);
+  const [authed, setLoginUser] = useState<any>(true)
 
   return {
-    loginUser,
+    authed,
     login() {
-      return new Promise<void>((res) => {
-        setLoginUser(true);
-        res();
-      });
+      setLoginUser(true)
+      // sessionStorage.setItem("auth", "true")
     },
+
     logout() {
-      return new Promise<void>((res) => {
-        setLoginUser(false);
-        res();
-      });
+      setLoginUser(false)
     },
-  };
-};
+  }
+}
 // export hook with state

@@ -6,7 +6,7 @@ interface IStyledButton {
 }
 
 export const StyledButton = styled(MuiButton)<IStyledButton>`
-    background-color: ${props => props.backgroundColor || '#D9D9D9'}; 
+    background-color: ${props => props.backgroundColor || '#5a558f'}; 
 `
 export const StyledButtonError = styled(StyledButton)`
     

@@ -1,163 +1,167 @@
-import { TextField, Typography } from "@mui/material";
-import { Button } from "./Button/Button";
-import { Container } from "@mui/system";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { KeyboardArrowRight } from "@mui/icons-material/";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
+import { TextField, Typography } from "@mui/material"
+import { Button } from "./Button/Button"
+import { Container } from "@mui/system"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import AcUnitIcon from "@mui/icons-material/AcUnit"
 
 function Register() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   //inputStates
-  const [firstname, setFirstname] = useState<string>("");
-  const [lastname, setLastname] = useState<string>("");
-  const [username, setUsername] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [passwordAgain, setPasswordAgain] = useState<string>("");
+  const [firstname, setFirstname] = useState<string>("")
+  const [lastname, setLastname] = useState<string>("")
+  const [username, setUsername] = useState<string>("")
+  const [email, setEmail] = useState<string>("")
+  const [password, setPassword] = useState<string>("")
+  const [passwordAgain, setPasswordAgain] = useState<string>("")
 
   //errorStates
-  const [firstnameErr, setFirstnameErr] = useState<boolean>(false);
-  const [lastnameErr, setLastnameErr] = useState<boolean>(false);
-  const [usernameErr, setUsernameErr] = useState<boolean>(false);
-  const [emailErr, setEmailErr] = useState<boolean>(false);
-  const [passwordErr, setPasswordErr] = useState<boolean>(false);
-  const [passwordAgainErr, setPasswordAgainErr] = useState<boolean>(false);
+  const [firstnameErr, setFirstnameErr] = useState<boolean>(false)
+  const [lastnameErr, setLastnameErr] = useState<boolean>(false)
+  const [usernameErr, setUsernameErr] = useState<boolean>(false)
+  const [emailErr, setEmailErr] = useState<boolean>(false)
+  const [passwordErr, setPasswordErr] = useState<boolean>(false)
+  const [passwordAgainErr, setPasswordAgainErr] = useState<boolean>(false)
 
   const fetchAccount = async () => {
     const settings = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ firstname, lastname, username, email, password }),
-    };
+    }
     try {
       const response = await fetch(
         "https://apilogin.herokuapp.com/api/auth/signup",
         settings
-      );
+      )
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
-    navigate("/login");
-  };
+    navigate("/login")
+  }
 
   const handleSubmit = (e: any) => {
-    e.preventDefault();
-    setFirstnameErr(false);
-    setLastnameErr(false);
-    setUsernameErr(false);
-    setEmailErr(false);
-    setPasswordErr(false);
-    setPasswordAgainErr(false);
+    e.preventDefault()
+    setFirstnameErr(false)
+    setLastnameErr(false)
+    setUsernameErr(false)
+    setEmailErr(false)
+    setPasswordErr(false)
+    setPasswordAgainErr(false)
 
     // form validation
 
     if (firstname === "") {
-      setFirstnameErr(true);
+      setFirstnameErr(true)
     }
     if (lastname === "") {
-      setLastnameErr(true);
+      setLastnameErr(true)
     }
     if (username === "") {
-      setUsernameErr(true);
+      setUsernameErr(true)
     }
     if (password === "") {
-      setPasswordErr(true);
-    }
-    if (email === "") {
-      setEmailErr(true);
-    }
-    if (password === "" || password !== passwordAgain) {
-      setPassword("");
-      setPasswordAgain("");
-      setPasswordErr(true);
+      setPasswordErr(true)
     }
     if (passwordAgain === "") {
-      setPasswordAgainErr(true);
+      setPasswordAgainErr(true)
+    }
+    if (email === "") {
+      setEmailErr(true)
     }
     if (firstname && lastname && email && password && passwordAgain) {
-      console.log("user created");
+      if (password !== passwordAgain) {
+        setPassword("")
+        setPasswordAgain("")
+        setPasswordErr(true)
 
-      fetchAccount();
-    }
-  };
+        console.log("something went wrong")
+      } else if (password === passwordAgain) {
+        console.log("trying to create user")
+        fetchAccount()
+      } else {
+        console.log("nope")
+      }
+    }}
 
-  return (
-    <>
-      <Typography
-        align="center"
-        variant="h6"
-        color="textSecondary"
-        gutterBottom
-      >
-        instapigeon
-      </Typography>
+    // this logic seems crap too
 
-      <Container maxWidth="xs">
-        <form style={{ display: "flex", flexDirection: "column" }}>
-          <TextField
-            sx={{ mb: 2 }}
-            onChange={(e) => setFirstname(e.target.value)}
-            label="firstname"
-            variant="outlined"
-            required
-            error={firstnameErr}
-          />
-          <TextField
-            sx={{ mb: 2 }}
-            onChange={(e) => setLastname(e.target.value)}
-            label="lastname"
-            variant="outlined"
-            required
-            error={lastnameErr}
-          />
-          <TextField
-            sx={{ mb: 2 }}
-            onChange={(e) => setUsername(e.target.value)}
-            label="username"
-            variant="outlined"
-            required
-            error={usernameErr}
-          />
-          <TextField
-            sx={{ mb: 2 }}
-            onChange={(e) => setEmail(e.target.value)}
-            label="email"
-            variant="outlined"
-            required
-            error={emailErr}
-          />
-          <TextField
-            sx={{ mb: 2 }}
-            onChange={(e) => setPassword(e.target.value)}
-            label="password"
-            type="password"
-            variant="outlined"
-            required
-            error={passwordErr}
-            // helperText="Incorrect entry."
-          />
-          <TextField
-            sx={{ mb: 2 }}
-            onChange={(e) => setPasswordAgain(e.target.value)}
-            label="password"
-            type="password"
-            variant="outlined"
-            required
-            error={passwordAgainErr}
-          />
+    return (
+      <>
+        <Typography
+          align="center"
+          variant="h6"
+          color="textSecondary"
+          gutterBottom
+        >
+          instapigeon
+        </Typography>
 
-          <Button
-            onClick={handleSubmit}
-            buttonText="submit"
-            // backgroundColor="primary"
-            iconComponent={<AcUnitIcon />}
-          />
-        </form>
-      </Container>
-    </>
-  );
-}
+        <Container maxWidth="xs">
+          <form style={{ display: "flex", flexDirection: "column" }}>
+            <TextField
+              sx={{ mb: 2 }}
+              onChange={(e) => setFirstname(e.target.value)}
+              label="firstname"
+              variant="outlined"
+              required
+              error={firstnameErr}
+            />
+            <TextField
+              sx={{ mb: 2 }}
+              onChange={(e) => setLastname(e.target.value)}
+              label="lastname"
+              variant="outlined"
+              required
+              error={lastnameErr}
+            />
+            <TextField
+              sx={{ mb: 2 }}
+              onChange={(e) => setUsername(e.target.value)}
+              label="username"
+              variant="outlined"
+              required
+              error={usernameErr}
+            />
+            <TextField
+              sx={{ mb: 2 }}
+              onChange={(e) => setEmail(e.target.value)}
+              label="email"
+              variant="outlined"
+              required
+              error={emailErr}
+            />
+            <TextField
+              sx={{ mb: 2 }}
+              onChange={(e) => setPassword(e.target.value)}
+              label="password"
+              type="password"
+              variant="outlined"
+              required
+              error={passwordErr}
+              // helperText="Incorrect entry."
+            />
+            <TextField
+              sx={{ mb: 2 }}
+              onChange={(e) => setPasswordAgain(e.target.value)}
+              label="password"
+              type="password"
+              variant="outlined"
+              required
+              error={passwordAgainErr}
+            />
 
-export default Register;
+            <Button
+              onClick={handleSubmit}
+              buttonText="submit"
+              iconComponent={<AcUnitIcon />}
+            />
+          </form>
+        </Container>
+      </>
+    )}
+  
+
+
+export default Register

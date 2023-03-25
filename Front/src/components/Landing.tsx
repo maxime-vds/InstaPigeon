@@ -1,18 +1,30 @@
-import { useAuthStore } from "../context/authStore";
-import NavScreen from "./Navbar/Navbar";
+import { useNavigate } from "react-router-dom"
+import { useAuthStore } from "../context/authStore"
 
 function Landing() {
-  // const { loginUser, setLoginUser } = useAuthStore();
+  const { authed, login } = useAuthStore()
+  const navigate = useNavigate()
+
+  console.log(authed)
 
   const handleButtonClick = () => {
-    // setLoginUser("User logged in ");
-  };
+    login()
+
+    console.log(authed)
+    if (authed) {
+      console.log(authed)
+
+      console.log("login")
+
+      navigate("/Home")
+    }
+  }
 
   return (
     <div className="Landing">
-      {/* <button onClick={handleButtonClick}>Set Login User</button> */}
+      <button onClick={handleButtonClick}>Set Login User</button>
     </div>
-  );
+  )
 }
 
-export default Landing;
+export default Landing
