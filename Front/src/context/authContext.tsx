@@ -6,6 +6,7 @@ interface IProviderProps {
 }
 // create interface for children
 
+
 export const AuthContext = createContext<IAuthContext>(initialContext);
 // create context and set initial values?
 

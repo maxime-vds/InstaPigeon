@@ -2,17 +2,17 @@ import { StyledButton } from "./Button.styles";
 
 interface ButtonProps {
   onClick?: (e: any) => void;
-  backgroundColor?: string;
+  backgroundcolor?: string | undefined;
   buttonText: string;
   iconComponent?: React.ReactNode;
 }
 
-export const Button = ({ onClick, backgroundColor, iconComponent, buttonText }: ButtonProps) => {
+export const Button = ({ onClick, backgroundcolor, iconComponent, buttonText }: ButtonProps) => {
   return (
     <>
       <StyledButton
         onClick={onClick}
-        backgroundColor={backgroundColor}
+        // backgroundcolor={backgroundcolor}
         endIcon={iconComponent}
         type="submit"
         variant="contained"
