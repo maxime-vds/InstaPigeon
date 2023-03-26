@@ -55,7 +55,8 @@ export const LoginForm = ({
               marginBottom: "50px",
             }}
           >
-            forgot your password? Don't be ashamed, it happens
+            forgot your password? 
+            don't be ashamed, it happens
           </p></Link>
           <Button
             onClick={handleLogin}

@@ -25,22 +25,24 @@ import type {} from '@mui/lab/themeAugmentation';
 
 // const heights = [150, 30, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 30, 50, 80];
 
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//   ...theme.typography.body2,
-//   padding: theme.spacing(0.5),
-//   textAlign: 'center',
-//   color: theme.palette.text.secondary,
-// }));
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(0.5),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
+
+const heights =[500]
 
 
 export default function Grid() {
   return (
 <div className="BasicMasonry">
-    check
-{/* 
-    <Box sx={{ width: 500, minHeight: 393 }}>
+   <h2>Grid</h2> 
+
+    <Box sx={{ width: 1800, minHeight: 393 }}>
       <Masonry columns={4} spacing={2}>
         {heights.map((height, index) => (
           <Item key={index} sx={{ height }}>
@@ -48,7 +50,7 @@ export default function Grid() {
           </Item>
         ))}
       </Masonry>
-    </Box> */}
+    </Box>
 
     </div>
 

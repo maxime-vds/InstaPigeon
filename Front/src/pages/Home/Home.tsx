@@ -1,5 +1,13 @@
-const Home = () => {
-    return <h2>home</h2>
-  }
+import Grid from "../../components/Grid"
 
-  export default Home
+const Home = () => {
+  return (
+    <>
+      <h2>Home</h2>
+
+      <Grid />
+    </>
+  )
+}
+
+export default Home

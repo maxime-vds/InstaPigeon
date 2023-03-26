@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 import { useAuthStore } from "../../context/authStore"
@@ -41,26 +41,25 @@ function LoginWrapper() {
       body: JSON.stringify({ username, password }),
     })
       // just gonna do a res.ok check here but might need some extra checks
+
       .then((res) => {
         if (!res.ok) {
-          //shouldn't put this here, it always navigates now
           console.log("failed to log in")
           // navigate(state?.path || "/")
-
           // catch error here?
         } else {
           login()
 
-          // authed is true here
-          if (authed) {
-            console.log("logged in succesfully!")
-
-            // authed is false here
-            navigate("/Dashboard")
-          }
+          console.log("logged in succesfully!")
         }
       })
   }
+
+  // navigation on if(data) via useEffect
+
+  useEffect(() => {
+    navigate("/home")
+  }, [authed])
 
   // console.log(authed)
 
@@ -117,12 +116,11 @@ function LoginWrapper() {
               />
             </Box>
           </div>
-          <div style={{display:"flex", justifyContent: "flex-start"}}>
+          <div style={{ display: "flex", justifyContent: "flex-start" }}>
             <img
-
               src="../../public/RickyPigeon.png"
               alt="RickyPigeon"
-              style={{ position: "fixed", width: "25rem", left:"7rem"}}
+              style={{ position: "fixed", width: "25rem", left: "7rem" }}
             />
           </div>
         </Box>

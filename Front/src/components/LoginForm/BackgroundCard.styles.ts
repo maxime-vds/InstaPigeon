@@ -12,4 +12,4 @@ export const StyledCard = styled(MuiCard)<IStyledBackgroundCard>`
   max-width: ${(props) => props.backgroundcolor};
 `
 
-// add variantions here
+// add variations here

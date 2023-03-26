@@ -10,7 +10,7 @@ import { ReactNode } from "react"
 
 //components
 import Register from "./components/Register"
-import LoginForm from "./components/LoginForm/LoginWrapper"
+import LoginForm from "./components/LoginForm/LoginPage"
 import Landing from "./components/Landing"
 import Home from "./pages/Home/Home"
 import Dashboard from "./pages/Dashboard/Dashboard"
