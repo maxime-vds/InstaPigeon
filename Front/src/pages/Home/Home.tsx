@@ -3,9 +3,17 @@ import Grid from "../../components/Grid"
 const Home = () => {
   return (
     <>
-      <h2>Home</h2>
-
-      <Grid />
+      <div
+        className="background"
+        style={{
+          display: "absolute",
+          backgroundColor: "#262525",
+          width: "100vw",
+          height: "100%",
+        }}
+      >
+        <Grid />
+      </div>
     </>
   )
 }

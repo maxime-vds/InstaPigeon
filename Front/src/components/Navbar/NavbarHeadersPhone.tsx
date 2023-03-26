@@ -10,7 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 export default function NavbarHeadersPhone() {
   return (
-    <Box>
+    <>
       <AppBar 
         position="static"
         elevation={0}
@@ -38,6 +38,6 @@ export default function NavbarHeadersPhone() {
           </IconButton>
         </Toolbar>
       </AppBar>
-    </Box>
+    </>
   );
 }

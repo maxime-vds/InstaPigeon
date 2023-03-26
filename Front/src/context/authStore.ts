@@ -7,25 +7,28 @@ export interface IAuthContext {
 // create interface for state
 
 export const initialContext: IAuthContext = {
-  authed: null,
+  authed: undefined || true || false,
   login: async () => null,
   logout: async () => null,
 }
 // set initial values
 
 export const useAuthStore = () => {
-  const [authed, setLoginUser] = useState<any>(true)
+  //can't seem to change the state here 
+  const [authed, setLoginUser] = useState<any>()
+
+  function login() {
+    setLoginUser(true)
+    // sessionStorage.setItem("auth", "true")
+  }
+  function logout() {
+    setLoginUser(false)
+  }
 
   return {
     authed,
-    login() {
-      setLoginUser(true)
-      // sessionStorage.setItem("auth", "true")
-    },
-
-    logout() {
-      setLoginUser(false)
-    },
+    login,
+    logout,
   }
 }
 // export hook with state

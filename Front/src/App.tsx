@@ -14,7 +14,7 @@ import LoginForm from "./components/LoginForm/LoginPage"
 import Landing from "./components/Landing"
 import Home from "./pages/Home/Home"
 import Dashboard from "./pages/Dashboard/Dashboard"
-import { RequireAuth } from "./hooks/RequireAuth"
+import { RequireAuth } from "./components/RequireAuth"
 
 //context
 import { AuthProvider } from "./context/authContext"
@@ -49,9 +49,9 @@ function App() {
         <Route
           path="/Home"
           element={
-            <RequireAuth>
+            // <RequireAuth>
               <Home />
-            </RequireAuth>
+            // </RequireAuth>
           }
         />
         <Route

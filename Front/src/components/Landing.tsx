@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useAuthStore } from "../context/authStore"
+import { useEffect } from "react"
 
 function Landing() {
   const { authed, login } = useAuthStore()
@@ -9,16 +10,17 @@ function Landing() {
 
   const handleButtonClick = () => {
     login()
-
-    console.log(authed)
-    if (authed) {
-      console.log(authed)
-
-      console.log("login")
-
-      navigate("/Home")
-    }
   }
+
+  useEffect(() => {
+    console.log(authed)
+
+    if (authed) {
+      console.log("trying to pass");
+      
+      navigate("/home")
+    }
+  }, [authed])
 
   return (
     <div className="Landing">

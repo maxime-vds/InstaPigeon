@@ -9,10 +9,13 @@ export function RequireAuth({ children }: { children: ReactNode }): any {
 
   console.log(authed)
 
+
   // the problem is with passing the authed value here
   // why is it undefined here ?
 
   // when I put authed on true originally it works fine
+
+  // something is always turning authed to false before it gets here
 
   return authed ? (
     children

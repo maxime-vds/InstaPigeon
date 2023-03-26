@@ -21,6 +21,12 @@ function LoginWrapper() {
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    console.log("handleLogin launched")
+    console.log(authed);
+    
+
+
     setUsernameErr(false)
     setPasswordErr(false)
 
@@ -41,15 +47,14 @@ function LoginWrapper() {
       body: JSON.stringify({ username, password }),
     })
       // just gonna do a res.ok check here but might need some extra checks
-
       .then((res) => {
         if (!res.ok) {
           console.log("failed to log in")
           // navigate(state?.path || "/")
           // catch error here?
         } else {
+          
           login()
-
           console.log("logged in succesfully!")
         }
       })
@@ -58,7 +63,9 @@ function LoginWrapper() {
   // navigation on if(data) via useEffect
 
   useEffect(() => {
-    navigate("/home")
+    if (authed) {
+      navigate("/home")
+    }
   }, [authed])
 
   // console.log(authed)
