@@ -1,9 +1,9 @@
 import { Typography, Container, TextField } from "@mui/material"
-import { Button } from "../Button/Button"
-import {Link} from "@mui/material"
+import { Button } from "../../components/button/Button"
+import { Link } from "@mui/material"
 import AcUnitIcon from "@mui/icons-material/AcUnit"
 
-interface LoginFormProps {
+interface IloginFormProps {
   handleLogin: (e: React.FormEvent<HTMLFormElement>) => void
   setUsername: React.Dispatch<React.SetStateAction<string>>
   usernameErr: boolean
@@ -17,7 +17,7 @@ export const LoginForm = ({
   usernameErr,
   setPassword,
   passwordErr,
-}: LoginFormProps) => {
+}: IloginFormProps) => {
   return (
     <>
       <Container maxWidth="xs">
@@ -45,19 +45,20 @@ export const LoginForm = ({
             required
             error={passwordErr}
           />
-          <Link><p
-            style={{
-              fontSize: "9px",
-              fontWeight: "bold",
-              fontFamily: "worksans",
-              textAlign: "center",
-              marginTop: "6px",
-              marginBottom: "50px",
-            }}
-          >
-            forgot your password? 
-            don't be ashamed, it happens
-          </p></Link>
+          <Link>
+            <p
+              style={{
+                fontSize: "9px",
+                fontWeight: "bold",
+                fontFamily: "worksans",
+                textAlign: "center",
+                marginTop: "6px",
+                marginBottom: "50px",
+              }}
+            >
+              forgot your password? don't be ashamed, it happens
+            </p>
+          </Link>
           <Button
             onClick={handleLogin}
             buttonText="Submit"

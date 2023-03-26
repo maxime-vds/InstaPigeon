@@ -15,7 +15,9 @@ export default function Navbar() {
             <NavbarHeadersPhone />
           </header>
           <footer>
-            <NavbarBottomPhone />
+
+            {/* authed? :  */}
+            {/* <NavbarBottomPhone /> */}
           </footer>
         </React.Fragment>
       ) : (

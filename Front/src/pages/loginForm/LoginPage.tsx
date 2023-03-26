@@ -6,7 +6,7 @@ import { BackgroundCard } from "./BackgroundCard"
 import { LoginForm } from "./LoginForm"
 import { Box } from "@mui/system"
 
-function LoginWrapper() {
+function LoginPage() {
   const { authed, login } = useAuthStore()
   const { state } = useLocation()
   const navigate = useNavigate()
@@ -23,9 +23,7 @@ function LoginWrapper() {
     e.preventDefault()
 
     console.log("handleLogin launched")
-    console.log(authed);
-    
-
+    console.log(authed)
 
     setUsernameErr(false)
     setPasswordErr(false)
@@ -53,7 +51,6 @@ function LoginWrapper() {
           // navigate(state?.path || "/")
           // catch error here?
         } else {
-          
           login()
           console.log("logged in succesfully!")
         }
@@ -73,19 +70,31 @@ function LoginWrapper() {
   return (
     <>
       <div
-        style={{ display: "flex", justifyContent: "center", marginTop: "15px" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          backgroundColor: "#D9D9D9",
+          overflow: "hidden",
+          height: "100vh",
+        }}
       >
         <Box
           sx={{
-            position: "absolute",
+            position: "relative",
             backgroundColor: "#BD9B45",
-            marginTop: "8px",
+            margin: "20px",
             height: "80vh",
-            width: "80vw",
+            width: "88vw",
             borderRadius: "8px",
           }}
         >
-          <h2 style={{ textAlign: "center", color: "#D9D9D9" }}>
+          <h2
+            style={{
+              textAlign: "center",
+              color: "#D9D9D9",
+              margin: "10px",
+            }}
+          >
             Look what the pigeon dragged in!
           </h2>
           <p
@@ -127,7 +136,7 @@ function LoginWrapper() {
             <img
               src="../../public/RickyPigeon.png"
               alt="RickyPigeon"
-              style={{ position: "fixed", width: "25rem", left: "7rem" }}
+              style={{ position: "relative", width: "35rem", left: "2.5rem" }}
             />
           </div>
         </Box>
@@ -136,4 +145,4 @@ function LoginWrapper() {
   )
 }
 
-export default LoginWrapper
+export default LoginPage

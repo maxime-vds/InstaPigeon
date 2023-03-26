@@ -7,7 +7,7 @@ const Home = () => {
         className="background"
         style={{
           display: "absolute",
-          backgroundColor: "#262525",
+          backgroundColor: "#D9D9D9",
           width: "100vw",
           height: "100%",
         }}

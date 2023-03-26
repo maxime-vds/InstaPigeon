@@ -9,9 +9,10 @@ import RootLayout from "./layout/RootLayout"
 import { ReactNode } from "react"
 
 //components
-import Register from "./components/Register"
-import LoginForm from "./components/LoginForm/LoginPage"
-import Landing from "./components/Landing"
+import RegisterPage from "./pages/registerform/RegisterPage"
+import LoginPage  from "./pages/loginForm/LoginPage"
+
+import Landing from "./pages/Landing"
 import Home from "./pages/Home/Home"
 import Dashboard from "./pages/Dashboard/Dashboard"
 import { RequireAuth } from "./components/RequireAuth"
@@ -43,14 +44,13 @@ function App() {
     createRoutesFromElements(
       <Route element={<RootLayout />}>
         <Route index element={<Landing />} />
-        <Route path="/Register" element={<Register />} />
+        <Route path="/Register" element={<RegisterPage />} />
 
-        {/* if(authed) {} */}
         <Route
           path="/Home"
           element={
             // <RequireAuth>
-              <Home />
+            <Home />
             // </RequireAuth>
           }
         />
@@ -62,7 +62,7 @@ function App() {
             </RequireAuth>
           }
         />
-        <Route path="/Login" element={<LoginForm />} />
+        <Route path="/Login" element={<LoginPage />} />
       </Route>
     )
   )

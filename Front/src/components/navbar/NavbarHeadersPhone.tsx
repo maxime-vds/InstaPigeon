@@ -12,7 +12,7 @@ export default function NavbarHeadersPhone() {
   return (
     <>
       <AppBar 
-        position="static"
+        position="relative"
         elevation={0}
           >
         <Toolbar>
