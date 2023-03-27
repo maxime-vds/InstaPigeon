@@ -1,0 +1,36 @@
+{
+    "posts": [
+        {
+            "id": "1",
+            "caption": "this is a picture of me",
+            "comments": "hello, how are you",
+            "likes": 3,
+            "follow": false,
+            "image": "./ricky-pigeon-circle-black.svg"
+        },
+        {
+            "id": "2",
+            "caption": "what's up",
+            "comments": "I like stuff too",
+            "likes": 3,
+            "follow": false,
+            "image": "./veronica-pigeon-circle-black.svg"
+        },
+        {
+            "id": "3",
+            "caption": "jijijiij",
+            "comments": "great pic",
+            "likes": 9,
+            "follow": true,
+            "image": "./freddy-pigeon-circle-black.svg"
+        },
+        {
+            "id": "4",
+            "caption": "img",
+            "comments": "whatever",
+            "likes": 3,
+            "follow": true,
+            "image": "./lol"
+        }
+    ]
+}
