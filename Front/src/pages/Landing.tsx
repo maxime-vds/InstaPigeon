@@ -1,29 +1,60 @@
-import { useNavigate } from "react-router-dom"
+import { useLinkClickHandler, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../context/authStore"
-import { Box } from "@mui/system"
 import { Link } from "react-router-dom"
 
+//components
+import { Box } from "@mui/system"
+import {
+  RickyPigeon,
+  VeronicaPigeon,
+  FreddyPigeon,
+} from "../components/graphics/Pigeons"
+import { Button } from "../components/button/Button"
+
+//styles
+import "./Landing.css"
+
 export default function Landing() {
+const navigate = useNavigate()
+
+
+  const NavRegister = () => {
+    navigate("/register")
+  }
+
+
   return (
-    <>
-      <div className="Landing">
-        <Box
-          style={{
-            position: "relative",
-            backgroundColor: "#7F96FF",
-            width: "100vw",
-            height: "100vh",
-          }}
-          display="flex"
-          justifyContent="center"
-          flexDirection="column"
-        >
+    <div
+      className="Landing"
+      style={{
+        position: "absolute",
+        backgroundColor: "#7F96FF",
+        width: "100%",
+        height: "360vh",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        className="purple-bg"
+        style={{
+          marginTop: "36rem",
+          width: "100%",
+          height: "80vh",
+        }}
+      ></div>
+      <Box
+        display="flex"
+        justifyContent="center"
+        flexDirection="column"
+        marginTop="10px"
+      >
+        <div style={{ marginBottom: "50px", textAlign: "center" }}>
           <h2
             style={{
-              marginTop: "6rem",
               color: "#D9D9D9",
-              textAlign: "center",
               fontSize: "2.6rem",
+              marginTop: "10px",
+              marginBottom: "20px",
             }}
           >
             InstaPigeon
@@ -33,7 +64,7 @@ export default function Landing() {
               fontFamily: "poppins",
               color: "#D9D9D9",
               textAlign: "center",
-              margin: "16px",
+              marginBottom: "20px",
             }}
           >
             Pigeons are often called the 'rats of the sky', but before we
@@ -42,26 +73,74 @@ export default function Landing() {
             fascinating creatures with a rich history of coexisting with humans
             in cities around the world.
           </p>
-          <Link to="/login">Login</Link>
+          <Button buttonText="Sign me up!" onClick={NavRegister}></Button>
+        </div>
 
-          {/* every should probably be a component, so it's easier to re-use for different screens ?  */}
+        {/* every should probably be a component, so it's easier to re-use for different screens ?  */}
+        {/* change flex direction on bigger screens ? */}
+        <div
+          className="illustration-wrap"
+          style={{ display: "flex", flexDirection: "column" }}
+        >
+          <RickyPigeon />
 
-          <img src="/RickyPigeon.png" width="500px"></img>
-          {/* <p
+          <p
             style={{
+              position: "relative",
               fontFamily: "poppins",
               color: "#D9D9D9",
               textAlign: "center",
-              margin: "16px",
             }}
           >
             This is Ricky, raised on greasy pizza found in the trash and monster
             energy mixed with starbucks coffee Don’t let the scar over his eye
             fool you, he’s actually a really nice pigeon even though he’s
             carrying a new strain of bird covid
-          </p> */}
-        </Box>
-      </div>
-    </>
+          </p>
+          <VeronicaPigeon />
+
+          <p
+            style={{
+              position: "relative",
+              fontFamily: "poppins",
+              color: "#D9D9D9",
+              textAlign: "center",
+            }}
+          >
+            This is Ricky, raised on greasy pizza found in the trash and monster
+            energy mixed with starbucks coffee Don’t let the scar over his eye
+            fool you, he’s actually a really nice pigeon even though he’s
+            carrying a new strain of bird covid
+          </p>
+
+          <div
+            className="purple-bg"
+            style={{
+              marginTop: "85rem",
+              width: "100%",
+              height: "80vh",
+            }}
+          />
+
+          <FreddyPigeon />
+
+          <p
+            style={{
+              position: "relative",
+              fontFamily: "poppins",
+              color: "#D9D9D9",
+              textAlign: "center",
+            }}
+          >
+            This is Ricky, raised on greasy pizza found in the trash and monster
+            energy mixed with starbucks coffee Don’t let the scar over his eye
+            fool you, he’s actually a really nice pigeon even though he’s
+            carrying a new strain of bird covid
+            <h2>where we're going we don't need no roads</h2>
+          </p>
+
+        </div>
+      </Box>
+    </div>
   )
 }

@@ -14,6 +14,7 @@ export default function NavbarHeadersPhone() {
       <AppBar 
         position="relative"
         elevation={0}
+        sx={{margin:"0"}}
           >
         <Toolbar>
           <Typography
