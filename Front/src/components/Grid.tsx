@@ -4,29 +4,30 @@ import Paper from "@mui/material/Paper"
 import Masonry from "@mui/lab/Masonry"
 import type {} from "@mui/lab/themeAugmentation"
 import { useFetch } from "../hooks/useFetch"
-import Posts from "./Posts"
 
+//components
+import Posts from "./Posts"
+import Cardbar from "./cardbar/Cardbar"
+
+//styles
 import "./Grid.css"
 
-const cards = [1, 2, 3, 4, 5]
 // replace this array by json file
 
 export default function Grid() {
   const url = "http://localhost:3000/posts"
-
   const { data, isPending, error, postData } = useFetch(url)
 
-
-
   return (
-    
+    <>
     <div className="home">
-      Home
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">Loading...</p>}
       {data && <Posts posts={data}/>}
     </div>
 
+    <Cardbar></Cardbar>
+    </>
   )
 }
 
