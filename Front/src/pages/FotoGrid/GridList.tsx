@@ -14,12 +14,7 @@ import "./GridList.css"
 // }
 
 const GridList = ({ posts }: any) => {
-
-  const handleClick: () => void = () => {
-
-  }
-
-
+  const handleClick: () => void = () => {}
 
   return (
     <Box
@@ -31,28 +26,28 @@ const GridList = ({ posts }: any) => {
       {posts &&
         posts.map((post: any) => (
           //ouput date of json here, same for comments on bottom
-          <Link to={`/posts/${post.id}`}>
-          <div 
-          className="card" 
-          key={post.id}
-          onClick={() => handleClick}
-          >
-            {/* top  */}
-            <div className="card-top"></div>
+          <div className="card" key={post.id} onClick={() => handleClick}>
+            <Link
+              to={`/posts/${post.id}`}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              {/* top  */}
+              <div className="card-top"></div>
 
-            {/* picture */}
+              {/* picture */}
 
-            <div className="picture">
-              <img src={post.image} />
-            </div>
+              <div className="picture">
+                <img src={post.image} />
+              </div>
 
-            <p>{post.caption},{post.id}</p>
+              <p>
+                {post.caption},{post.id}
+              </p>
 
-
-            {/* bottom */}
-            <div className="card-bottom"></div>
+              {/* bottom */}
+              <div className="card-bottom"></div>
+            </Link>
           </div>
-          </Link>
         ))}
     </Box>
   )

@@ -6,7 +6,7 @@
             "comments": "hello, how are you",
             "likes": 3,
             "follow": false,
-            "image": "./ricky-pigeon-circle-black.svg"
+            "image": "/ricky-pigeon-circle-black.svg"
         },
         {
             "id": "2",
@@ -14,7 +14,7 @@
             "comments": "I like stuff too",
             "likes": 3,
             "follow": false,
-            "image": "./veronica-pigeon-circle-black.svg"
+            "image": "/veronica-pigeon-circle-black.svg"
         },
         {
             "id": "3",
@@ -22,7 +22,7 @@
             "comments": "great pic",
             "likes": 9,
             "follow": true,
-            "image": "./freddy-pigeon-circle-black.svg"
+            "image": "/freddy-pigeon-circle-black.svg"
         },
         {
             "id": "4",
@@ -30,7 +30,7 @@
             "comments": "hello, how are you",
             "likes": 3,
             "follow": false,
-            "image": "./ricky-pigeon-circle-black.svg"
+            "image": "/ricky-pigeon-circle-black.svg"
         },
         {
             "id": "5",
@@ -38,7 +38,7 @@
             "comments": "I like stuff too",
             "likes": 3,
             "follow": false,
-            "image": "./veronica-pigeon-circle-black.svg"
+            "image": "/veronica-pigeon-circle-black.svg"
         },
         {
             "id": "6",
@@ -46,7 +46,7 @@
             "comments": "great pic",
             "likes": 9,
             "follow": true,
-            "image": "./freddy-pigeon-circle-black.svg"
+            "image": "/freddy-pigeon-circle-black.svg"
         },
         {
             "id": "7",
@@ -54,7 +54,7 @@
             "comments": "hello, how are you",
             "likes": 3,
             "follow": false,
-            "image": "./ricky-pigeon-circle-black.svg"
+            "image": "/ricky-pigeon-circle-black.svg"
         },
         {
             "id": "8",
@@ -62,7 +62,7 @@
             "comments": "I like stuff too",
             "likes": 3,
             "follow": false,
-            "image": "./veronica-pigeon-circle-black.svg"
+            "image": "/veronica-pigeon-circle-black.svg"
         },
         {
             "id": "9",
@@ -70,7 +70,7 @@
             "comments": "great pic",
             "likes": 9,
             "follow": true,
-            "image": "./freddy-pigeon-circle-black.svg"
+            "image": "/freddy-pigeon-circle-black.svg"
         },
         {
             "id": "10",
@@ -78,7 +78,7 @@
             "comments": "hello, how are you",
             "likes": 3,
             "follow": false,
-            "image": "./ricky-pigeon-circle-black.svg"
+            "image": "/ricky-pigeon-circle-black.svg"
         },
         {
             "id": "11",
@@ -86,7 +86,7 @@
             "comments": "I like stuff too",
             "likes": 3,
             "follow": false,
-            "image": "./veronica-pigeon-circle-black.svg"
+            "image": "/veronica-pigeon-circle-black.svg"
         },
         {
             "id": "12",
@@ -94,7 +94,7 @@
             "comments": "great pic",
             "likes": 9,
             "follow": true,
-            "image": "./freddy-pigeon-circle-black.svg"
+            "image": "/freddy-pigeon-circle-black.svg"
         },
         {
             "id": "13",
@@ -102,7 +102,7 @@
             "comments": "hello, how are you",
             "likes": 3,
             "follow": false,
-            "image": "./ricky-pigeon-circle-black.svg"
+            "image": "/ricky-pigeon-circle-black.svg"
         },
         {
             "id": "14",
@@ -110,7 +110,7 @@
             "comments": "I like stuff too",
             "likes": 3,
             "follow": false,
-            "image": "./veronica-pigeon-circle-black.svg"
+            "image": "/veronica-pigeon-circle-black.svg"
         },
         {
             "id": "15",
@@ -118,7 +118,7 @@
             "comments": "great pic",
             "likes": 9,
             "follow": true,
-            "image": "./freddy-pigeon-circle-black.svg"
+            "image": "/freddy-pigeon-circle-black.svg"
         },
         {
             "id": "16",
@@ -126,7 +126,7 @@
             "comments": "hello, how are you",
             "likes": 3,
             "follow": false,
-            "image": "./ricky-pigeon-circle-black.svg"
+            "image": "/ricky-pigeon-circle-black.svg"
         },
         {
             "id": "17",
@@ -134,7 +134,7 @@
             "comments": "I like stuff too",
             "likes": 3,
             "follow": false,
-            "image": "./veronica-pigeon-circle-black.svg"
+            "image": "/veronica-pigeon-circle-black.svg"
         },
         {
             "id": "18",
@@ -142,7 +142,7 @@
             "comments": "great pic",
             "likes": 9,
             "follow": true,
-            "image": "./freddy-pigeon-circle-black.svg"
+            "image": "/freddy-pigeon-circle-black.svg"
         },
         {
             "id": "20",
@@ -150,7 +150,7 @@
             "comments": "hello, how are you",
             "likes": 3,
             "follow": false,
-            "image": "./ricky-pigeon-circle-black.svg"
+            "image": "/ricky-pigeon-circle-black.svg"
         },
         {
             "id": "21",
@@ -158,7 +158,7 @@
             "comments": "I like stuff too",
             "likes": 3,
             "follow": false,
-            "image": "./veronica-pigeon-circle-black.svg"
+            "image": "/veronica-pigeon-circle-black.svg"
         },
         {
             "id": "22",
@@ -174,7 +174,7 @@
             "comments": "hello, how are you",
             "likes": 3,
             "follow": false,
-            "image": "./ricky-pigeon-circle-black.svg"
+            "image": "/ricky-pigeon-circle-black.svg"
         },
         {
             "id": "24",
@@ -182,7 +182,7 @@
             "comments": "I like stuff too",
             "likes": 3,
             "follow": false,
-            "image": "./veronica-pigeon-circle-black.svg"
+            "image": "/veronica-pigeon-circle-black.svg"
         },
         {
             "id": "25",
@@ -190,7 +190,7 @@
             "comments": "great pic",
             "likes": 9,
             "follow": true,
-            "image": "./freddy-pigeon-circle-black.svg"
+            "image": "/freddy-pigeon-circle-black.svg"
         }
     ]
 }
