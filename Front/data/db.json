@@ -1,0 +1,196 @@
+{
+    "posts": [
+        {
+            "id": "1",
+            "caption": "this is a picture of me",
+            "comments": "hello, how are you",
+            "likes": 3,
+            "follow": false,
+            "image": "/ricky-pigeon-circle-black.svg"
+        },
+        {
+            "id": "2",
+            "caption": "what's up",
+            "comments": "I like stuff too",
+            "likes": 3,
+            "follow": false,
+            "image": "/veronica-pigeon-circle-black.svg"
+        },
+        {
+            "id": "3",
+            "caption": "jijijiij",
+            "comments": "great pic",
+            "likes": 9,
+            "follow": true,
+            "image": "/freddy-pigeon-circle-black.svg"
+        },
+        {
+            "id": "4",
+            "caption": "this is a picture of me",
+            "comments": "hello, how are you",
+            "likes": 3,
+            "follow": false,
+            "image": "/ricky-pigeon-circle-black.svg"
+        },
+        {
+            "id": "5",
+            "caption": "what's up",
+            "comments": "I like stuff too",
+            "likes": 3,
+            "follow": false,
+            "image": "/veronica-pigeon-circle-black.svg"
+        },
+        {
+            "id": "6",
+            "caption": "jijijiij",
+            "comments": "great pic",
+            "likes": 9,
+            "follow": true,
+            "image": "/freddy-pigeon-circle-black.svg"
+        },
+        {
+            "id": "7",
+            "caption": "this is a picture of me",
+            "comments": "hello, how are you",
+            "likes": 3,
+            "follow": false,
+            "image": "/ricky-pigeon-circle-black.svg"
+        },
+        {
+            "id": "8",
+            "caption": "what's up",
+            "comments": "I like stuff too",
+            "likes": 3,
+            "follow": false,
+            "image": "/veronica-pigeon-circle-black.svg"
+        },
+        {
+            "id": "9",
+            "caption": "jijijiij",
+            "comments": "great pic",
+            "likes": 9,
+            "follow": true,
+            "image": "/freddy-pigeon-circle-black.svg"
+        },
+        {
+            "id": "10",
+            "caption": "this is a picture of me",
+            "comments": "hello, how are you",
+            "likes": 3,
+            "follow": false,
+            "image": "/ricky-pigeon-circle-black.svg"
+        },
+        {
+            "id": "11",
+            "caption": "what's up",
+            "comments": "I like stuff too",
+            "likes": 3,
+            "follow": false,
+            "image": "/veronica-pigeon-circle-black.svg"
+        },
+        {
+            "id": "12",
+            "caption": "jijijiij",
+            "comments": "great pic",
+            "likes": 9,
+            "follow": true,
+            "image": "/freddy-pigeon-circle-black.svg"
+        },
+        {
+            "id": "13",
+            "caption": "this is a picture of me",
+            "comments": "hello, how are you",
+            "likes": 3,
+            "follow": false,
+            "image": "/ricky-pigeon-circle-black.svg"
+        },
+        {
+            "id": "14",
+            "caption": "what's up",
+            "comments": "I like stuff too",
+            "likes": 3,
+            "follow": false,
+            "image": "/veronica-pigeon-circle-black.svg"
+        },
+        {
+            "id": "15",
+            "caption": "jijijiij",
+            "comments": "great pic",
+            "likes": 9,
+            "follow": true,
+            "image": "/freddy-pigeon-circle-black.svg"
+        },
+        {
+            "id": "16",
+            "caption": "this is a picture of me",
+            "comments": "hello, how are you",
+            "likes": 3,
+            "follow": false,
+            "image": "/ricky-pigeon-circle-black.svg"
+        },
+        {
+            "id": "17",
+            "caption": "what's up",
+            "comments": "I like stuff too",
+            "likes": 3,
+            "follow": false,
+            "image": "/veronica-pigeon-circle-black.svg"
+        },
+        {
+            "id": "18",
+            "caption": "jijijiij",
+            "comments": "great pic",
+            "likes": 9,
+            "follow": true,
+            "image": "/freddy-pigeon-circle-black.svg"
+        },
+        {
+            "id": "20",
+            "caption": "this is a picture of me",
+            "comments": "hello, how are you",
+            "likes": 3,
+            "follow": false,
+            "image": "/ricky-pigeon-circle-black.svg"
+        },
+        {
+            "id": "21",
+            "caption": "what's up",
+            "comments": "I like stuff too",
+            "likes": 3,
+            "follow": false,
+            "image": "/veronica-pigeon-circle-black.svg"
+        },
+        {
+            "id": "22",
+            "caption": "jijijiij",
+            "comments": "great pic",
+            "likes": 9,
+            "follow": true,
+            "image": "./freddy-pigeon-circle-black.svg"
+        },
+        {
+            "id": "23",
+            "caption": "this is a picture of me",
+            "comments": "hello, how are you",
+            "likes": 3,
+            "follow": false,
+            "image": "/ricky-pigeon-circle-black.svg"
+        },
+        {
+            "id": "24",
+            "caption": "what's up",
+            "comments": "I like stuff too",
+            "likes": 3,
+            "follow": false,
+            "image": "/veronica-pigeon-circle-black.svg"
+        },
+        {
+            "id": "25",
+            "caption": "jijijiij",
+            "comments": "great pic",
+            "likes": 9,
+            "follow": true,
+            "image": "/freddy-pigeon-circle-black.svg"
+        }
+    ]
+}

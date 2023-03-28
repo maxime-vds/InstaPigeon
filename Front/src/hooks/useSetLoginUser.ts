@@ -4,5 +4,5 @@ import { AuthContext } from "../context/authContext"
 
 const useCtx = () => useContext(AuthContext)
 
-export const useSetLoginUser = useCtx().setLoginUser
+export const useSetLoginUser = useCtx().login()
 
