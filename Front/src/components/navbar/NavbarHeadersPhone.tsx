@@ -79,7 +79,7 @@ export default function NavbarHeadersPhone() {
         TransitionComponent={Fade}
       >
         <MenuItem onClick={handleClose} style={{ height: open ? '80px' : 'auto', fontSize:"24px "}}>Profile</MenuItem>
-        <MenuItem onClick={handleClose} style={{ height: open ? '80px' : 'auto', fontSize:"24px"  }}>My account</MenuItem>
+        <MenuItem onClick={handleClose} style={{ height: open ? '80px' : 'auto', fontSize:"24px"  }}>Setting</MenuItem>
         <MenuItem onClick={handleClose} style={{ height: open ? '80px' : 'auto', fontSize:"24px"  }}>Logout</MenuItem>
       </Menu>
     </div>

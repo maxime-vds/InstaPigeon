@@ -1,4 +1,5 @@
 import Grid from "../../components/Grid"
+import ResponsiveGrid from "../Dashboard/testDash"
 
 const Home = () => {
   return (
@@ -12,7 +13,8 @@ const Home = () => {
           height: "100%",
         }}
       >
-        <Grid />
+      {/**<Grid /> */} 
+      <ResponsiveGrid />
       </div>
     </>
   )
