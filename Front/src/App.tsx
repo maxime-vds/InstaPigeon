@@ -10,10 +10,11 @@ import { ReactNode } from "react"
 
 //components
 import RegisterPage from "./pages/registerform/RegisterPage"
-import LoginPage  from "./pages/loginForm/LoginPage"
+import LoginPage from "./pages/loginForm/LoginPage"
+import Posts from "./pages/FotoGrid/Posts"
 
 import Landing from "./pages/Landing"
-import Home from "./pages/Home/Home"
+import FotoGrid from "./pages/FotoGrid/FotoGrid"
 import Dashboard from "./pages/Dashboard/Dashboard"
 import { RequireAuth } from "./components/RequireAuth"
 
@@ -47,13 +48,18 @@ function App() {
         <Route path="/Register" element={<RegisterPage />} />
 
         <Route
-          path="/Home"
+          path="/Grid"
           element={
             // <RequireAuth>
-            <Home />
+            <FotoGrid />
             // </RequireAuth>
           }
         />
+        <Route 
+        path="/posts/:id" 
+        element={<Posts />} 
+        />
+
         <Route
           path="/Dashboard"
           element={
@@ -62,6 +68,7 @@ function App() {
             </RequireAuth>
           }
         />
+
         <Route path="/Login" element={<LoginPage />} />
       </Route>
     )
