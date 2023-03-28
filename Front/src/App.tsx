@@ -11,6 +11,7 @@ import { ReactNode } from "react"
 //components
 import RegisterPage from "./pages/registerform/RegisterPage"
 import LoginPage from "./pages/loginForm/LoginPage"
+import CreatePage from "./pages/Create/CreatePage"
 import Posts from "./pages/FotoGrid/Posts"
 
 import Landing from "./pages/Landing"
@@ -46,6 +47,7 @@ function App() {
       <Route element={<RootLayout />}>
         <Route index element={<Landing />} />
         <Route path="/Register" element={<RegisterPage />} />
+        <Route path="/Login" element={<LoginPage />} />
 
         <Route
           path="/Grid"
@@ -55,10 +57,7 @@ function App() {
             // </RequireAuth>
           }
         />
-        <Route 
-        path="/posts/:id" 
-        element={<Posts />} 
-        />
+        <Route path="/posts/:id" element={<Posts />} />
 
         <Route
           path="/Dashboard"
@@ -68,8 +67,7 @@ function App() {
             </RequireAuth>
           }
         />
-
-        <Route path="/Login" element={<LoginPage />} />
+        <Route path="/create" element={<CreatePage />} />
       </Route>
     )
   )
