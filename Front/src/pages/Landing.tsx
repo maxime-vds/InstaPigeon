@@ -73,7 +73,7 @@ const navigate = useNavigate()
             fascinating creatures with a rich history of coexisting with humans
             in cities around the world.
           </p>
-          <Button buttonText="Sign me up!" onClick={NavRegister}></Button>
+          <Button buttonText="Sign me up!" onClick={NavRegister}></Button> 
         </div>
 
         {/* every should probably be a component, so it's easier to re-use for different screens ?  */}
