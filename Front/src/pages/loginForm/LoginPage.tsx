@@ -61,7 +61,7 @@ function LoginPage() {
 
   useEffect(() => {
     if (authed) {
-      navigate("/home")
+      navigate("/grid")
     }
   }, [authed])
 
