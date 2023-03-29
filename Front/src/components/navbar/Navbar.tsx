@@ -17,7 +17,7 @@ export default function Navbar() {
           <footer>
 
             {/* authed? :  */}
-            {/* <NavbarBottomPhone /> */}
+            <NavbarBottomPhone />
           </footer>
         </React.Fragment>
       ) : (

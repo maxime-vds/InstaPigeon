@@ -136,7 +136,6 @@ const navigate = useNavigate()
             energy mixed with starbucks coffee Don’t let the scar over his eye
             fool you, he’s actually a really nice pigeon even though he’s
             carrying a new strain of bird covid
-            <h2>where we're going we don't need no roads</h2>
           </p>
 
         </div>

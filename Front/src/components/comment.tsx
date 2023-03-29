@@ -16,7 +16,7 @@ const CommentSection = () => {
       text: newComment,
       date: date,
       replies: []
-    };q
+    };
     setComments([...comments, comment]);
     setNewComment("");
   };
