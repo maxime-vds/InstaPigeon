@@ -38,7 +38,7 @@ export default function Landing() {
         flexDirection="column"
         marginTop="10px"
       >
-        <div style={{ marginBottom: "50px", textAlign: "center" }}>
+        <div style={{ marginBottom: "70px", textAlign: "center" }}>
           <h2
             style={{
               color: "#D9D9D9",
@@ -48,7 +48,8 @@ export default function Landing() {
             InstaPigeon
           </h2>
 
-          <p className="paragraph">
+          <p className="paragraph"
+          style={{marginBottom: "40px"}}>
             Pigeons are often called the 'rats of the sky', but before we
             dismiss them entirely, let's take a closer look at these
             misunderstood birds. Despite their negative reputation, pigeons are
@@ -69,7 +70,7 @@ export default function Landing() {
             className="purple-bg"
             style={{
               width: "100%",
-              height: "80vh",
+              height: "75vh",
             }}
           >
             <RickyPigeon />
