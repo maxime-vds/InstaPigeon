@@ -1,9 +1,9 @@
-import { useLinkClickHandler, useNavigate } from "react-router-dom"
-import { useAuthStore } from "../context/authStore"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
 
 //components
 import { Box } from "@mui/system"
+import BasicModal from "../components/BasicModal"
 import {
   RickyPigeon,
   VeronicaPigeon,
@@ -15,6 +15,8 @@ import { Button } from "../components/button/Button"
 import styles from "./Landing.module.css"
 
 export default function Landing() {
+  // toggle modal on authed state
+  const [open, setOpen] = useState<boolean | null>(true)
   const navigate = useNavigate()
 
   const NavRegister = () => {
@@ -32,19 +34,18 @@ export default function Landing() {
         overflow: "hidden",
       }}
     >
+      {open ? <BasicModal open={open} setOpen={setOpen} /> : " "}
+
       <Box
         display="flex"
         justifyContent="center"
         flexDirection="column"
         marginTop="10px"
       >
-
-
         <div style={{ marginBottom: "30px", textAlign: "center" }}>
           <h2 className={styles.h2}>InstaPigeon</h2>
 
           <p className={styles.paragraph}>
-
             Pigeons are often called the 'rats of the sky', but before we
             dismiss them entirely, let's take a closer look at these
             misunderstood birds. Despite their negative reputation, pigeons are
@@ -52,13 +53,11 @@ export default function Landing() {
             in cities around the world.
           </p>
 
-
           <Button
             buttonText="Sign me up!"
             onClick={NavRegister}
             backgroundColor="#BD9B45"
           ></Button>
-
         </div>
 
         <div
@@ -108,10 +107,8 @@ export default function Landing() {
           </div>
         </div>
 
-
         <div className={styles.footer} style={{ marginTop: "20px" }}>
           <h2 className={styles.h2} style={{ textAlign: "center" }}>
-
             Where we're going we don't need no roads
           </h2>
 
