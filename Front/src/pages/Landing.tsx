@@ -48,8 +48,7 @@ export default function Landing() {
             InstaPigeon
           </h2>
 
-          <p className="paragraph"
-          style={{marginBottom: "40px"}}>
+          <p className="paragraph" style={{ marginBottom: "40px" }}>
             Pigeons are often called the 'rats of the sky', but before we
             dismiss them entirely, let's take a closer look at these
             misunderstood birds. Despite their negative reputation, pigeons are
@@ -60,8 +59,6 @@ export default function Landing() {
           <Button buttonText="Sign me up!" onClick={NavRegister}></Button>
         </div>
 
-        {/* every should probably be a component, so it's easier to re-use for different screens ?  */}
-        {/* change flex direction on bigger screens ? */}
         <div
           className="illustration-wrap"
           style={{ display: "flex", flexDirection: "column" }}
@@ -111,8 +108,7 @@ export default function Landing() {
           </div>
         </div>
 
-        <div className="footer"
-          style={{marginTop: "20px"}}>
+        <div className="footer" style={{ marginTop: "20px" }}>
           <h2 style={{ textAlign: "center" }}>
             Where we're going we don't need no roads
           </h2>

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { Box } from "@mui/system"
 import { Account } from "./Account"
+import { Comments } from "./Comments"
 
 const Cardbar = () => {
   // am I supposed to get the number of likes from the json file here ? but that would mean two fetch requests...
@@ -43,17 +44,20 @@ const Cardbar = () => {
     <Box
       sx={{
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        margin: "0px 20px",
       }}
     >
       <div>
         <Account />
       </div>
-      <div>
+
+      <div style={{ display: "flex" }}>
         <Likes like={postLikes} />
+        <div style={{ marginLeft: "10px" }}>
+          <Comments />
+        </div>
       </div>
-      {/* <Follow click={postFollows}/> */}
     </Box>
   )
 }
