@@ -6,10 +6,9 @@ import { BackgroundCard } from "./BackgroundCard"
 import { LoginForm } from "./LoginForm"
 import { Box } from "@mui/system"
 
-
-
 function LoginPage() {
   const { authed, login } = useAuthStore()
+  const  location = useLocation()
   const navigate = useNavigate()
 
   //inputState

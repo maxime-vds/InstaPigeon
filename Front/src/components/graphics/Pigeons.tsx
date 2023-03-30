@@ -19,7 +19,7 @@ export const RickyPigeon = ({width = 400, height } : Ipigeon) => {
   return (
     <img
       src="/ricky-pigeon-circle-black.svg"
-      style={{ zIndex: "2", position: "relative" }}
+      style={{  position: "relative" }}
       width={width}
       height={height}
     />
@@ -30,7 +30,7 @@ export const VeronicaPigeon = ({ width = 400, height }: Ipigeon) => {
   return (
     <img
       src="/veronica-pigeon-circle-black.svg"
-      style={{ zIndex: "2", position: "relative" }}
+      style={{ position: "relative" }}
       width={width}
       height={height}
     />
@@ -41,7 +41,7 @@ export const FreddyPigeon = ({ width = 400, height }: Ipigeon) => {
   return (
     <img
       src="/freddy-pigeon-circle-black.svg"
-      style={{ zIndex: "2", position: "relative" }}
+      style={{ position: "relative" }}
       width={width}
       height={height}
     />
