@@ -38,6 +38,7 @@ const theme = createTheme({
     },
     secondary: {
       main: "#D9D9D9",
+      dark: "#5C5C5C"
     },
   },
 })
@@ -55,9 +56,9 @@ function App() {
         <Route
           path="/Grid"
           element={
-            // <RequireAuth>
+            <RequireAuth>
             <FotoGrid />
-            // </RequireAuth>
+            </RequireAuth>
           }
         />
         <Route path="/" element={<Landing />} />

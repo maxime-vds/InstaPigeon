@@ -8,7 +8,7 @@ import { Box } from "@mui/system"
 
 function LoginPage() {
   const { authed, login } = useAuthStore()
-  const  location = useLocation()
+  const location = useLocation()
   const navigate = useNavigate()
 
   //inputState

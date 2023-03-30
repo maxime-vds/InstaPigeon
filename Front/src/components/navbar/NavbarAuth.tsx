@@ -15,7 +15,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 
 //userAuth= true
 
-export default function NavbarHeadersPhone() {
+export default function NavbarAuth() {
   const authed = ["/"]
   const { pathname } = useLocation()
   const navigate = useNavigate()
@@ -23,7 +23,7 @@ export default function NavbarHeadersPhone() {
   const open = Boolean(anchorEl)
 
   const toolbarStyles = {
-    backgroundColor: pathname === "/" ? "#7F96FF" : "#D9D9D9",
+    backgroundColor: "#5C5C5C",
     display: "flex",
     justifyContent: "space-between",
   }
@@ -44,15 +44,7 @@ export default function NavbarHeadersPhone() {
       <AppBar position="relative" elevation={0} sx={{ margin: "0" }}>
         {/* changing  */}
         <Toolbar style={toolbarStyles}>
-          {pathname === "/" ? (
-            <Button
-              buttonText="Login"
-              backgroundColor="#BD9B45"
-              onClick={navigateToLogin}
-            />
-          ) : (
-            <h2 style={{ fontSize: "28px", color: "#5A558F" }}>InstaPigeon</h2>
-          )}
+          <h2 style={{ fontSize: "28px", color: "#D9D9D9" }}>InstaPigeon</h2>
 
           <div>
             <IconButton
@@ -63,7 +55,7 @@ export default function NavbarHeadersPhone() {
               onClick={handleClick}
               size="large"
               edge="start"
-              color={pathname === "/" ? "secondary" : "primary"}
+              color="secondary"
             >
               <MenuIcon />
 

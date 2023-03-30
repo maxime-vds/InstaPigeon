@@ -1,14 +1,21 @@
 import { useAuthStore } from "../context/authStore"
-import React, { ReactNode } from "react"
+import React, { ReactNode,useEffect } from "react"
 import { Navigate } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 
 export function RequireAuth({ children }: { children: ReactNode }): any {
   const location = useLocation()
-  const { authed } = useAuthStore()
+  
+    let authed = sessionStorage.getItem("auth")
 
-  console.log(authed)
 
+
+
+
+
+
+  console.log(authed);
+  
 
   // the problem is with passing the authed value here
   // why is it undefined here ?
@@ -17,11 +24,19 @@ export function RequireAuth({ children }: { children: ReactNode }): any {
 
   // something is always turning authed to false before it gets here
 
-  return authed ? (
+  // still having problems even with sessions storage
+
+  // "works" now
+
+  if(authed) {
+
+
+  return authed === "true" ? (
     children
   ) : (
     <Navigate to="/" replace state={{ path: location.pathname }} />
   )
+  }
 }
 
 // dno 100% how the navigate state prop works

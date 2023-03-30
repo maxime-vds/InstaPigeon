@@ -191,22 +191,6 @@
       "likes": 9,
       "follow": true,
       "image": "/freddy-pigeon-circle-black.svg"
-    },
-    {
-      "caption": "laurent",
-      "comments": "a",
-      "likes": 0,
-      "follow": true,
-      "image": "hi",
-      "id": "nod-KI0"
-    },
-    {
-      "caption": "jiejfozef",
-      "comments": "a",
-      "likes": 0,
-      "follow": true,
-      "image": "aefezfe",
-      "id": 26
     }
   ]
 }
