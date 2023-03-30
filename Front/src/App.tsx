@@ -27,6 +27,7 @@ import { useAuthStore } from "./context/authStore"
 import { createTheme } from "@mui/material/styles"
 import { ThemeProvider } from "@mui/material/styles"
 import { StyledEngineProvider } from "@mui/material/styles"
+import Home from "./pages/Home/Home"
 
 const theme = createTheme({
   palette: {
@@ -68,7 +69,9 @@ function App() {
           }
         />
         <Route path="/create" element={<CreatePage />} />
+        <Route path="/home" element={<Home />} />
       </Route>
+      
     )
   )
   return (
