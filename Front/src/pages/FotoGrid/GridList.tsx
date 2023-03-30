@@ -34,6 +34,7 @@ const GridList = ({ posts }: any) => {
               </Link>
             </div>
           </>
+
         ))}
     </Box>
   )
