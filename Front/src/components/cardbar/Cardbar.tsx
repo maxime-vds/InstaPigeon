@@ -2,10 +2,10 @@ import { useFetch } from "../../hooks/useFetch"
 import Likes from "./Likes"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { Box } from "@mui/system"
+import { Account } from "./Account"
 
 const Cardbar = () => {
-  const [caption, setCaption] = useState<string>("what's up")
-
   // am I supposed to get the number of likes from the json file here ? but that would mean two fetch requests...
 
   // on refresh we're reinstallizing to 999
@@ -14,14 +14,9 @@ const Cardbar = () => {
   const url = "http://localhost:3000/posts/" + id
   const [likes, setLikes] = useState<number>(999)
 
-
   function postLikes(e: { preventDefault: () => void }) {
     e.preventDefault()
     console.log("click love")
-
-
- 
-
 
     setLikes((prevLikes) => prevLikes + 1)
 
@@ -45,8 +40,21 @@ const Cardbar = () => {
   }
 
   return (
-    <Likes like={postLikes} />
-    // <Follow click={postFollows}/>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between"
+      }}
+    >
+      <div>
+        <Account />
+      </div>
+      <div>
+        <Likes like={postLikes} />
+      </div>
+      {/* <Follow click={postFollows}/> */}
+    </Box>
   )
 }
 

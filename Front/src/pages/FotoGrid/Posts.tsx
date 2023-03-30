@@ -22,28 +22,23 @@ const Posts = () => {
         justifyContent: "justify-between",
         flexDirection: "column",
         alignItems: "center",
-
       }}
     >
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">Loading...</p>}
       {card && (
         <>
-        <div className={styles.singleCard}>
-          <Link to="/grid"
-          style={{textDecoration: "none", color: "black" }}>
-            <img src={card.image} />
+          <div className={styles.singleCard}>
+            <Link to="/grid" style={{ textDecoration: "none", color: "black" }}>
+              <img src={card.image} />
 
-            <p>
-              {card.caption},{card.id}
-            </p>
-
-          </Link>
-        </div>
-        <div>
-            <Cardbar></Cardbar>
-            </div>
-            </>
+              <p>
+                {card.caption},{card.id}
+              </p>
+            </Link>
+          </div>
+            <Cardbar/>
+        </>
       )}
     </Box>
   )
