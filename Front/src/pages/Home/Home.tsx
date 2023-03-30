@@ -1,5 +1,8 @@
+import Comment from "../../components/comment"
 import Grid from "../../components/Grid"
-import ResponsiveGrid from "../Dashboard/testDash"
+import SimpleBackdrop from "../Dashboard/clickPhotoDashboard"
+import StandardImageList from "../Dashboard/testDash"
+
 
 const Home = () => {
   return (
@@ -13,8 +16,12 @@ const Home = () => {
           height: "100%",
         }}
       >
-      {/**<Grid /> */} 
-      <ResponsiveGrid />
+      {/**<Grid />
+       * <StandardImageList />
+       * <SimpleBackdrop />
+       */} 
+      
+     <Comment/>
       </div>
     </>
   )

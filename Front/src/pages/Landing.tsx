@@ -38,10 +38,12 @@ export default function Landing() {
         flexDirection="column"
         marginTop="10px"
       >
+
         <div style={{ marginBottom: "30px", textAlign: "center" }}>
           <h2 className={styles.h2}>InstaPigeon</h2>
 
           <p className={styles.paragraph}>
+
             Pigeons are often called the 'rats of the sky', but before we
             dismiss them entirely, let's take a closer look at these
             misunderstood birds. Despite their negative reputation, pigeons are
@@ -49,11 +51,13 @@ export default function Landing() {
             in cities around the world.
           </p>
 
+
           <Button
             buttonText="Sign me up!"
             onClick={NavRegister}
             backgroundColor="#BD9B45"
           ></Button>
+
         </div>
 
         {/* every should probably be a component, so it's easier to re-use for different screens ?  */}
@@ -66,7 +70,7 @@ export default function Landing() {
             className={styles["purple-bg"]}
             style={{
               width: "100%",
-              height: "80vh",
+              height: "75vh",
             }}
           >
             <RickyPigeon />

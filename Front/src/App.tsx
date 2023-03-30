@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom"
 import RootLayout from "./layout/RootLayout"
-import { ReactNode } from "react"
+import { useState } from "react"
 
 //components
 import RegisterPage from "./pages/registerform/RegisterPage"
@@ -27,6 +27,7 @@ import { useAuthStore } from "./context/authStore"
 import { createTheme } from "@mui/material/styles"
 import { ThemeProvider } from "@mui/material/styles"
 import { StyledEngineProvider } from "@mui/material/styles"
+import Home from "./pages/Home/Home"
 
 const theme = createTheme({
   palette: {
@@ -41,22 +42,43 @@ const theme = createTheme({
 
 function App() {
   const { authed } = useAuthStore()
+  const [gotIt, setGotIt] = useState<boolean>(false)
+
+
+
+  function TryLog ():void {
+    console.log("got it")
+    setGotIt(true)
+
+
+  }
+
+
+
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route element={<RootLayout />}>
         <Route index element={<Landing />} />
         <Route path="/Register" element={<RegisterPage />} />
-        <Route path="/Login" element={<LoginPage />} />
+        <Route path="/Login" element={<LoginPage TryLog={TryLog} />} />
+
+      {gotIt ?  
 
         <Route
           path="/Grid"
           element={
+
+
             // <RequireAuth>
             <FotoGrid />
             // </RequireAuth>
           }
         />
+
+         :  <Route path="/" element={<Landing/>}/> }
+
+
         <Route path="/posts/:id" element={<Posts />} />
 
         <Route
@@ -68,7 +90,9 @@ function App() {
           }
         />
         <Route path="/create" element={<CreatePage />} />
+        <Route path="/home" element={<Home />} />
       </Route>
+      
     )
   )
   return (

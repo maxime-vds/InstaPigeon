@@ -1,5 +1,6 @@
 import { useNavigate, useParams, Link } from "react-router-dom"
 import { useEffect, useState } from "react"
+import Cardbar from "../../components/cardbar/Cardbar"
 
 import { Box } from "@mui/system"
 //components
@@ -37,7 +38,9 @@ const Posts = () => {
             {card.caption},{card.id}
           </p>
 
-          <div className="card-bottom"></div>
+          {/* <div className="card-bottom"></div> */}
+          <Cardbar></Cardbar>
+
         </Link>
         </div>
       )}
