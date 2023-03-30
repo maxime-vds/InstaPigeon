@@ -3,14 +3,17 @@ import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
 
 
 interface Props  { 
-    click:() => void
+    like:(e:{ preventDefault: () => void; }) => void
 }
 
 
-const Likes  = ({click}:Props) => {
-    return<FavoriteBorderSharpIcon 
+const Likes  = ({like}:Props) => {
+    return (
+    
+    <FavoriteBorderSharpIcon 
     sx={{}}
-    onClick={() => click()}
+    onClick={(e) => like(e)}
     />
+    )
 }
 export default Likes;
