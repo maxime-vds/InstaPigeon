@@ -4,7 +4,6 @@ import { Link } from "@mui/material"
 import AcUnitIcon from "@mui/icons-material/AcUnit"
 
 interface IloginFormProps {
-  TryLog: () => void
   handleLogin: (e: React.FormEvent<HTMLFormElement>) => void
   setUsername: React.Dispatch<React.SetStateAction<string>>
   usernameErr: boolean
@@ -13,7 +12,6 @@ interface IloginFormProps {
 }
 
 export const LoginForm = ({
-  TryLog,
   handleLogin,
   setUsername,
   usernameErr,
@@ -62,7 +60,7 @@ export const LoginForm = ({
             </p>
           </Link>
           <Button
-            onClick={TryLog}
+            onClick={handleLogin}
             buttonText="Submit"
             // iconComponent={<AcUnitIcon />}
             // iconComponent={<KeyboardArrowRight />}

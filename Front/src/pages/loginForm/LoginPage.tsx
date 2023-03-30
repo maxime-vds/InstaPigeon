@@ -7,13 +7,8 @@ import { LoginForm } from "./LoginForm"
 import { Box } from "@mui/system"
 
 
-type AuthProp = {
-  TryLog: () => void
-}
 
-
-
-function LoginPage({ TryLog }: AuthProp) {
+function LoginPage() {
   const { authed, login } = useAuthStore()
   const navigate = useNavigate()
 
@@ -130,7 +125,6 @@ function LoginPage({ TryLog }: AuthProp) {
               }}
             >
               <LoginForm
-                TryLog={TryLog}
                 handleLogin={handleLogin}
                 setUsername={setUsername}
                 usernameErr={usernameErr}

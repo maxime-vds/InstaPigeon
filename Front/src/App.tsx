@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom"
 import RootLayout from "./layout/RootLayout"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 //components
 import RegisterPage from "./pages/registerform/RegisterPage"
@@ -41,42 +41,23 @@ const theme = createTheme({
 
 function App() {
   const { authed } = useAuthStore()
-  const [gotIt, setGotIt] = useState<boolean>(false)
-
-
-
-  function TryLog ():void {
-    console.log("got it")
-    setGotIt(true)
-
-
-  }
-
-
-
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route element={<RootLayout />}>
         <Route index element={<Landing />} />
         <Route path="/Register" element={<RegisterPage />} />
-        <Route path="/Login" element={<LoginPage TryLog={TryLog} />} />
-
-      {gotIt ?  
+        <Route path="/Login" element={<LoginPage />} />
 
         <Route
           path="/Grid"
           element={
-
-
             // <RequireAuth>
             <FotoGrid />
             // </RequireAuth>
           }
         />
-
-         :  <Route path="/" element={<Landing/>}/> }
-
+        <Route path="/" element={<Landing />} />
 
         <Route path="/posts/:id" element={<Posts />} />
 
