@@ -1,5 +1,6 @@
 import { Box } from "@mui/system"
 import { Link } from "react-router-dom"
+import Cardbar from "../../components/cardbar/Cardbar"
 
 // styles
 import styles from "./GridList.module.css"
@@ -14,8 +15,6 @@ import styles from "./GridList.module.css"
 // }
 
 const GridList = ({ posts }: any) => {
-  const handleClick: () => void = () => {}
-
   return (
     <Box
       sx={{
@@ -25,29 +24,17 @@ const GridList = ({ posts }: any) => {
     >
       {posts &&
         posts.map((post: any) => (
-          //ouput date of json here, same for comments on bottom
-          <div className={styles.card} key={post.id} onClick={() => handleClick}>
-            <Link
-              to={`/posts/${post.id}`}
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              {/* top  */}
-              <div className={styles["card-top"]}></div>
-
-              {/* picture */}
-
-              <div className={styles.picture}>
+          <>
+            <div className={styles.card} key={post.id}>
+              <Link
+                to={`/posts/${post.id}`}
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 <img src={post.image} />
-              </div>
+              </Link>
+            </div>
+          </>
 
-              <p className={styles.paragraph}>
-                {post.caption},{post.id}
-              </p>
-
-              {/* bottom */}
-              <div className={styles["card-bottom"]}></div>
-            </Link>
-          </div>
         ))}
     </Box>
   )

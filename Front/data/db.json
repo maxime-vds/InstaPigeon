@@ -4,7 +4,7 @@
       "id": 1,
       "caption": "this is a picture of me",
       "comments": "hello, how are you",
-      "likes": 1010,
+      "likes": 999,
       "follow": false,
       "image": "/ricky-pigeon-circle-black.svg"
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "caption": "what's up",
       "comments": "I like stuff too",
-      "likes": 3,
+      "likes": 999,
       "follow": false,
       "image": "/veronica-pigeon-circle-black.svg"
     },
