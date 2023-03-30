@@ -19,14 +19,16 @@ const Posts = () => {
       sx={{
         width: "100%",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "justify-between",
         flexDirection: "column",
         alignItems: "center",
+
       }}
     >
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">Loading...</p>}
       {card && (
+        <>
         <div className={styles.singleCard}>
           <Link to="/grid"
           style={{textDecoration: "none", color: "black" }}>
@@ -37,8 +39,11 @@ const Posts = () => {
             </p>
 
           </Link>
-            <Cardbar></Cardbar>
         </div>
+        <div>
+            <Cardbar></Cardbar>
+            </div>
+            </>
       )}
     </Box>
   )
