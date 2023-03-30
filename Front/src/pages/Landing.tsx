@@ -12,7 +12,7 @@ import {
 import { Button } from "../components/button/Button"
 
 //styles
-import "./Landing.css"
+import styles from "./Landing.module.css"
 
 export default function Landing() {
   const navigate = useNavigate()
@@ -23,7 +23,7 @@ export default function Landing() {
 
   return (
     <div
-      className="Landing"
+      className={styles.Landing}
       style={{
         position: "absolute",
         backgroundColor: "#7F96FF",
@@ -38,17 +38,10 @@ export default function Landing() {
         flexDirection="column"
         marginTop="10px"
       >
-        <div style={{ marginBottom: "50px", textAlign: "center" }}>
-          <h2
-            style={{
-              color: "#D9D9D9",
-              fontSize: "2.6rem",
-            }}
-          >
-            InstaPigeon
-          </h2>
+        <div style={{ marginBottom: "30px", textAlign: "center" }}>
+          <h2 className={styles.h2}>InstaPigeon</h2>
 
-          <p className="paragraph">
+          <p className={styles.paragraph}>
             Pigeons are often called the 'rats of the sky', but before we
             dismiss them entirely, let's take a closer look at these
             misunderstood birds. Despite their negative reputation, pigeons are
@@ -56,7 +49,11 @@ export default function Landing() {
             in cities around the world.
           </p>
 
-          <Button buttonText="Sign me up!" onClick={NavRegister}></Button>
+          <Button
+            buttonText="Sign me up!"
+            onClick={NavRegister}
+            backgroundColor="#BD9B45"
+          ></Button>
         </div>
 
         {/* every should probably be a component, so it's easier to re-use for different screens ?  */}
@@ -66,7 +63,7 @@ export default function Landing() {
           style={{ display: "flex", flexDirection: "column" }}
         >
           <div
-            className="purple-bg"
+            className={styles["purple-bg"]}
             style={{
               width: "100%",
               height: "80vh",
@@ -74,7 +71,7 @@ export default function Landing() {
           >
             <RickyPigeon />
 
-            <p className="paragraph" style={{}}>
+            <p className={styles.paragraph}>
               This is Ricky, raised on greasy pizza found in the trash and
               monster energy mixed with starbucks coffee Don’t let the scar over
               his eye fool you, he’s actually a really nice pigeon even though
@@ -84,15 +81,14 @@ export default function Landing() {
 
           <VeronicaPigeon />
 
-          <p className="paragraph">
-            This is Ricky, raised on greasy pizza found in the trash and monster
-            energy mixed with starbucks coffee Don’t let the scar over his eye
-            fool you, he’s actually a really nice pigeon even though he’s
-            carrying a new strain of bird covid
+          <p className={styles.paragraph}>
+            this is veronica, she likes to dance when she's not eating dead rats
+            in the streets, she's single and ready to mingle! though I wouldn't,
+            because she's not taken a show, like ever.. in her life
           </p>
 
           <div
-            className="purple-bg"
+            className={styles["purple-bg"]}
             style={{
               width: "100%",
               height: "80vh",
@@ -101,30 +97,28 @@ export default function Landing() {
           >
             <FreddyPigeon />
 
-            <p className="paragraph">
-              This is Ricky, raised on greasy pizza found in the trash and
-              monster energy mixed with starbucks coffee Don’t let the scar over
-              his eye fool you, he’s actually a really nice pigeon even though
-              he’s carrying a new strain of bird covid
+            <p className={styles.paragraph}>
+              Freddy, really likes candy for some reason. You'd think pigeons
+              would just eat whatever they can find but Freddy really has a
+              sweet tooth! That's why he's always on a permanent sugar rush!
             </p>
           </div>
         </div>
 
-        <div className="footer"
-          style={{marginTop: "20px"}}>
-          <h2 style={{ textAlign: "center" }}>
+        <div className={styles.footer} style={{ marginTop: "20px" }}>
+          <h2 className={styles.h2} style={{ fontSize: "25px" }}>
             Where we're going we don't need no roads
           </h2>
 
           <div
-            className="footer-list"
+            className={styles["footer-list"]}
             style={{
               marginTop: "20px",
               display: "flex",
               justifyContent: "space-between",
             }}
           >
-            <div className="footer-left">
+            <div className={styles["footer-left"]}>
               <ul>
                 <li>Product</li>
                 <li>Download</li>
@@ -141,7 +135,7 @@ export default function Landing() {
               </ul>
             </div>
 
-            <div className="footer-right">
+            <div className={styles["footer-right"]}>
               <ul>
                 <li>Company</li>
                 <li>About</li>
