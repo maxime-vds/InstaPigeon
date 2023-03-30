@@ -3,8 +3,8 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
 import type {} from "@mui/lab/themeAugmentation";
+import CommentSection from "./comment";
 
-import "./Grid.css";
 
 const cards = [1, 2, 3, 4, 5];
 // replace this array by json file
@@ -75,6 +75,7 @@ export default function Grid() {
               borderRadius: "0 0 10px 10px",
             }}
           ></div>
+          {/**<CommentSection/>*/}
         </StyledCard>
       ))}
     </Box>

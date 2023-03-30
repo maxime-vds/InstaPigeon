@@ -28,6 +28,7 @@ import { createTheme } from "@mui/material/styles"
 import { ThemeProvider } from "@mui/material/styles"
 import { StyledEngineProvider } from "@mui/material/styles"
 import Home from "./pages/Home/Home"
+import Grid from "./components/Grid"
 
 const theme = createTheme({
   palette: {
@@ -69,7 +70,8 @@ function App() {
           }
         />
         <Route path="/create" element={<CreatePage />} />
-        <Route path="/home" element={<Home />} />
+      {/**  <Route path="/home" element={<Home />} />
+         <Route path="/ho" element={<Grid />} />*/} 
       </Route>
       
     )

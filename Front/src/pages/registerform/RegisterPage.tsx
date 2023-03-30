@@ -3,6 +3,7 @@ import { Box } from "@mui/material"
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { RickyPigeon } from "../../components/graphics/Pigeons"
 import { RegisterForm } from "./RegisterForm"
 
 function RegisterPage() {
@@ -155,9 +156,10 @@ function RegisterPage() {
 
               
             </Box>
-          </div>
+          </div><RickyPigeon/>
         </Box>
       </div>
+       
     </>
   )
 }

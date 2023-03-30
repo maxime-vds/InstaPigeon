@@ -1,3 +1,4 @@
+import { Comment } from "@mui/icons-material"
 import { Box } from "@mui/system"
 import { Link } from "react-router-dom"
 
@@ -32,7 +33,7 @@ const GridList = ({ posts }: any) => {
               style={{ textDecoration: "none", color: "black" }}
             >
               {/* top  */}
-              <div className="card-top"></div>
+              <div className="card-top"> </div>
 
               {/* picture */}
 
@@ -49,6 +50,7 @@ const GridList = ({ posts }: any) => {
             </Link>
           </div>
         ))}
+       
     </Box>
   )
 }

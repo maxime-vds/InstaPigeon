@@ -44,7 +44,7 @@ const CommentSection = () => {
 
   return (
     <div>
-      <h3>Commentaires</h3>
+      <h5>Commentaires</h5>
       {comments.length === 0 ? (
         <p>Aucun commentaire pour le moment</p>
       ) : (

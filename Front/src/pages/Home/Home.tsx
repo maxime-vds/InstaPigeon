@@ -1,7 +1,8 @@
-import Comment from "../../components/comment"
+import CommentSection from "../../components/comment"
 import Grid from "../../components/Grid"
 import SimpleBackdrop from "../Dashboard/clickPhotoDashboard"
 import StandardImageList from "../Dashboard/testDash"
+import FotoGrid from "../FotoGrid/FotoGrid"
 
 
 const Home = () => {
@@ -20,8 +21,8 @@ const Home = () => {
        * <StandardImageList />
        * <SimpleBackdrop />
        */} 
-      
-     <Comment/>
+      <FotoGrid/>
+     <CommentSection/>
       </div>
     </>
   )
