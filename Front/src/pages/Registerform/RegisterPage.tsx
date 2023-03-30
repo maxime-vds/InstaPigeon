@@ -89,20 +89,30 @@ function RegisterPage() {
   // this logic seems crap too
 
   return (
-    <>
       <div
-        style={{ display: "flex", justifyContent: "center", marginTop: "15px" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          backgroundColor: "#D9D9D9",
+          height: "100%",
+          overflow: "hidden"
+        }}
       >
         <Box
           sx={{
-            position: "absolute",
+            position: "relative",
             backgroundColor: "#BD9B45",
+            marginTop: "25px",
+            marginBottom: "80px",
             height: "80vh",
             width: "88vw",
             borderRadius: "8px",
+            
           }}
         >
-          <h3 style={{ textAlign: "center", color: "#D9D9D9", marginTop: "15px" }}>
+          <h3
+            style={{ textAlign: "center", color: "#D9D9D9", marginTop: "15px" }}
+          >
             Before you fly, lets get you chipped first
           </h3>
           <p
@@ -152,13 +162,10 @@ function RegisterPage() {
                 passwordAgainErr={passwordAgainErr}
                 handleSubmit={handleSubmit}
               />
-
-              
             </Box>
           </div>
         </Box>
       </div>
-    </>
   )
 }
 

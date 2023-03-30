@@ -30,7 +30,7 @@ export default function Landing() {
         position: "absolute",
         backgroundColor: "#7F96FF",
         width: "100%",
-        height: "350vh",
+        height: "335vh",
         overflow: "hidden",
       }}
     >

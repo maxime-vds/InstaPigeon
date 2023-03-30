@@ -20,7 +20,6 @@ export const AccountPage = () => {
 
         <AccountElements />
 
-        {/*flexbox / text / flexbox  */}
 
         {/* GridList */}
         <div className="AccountGrid">

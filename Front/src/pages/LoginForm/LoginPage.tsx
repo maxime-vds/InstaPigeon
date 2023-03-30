@@ -75,7 +75,7 @@ function LoginPage() {
           justifyContent: "center",
           backgroundColor: "#D9D9D9",
           overflow: "hidden",
-          height: "100vh",
+          height: "100%",
         }}
       >
         <Box
@@ -83,7 +83,7 @@ function LoginPage() {
             position: "relative",
             backgroundColor: "#BD9B45",
             margin: "20px",
-            height: "80vh",
+            height: "88vh",
             width: "88vw",
             borderRadius: "8px",
           }}
