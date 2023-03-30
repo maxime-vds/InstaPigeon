@@ -6,12 +6,13 @@ import { Box } from "@mui/system"
 //components
 import { useFetch } from "../../hooks/useFetch"
 //styles
-import "./Posts.css"
+import styles from "./Posts.module.css"
 
 const Posts = () => {
   const { id } = useParams()
   const url = "http://localhost:3000/posts/" + id
   const { data: card, isPending, error, postData } = useFetch(url)
+  // sort cards here
 
   return (
     <Box
@@ -26,22 +27,17 @@ const Posts = () => {
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">Loading...</p>}
       {card && (
-        <div className="singleCard">
-          <Link to="/grid">
-          <div className="card-top"></div>
-
-          <div className="picture">
+        <div className={styles.singleCard}>
+          <Link to="/grid"
+          style={{textDecoration: "none", color: "black" }}>
             <img src={card.image} />
-          </div>
 
-          <p>
-            {card.caption},{card.id}
-          </p>
+            <p>
+              {card.caption},{card.id}
+            </p>
 
-          {/* <div className="card-bottom"></div> */}
-          <Cardbar></Cardbar>
-
-        </Link>
+          </Link>
+            <Cardbar></Cardbar>
         </div>
       )}
     </Box>
