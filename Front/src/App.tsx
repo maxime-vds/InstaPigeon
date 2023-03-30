@@ -6,11 +6,12 @@ import {
   Navigate,
 } from "react-router-dom"
 import RootLayout from "./layout/RootLayout"
-import { ReactNode } from "react"
+import { useState } from "react"
 
 //components
 import RegisterPage from "./pages/registerform/RegisterPage"
 import LoginPage from "./pages/loginForm/LoginPage"
+import CreatePage from "./pages/Create/CreatePage"
 import Posts from "./pages/FotoGrid/Posts"
 
 import Landing from "./pages/Landing"
@@ -40,25 +41,44 @@ const theme = createTheme({
 
 function App() {
   const { authed } = useAuthStore()
+  const [gotIt, setGotIt] = useState<boolean>(false)
+
+
+
+  function TryLog ():void {
+    console.log("got it")
+    setGotIt(true)
+
+
+  }
+
+
+
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route element={<RootLayout />}>
         <Route index element={<Landing />} />
         <Route path="/Register" element={<RegisterPage />} />
+        <Route path="/Login" element={<LoginPage TryLog={TryLog} />} />
+
+      {gotIt ?  
 
         <Route
           path="/Grid"
           element={
+
+
             // <RequireAuth>
             <FotoGrid />
             // </RequireAuth>
           }
         />
-        <Route 
-        path="/posts/:id" 
-        element={<Posts />} 
-        />
+
+         :  <Route path="/" element={<Landing/>}/> }
+
+
+        <Route path="/posts/:id" element={<Posts />} />
 
         <Route
           path="/Dashboard"
@@ -68,8 +88,7 @@ function App() {
             </RequireAuth>
           }
         />
-
-        <Route path="/Login" element={<LoginPage />} />
+        <Route path="/create" element={<CreatePage />} />
       </Route>
     )
   )
