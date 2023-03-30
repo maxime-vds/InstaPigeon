@@ -109,8 +109,8 @@ export default function Landing() {
         </div>
 
 
-        <div className="footer" style={{ marginTop: "20px" }}>
-          <h2 style={{ textAlign: "center" }}>
+        <div className={styles.footer} style={{ marginTop: "20px" }}>
+          <h2 className={styles.h2} style={{ textAlign: "center" }}>
 
             Where we're going we don't need no roads
           </h2>
