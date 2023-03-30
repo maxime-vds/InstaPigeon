@@ -6,9 +6,15 @@ import { BackgroundCard } from "./BackgroundCard"
 import { LoginForm } from "./LoginForm"
 import { Box } from "@mui/system"
 
-function LoginPage() {
+
+type AuthProp = {
+  TryLog: () => void
+}
+
+
+
+function LoginPage({ TryLog }: AuthProp) {
   const { authed, login } = useAuthStore()
-  const { state } = useLocation()
   const navigate = useNavigate()
 
   //inputState
@@ -61,7 +67,7 @@ function LoginPage() {
 
   useEffect(() => {
     if (authed) {
-      navigate("/home")
+      navigate("/grid")
     }
   }, [authed])
 
@@ -124,6 +130,7 @@ function LoginPage() {
               }}
             >
               <LoginForm
+                TryLog={TryLog}
                 handleLogin={handleLogin}
                 setUsername={setUsername}
                 usernameErr={usernameErr}

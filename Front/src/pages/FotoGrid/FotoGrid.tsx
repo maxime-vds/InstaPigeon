@@ -1,7 +1,6 @@
 import { useFetch } from "../../hooks/useFetch"
 
 import GridList from "./GridList"
-import Cardbar from "../../components/cardbar/Cardbar"
 
 const FotoGrid = () => {
   const url = "http://localhost:3000/posts"
@@ -24,7 +23,6 @@ const FotoGrid = () => {
           {data && <GridList posts={data} />}
         </div>
 
-        <Cardbar></Cardbar>
       </div>
     </>
   )
