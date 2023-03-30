@@ -57,7 +57,9 @@ export default function Landing() {
             in cities around the world.
           </p>
 
+
           <Button buttonText="Sign me up!" onClick={NavRegister}></Button>
+
         </div>
 
         {/* every should probably be a component, so it's easier to re-use for different screens ?  */}
