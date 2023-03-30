@@ -73,7 +73,7 @@ function App() {
           }
         />
 
-        <Route path="/Account" element={<AccountPage />}></Route>
+        <Route path="/Account" element={<AccountPage />}/>
 
         <Route path="/create" element={<CreatePage />} />
         <Route path="/home" element={<Home />} />
