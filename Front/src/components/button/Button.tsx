@@ -13,7 +13,8 @@ export const Button = ({ onClick, backgroundColor, iconComponent, buttonText }: 
     <>
       <StyledButton
         onClick={onClick}
-        // backgroundColor={backgroundColor}
+        
+        backgroundcolor={backgroundColor}
         endIcon={iconComponent}
         type="submit"
         variant="contained"
