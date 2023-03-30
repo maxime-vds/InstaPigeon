@@ -9,17 +9,19 @@ import RootLayout from "./layout/RootLayout"
 import { useState, useEffect } from "react"
 
 //components
-import RegisterPage from "./pages/registerform/RegisterPage"
-import LoginPage from "./pages/loginForm/LoginPage"
+import RegisterPage from "./pages/Registerform/RegisterPage"
+import LoginPage from "./pages/LoginForm/LoginPage"
 import CreatePage from "./pages/Create/CreatePage"
 import Posts from "./pages/FotoGrid/Posts"
+import { AccountPage } from "./pages/Account/AccountPage"
+
 
 import Landing from "./pages/Landing"
 import FotoGrid from "./pages/FotoGrid/FotoGrid"
 import Dashboard from "./pages/Dashboard/Dashboard"
-import { RequireAuth } from "./components/RequireAuth"
 
 //context
+import { RequireAuth } from "./components/RequireAuth"
 import { AuthProvider } from "./context/authContext"
 import { useAuthStore } from "./context/authStore"
 
@@ -66,14 +68,16 @@ function App() {
           path="/Dashboard"
           element={
             // <RequireAuth>
-              <Dashboard />
+            <Dashboard />
             // </RequireAuth>
           }
         />
+
+        <Route path="/Account" element={<AccountPage />}></Route>
+
         <Route path="/create" element={<CreatePage />} />
         <Route path="/home" element={<Home />} />
       </Route>
-      
     )
   )
   return (
