@@ -65,9 +65,9 @@ function App() {
         <Route
           path="/Dashboard"
           element={
-            <RequireAuth>
+            // <RequireAuth>
               <Dashboard />
-            </RequireAuth>
+            // </RequireAuth>
           }
         />
         <Route path="/create" element={<CreatePage />} />

@@ -39,6 +39,7 @@ export default function Landing() {
         marginTop="10px"
       >
 
+
         <div style={{ marginBottom: "30px", textAlign: "center" }}>
           <h2 className={styles.h2}>InstaPigeon</h2>
 
@@ -60,8 +61,6 @@ export default function Landing() {
 
         </div>
 
-        {/* every should probably be a component, so it's easier to re-use for different screens ?  */}
-        {/* change flex direction on bigger screens ? */}
         <div
           className="illustration-wrap"
           style={{ display: "flex", flexDirection: "column" }}
@@ -109,8 +108,10 @@ export default function Landing() {
           </div>
         </div>
 
-        <div className={styles.footer} style={{ marginTop: "20px" }}>
-          <h2 className={styles.h2} style={{ fontSize: "25px" }}>
+
+        <div className="footer" style={{ marginTop: "20px" }}>
+          <h2 style={{ textAlign: "center" }}>
+
             Where we're going we don't need no roads
           </h2>
 
