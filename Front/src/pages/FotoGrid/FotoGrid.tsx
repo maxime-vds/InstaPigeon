@@ -4,7 +4,6 @@ import GridList from "./GridList"
 
 const FotoGrid = () => {
   const url = "http://localhost:3000/posts"
-  // const url ="https://api.thecatapi.com/v1/images/search?limit=30&breed_ids=beng&api_key=live_wSC7y2dnE5c7ukspwUXewcXzxd77oqhl5Hpj4lZc7RZWpaMmFigB9iAXOSBaA5ZT"
   const { data, isPending, error, postData } = useFetch(url)
 
   return (

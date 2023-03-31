@@ -1,10 +1,14 @@
 import { useFetch } from "../../hooks/useFetch"
+import { useState } from "react"
 import GridList from "../FotoGrid/GridList"
 import { AccountElements } from "./AccountElements"
+import { AccountSettings } from "./AccountSettings"
 
 export const AccountPage = () => {
   const url = "http://localhost:3000/posts"
   const { data, isPending, error } = useFetch(url)
+
+  const [settingsNav, setSettingsNav] = useState<boolean>(false)
 
   return (
     <div>
@@ -18,17 +22,26 @@ export const AccountPage = () => {
       >
         {/* Account elements */}
 
-        <AccountElements />
+        {!settingsNav ? (
+          <>
+            <AccountElements
+              setSettingsNav={setSettingsNav}
+            />
 
-        {/* GridList */}
-        <div className="AccountGrid">
-          {error && <p className="error">{error}</p>}
-          {isPending && <p className="loading">Loading...</p>}
+            <div className="AccountGrid">
+              {error && <p className="error">{error}</p>}
+              {isPending && <p className="loading">Loading...</p>}
 
-          {/* sort the cards first here ?  */}
+              {/* sort the cards first here ?  */}
 
-          {data && <GridList posts={data} />}
-        </div>
+              {data && <GridList posts={data} />}
+            </div>
+          </>
+        ) : (
+          <>
+            <AccountSettings setSettingsNav={setSettingsNav}/>
+          </>
+        )}
       </div>
     </div>
   )
