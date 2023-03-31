@@ -16,12 +16,15 @@ const GridList = ({ posts }: any) => {
         {posts &&
           posts.map((post: any) => (
             <>
+
+            {/* problem with the unique id ?  */}
               <div className={styles.card} key={post.id}>
                 <Link
+                  key={post.id}
                   to={`/posts/${post.id}`}
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  <img src={post.image} />
+                  <img src={post.image} key={post.id} />
                 </Link>
               </div>
             </>

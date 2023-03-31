@@ -13,7 +13,7 @@ const Posts = () => {
   const url = "http://localhost:3000/posts/" + id
   const { data: card, isPending, error, postData } = useFetch(url)
   // sort cards here
-// then map them out
+  // then map them out
 
   return (
     <>
@@ -29,13 +29,14 @@ const Posts = () => {
         {isPending && <p className="loading">Loading...</p>}
         {card && (
           <div className={styles.singleCard}>
+            {/* can't hardcode the link, can I add -1 on Link? otherwise will have to figure out navigate here */}
             <Link to="/grid" style={{ textDecoration: "none", color: "black" }}>
               <div>
-              <img src={card.image} />
+                <img src={card.image} />
 
-              <p>
-                {card.caption},{card.id}
-              </p>
+                <p>
+                  {card.caption},{card.id}
+                </p>
               </div>
             </Link>
           </div>

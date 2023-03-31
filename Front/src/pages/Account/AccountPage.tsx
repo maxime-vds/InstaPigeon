@@ -20,7 +20,6 @@ export const AccountPage = () => {
 
         <AccountElements />
 
-
         {/* GridList */}
         <div className="AccountGrid">
           {error && <p className="error">{error}</p>}
@@ -28,7 +27,7 @@ export const AccountPage = () => {
 
           {/* sort the cards first here ?  */}
 
-          {/* {data && <GridList posts={data} />} */}
+          {data && <GridList posts={data} />}
         </div>
       </div>
     </div>

@@ -19,10 +19,6 @@ export default function Landing() {
   const [open, setOpen] = useState<boolean | null>(true)
   const navigate = useNavigate()
 
-  const NavRegister = () => {
-    navigate("/register")
-  }
-
   return (
     <div
       className={styles.Landing}
@@ -55,7 +51,7 @@ export default function Landing() {
 
           <Button
             buttonText="Sign me up!"
-            onClick={NavRegister}
+            onClick={() => navigate("/register")}
             backgroundColor="#BD9B45"
           ></Button>
         </div>

@@ -123,15 +123,15 @@ export default function NavbarBottomPhone() {
             <HomeIcon />
           </IconButton>
           <Box sx={{ flexGrow: 0.25 }} />
-          <IconButton component={Link} to="/" color="inherit">
+          <IconButton component={Link} to="/search" color="inherit">
             <SearchIcon />
           </IconButton>
           <Box sx={{ flexGrow: 0.3 }} />
-          <IconButton component={Link} to="/" color="inherit">
+          <IconButton component={Link} to="/create" color="inherit">
             <AddBoxIcon />
           </IconButton>
           <Box sx={{ flexGrow: 0.3 }} />
-          <IconButton component={Link} to="/" color="inherit">
+          <IconButton component={Link} to="/account" color="inherit">
             <AccountBoxIcon />
           </IconButton>
         </Toolbar>

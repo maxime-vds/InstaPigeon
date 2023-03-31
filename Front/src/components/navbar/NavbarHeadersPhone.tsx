@@ -11,7 +11,8 @@ import Fade from "@mui/material/Fade"
 
 import { Button } from "../button/Button"
 
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation, useNavigate, Link as RouterLink } from "react-router-dom"
+import { Link } from "@mui/material"
 
 //userAuth= true
 
@@ -51,7 +52,7 @@ export default function NavbarHeadersPhone() {
               onClick={navigateToLogin}
             />
           ) : (
-            <h2 style={{ fontSize: "28px", color: "#5A558F" }}>InstaPigeon</h2>
+            <Link underline="none" component={RouterLink} to="/"> <h2 style={{ fontSize: "28px", color: "#5A558F" }}>InstaPigeon</h2></Link>
           )}
 
           <div>

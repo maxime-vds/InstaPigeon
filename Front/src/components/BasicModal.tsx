@@ -26,7 +26,7 @@ export default function BasicModal({ open, setOpen }: IbasicModalProps) {
 
   return (
     <div>
-      <Modal open={open}>
+      <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Cookies are great and so are you!
