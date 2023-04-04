@@ -1,48 +1,46 @@
-import { useFetch } from "../../hooks/useFetch"
-import { useState } from "react"
-import GridList from "../FotoGrid/GridList"
-import { AccountElements } from "./AccountElements"
-import { AccountSettings } from "./AccountSettings"
+import { useFetch } from '../../hooks/useFetch'
+import { useState } from 'react'
+import GridList from '../FotoGrid/GridList'
+import { AccountElements } from './AccountElements'
+import { AccountSettings } from './AccountSettings'
 
 export const AccountPage = () => {
-  const url = "http://localhost:3000/posts"
-  const { data, isPending, error } = useFetch(url)
+   const url = 'http://localhost:3000/posts'
+   const { data, isPending, error } = useFetch(url)
 
-  const [settingsNav, setSettingsNav] = useState<boolean>(false)
+   const [settingsNav, setSettingsNav] = useState<boolean>(false)
 
-  return (
-    <div>
-      <div
-        style={{
-          position: "absolute",
-          backgroundColor: "#D9D9D9",
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        {/* Account elements */}
+   return (
+      <div>
+         <div
+            style={{
+               position: 'absolute',
+               backgroundColor: '#D9D9D9',
+               width: '100%',
+               height: '100%',
+            }}
+         >
+            {/* Account elements */}
 
-        {!settingsNav ? (
-          <>
-            <AccountElements
-              setSettingsNav={setSettingsNav}
-            />
+            {!settingsNav ? (
+               <>
+                  <AccountElements setSettingsNav={setSettingsNav} />
 
-            <div className="AccountGrid">
-              {error && <p className="error">{error}</p>}
-              {isPending && <p className="loading">Loading...</p>}
+                  <div className="AccountGrid">
+                     {error && <p className="error">{error}</p>}
+                     {isPending && <p className="loading">Loading...</p>}
 
-              {/* sort the cards first here ?  */}
+                     {/* sort the cards first here ?  */}
 
-              {data && <GridList posts={data} />}
-            </div>
-          </>
-        ) : (
-          <>
-            <AccountSettings setSettingsNav={setSettingsNav}/>
-          </>
-        )}
+                     {data && <GridList posts={data} />}
+                  </div>
+               </>
+            ) : (
+               <>
+                  <AccountSettings setSettingsNav={setSettingsNav} />
+               </>
+            )}
+         </div>
       </div>
-    </div>
-  )
+   )
 }

@@ -12,8 +12,8 @@ export const Button = ({ onClick, backgroundColor, iconComponent, buttonText }: 
   return (
     <>
       <StyledButton
+        sx={{}}
         onClick={onClick}
-        
         backgroundcolor={backgroundColor}
         endIcon={iconComponent}
         type="submit"

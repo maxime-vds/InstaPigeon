@@ -119,7 +119,7 @@ export default function NavbarBottomPhone() {
       <AppBar position="fixed" sx={{ top: "auto", bottom: 0, backgroundColor: "#5C5C5C" }}>
         <Toolbar>
           <Box sx={{ flexGrow: 0.1 }} />
-          <IconButton component={Link} to="/" color="inherit" aria-label="home">
+          <IconButton component={Link} to="/grid" color="inherit" aria-label="home">
             <HomeIcon />
           </IconButton>
           <Box sx={{ flexGrow: 0.25 }} />

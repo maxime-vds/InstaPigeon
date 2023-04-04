@@ -4,13 +4,13 @@ import Typography from "@mui/material/Typography"
 import Modal from "@mui/material/Modal"
 
 const style = {
-  position: "absolute" as "absolute",
+  position: "absolute",
   top: "50%",
   left: "50%",
   outline: 0,
   transform: "translate(-50%, -50%)",
   width: "200px",
-  bgcolor: "secondary.main",
+  bgcolor: "#D9D9D9",
   boxShadow: 24,
   borderRadius: "3px",
   p: 5,

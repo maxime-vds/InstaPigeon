@@ -16,7 +16,7 @@ import styles from "./Landing.module.css"
 
 export default function Landing() {
   // toggle modal on authed state
-  const [open, setOpen] = useState<boolean | null>(true)
+  const [showModal, setShowModal] = useState<boolean | null>(true)
   const navigate = useNavigate()
 
   return (
@@ -30,7 +30,7 @@ export default function Landing() {
         overflow: "hidden",
       }}
     >
-      {open ? <BasicModal open={open} setOpen={setOpen} /> : " "}
+      {showModal ? <BasicModal open={showModal} setOpen={setShowModal} /> : " "}
 
       <Box
         display="flex"
