@@ -91,7 +91,7 @@
 
         .box-background {
             position: relative;
-            width: 380px;
+            width: 88%;
             border-radius: 8px;
         }
 
@@ -103,7 +103,7 @@
             width: 80%;
         }
         .images-login img:last-child {
-            display: none
+            display: block
         } 
         .images-login img:first-child {
             position: absolute;

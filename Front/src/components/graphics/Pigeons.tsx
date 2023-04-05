@@ -5,10 +5,6 @@ interface Ipigeon {
   height?: number
 }
 
-// export const pige = {
-//   width: 30000,
-//   height: 300
-// }
 
 
 
