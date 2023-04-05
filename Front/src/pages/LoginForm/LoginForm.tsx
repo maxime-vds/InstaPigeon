@@ -21,7 +21,6 @@ export const LoginForm = ({
    passwordErr,
 }: IloginFormProps) => {
    return (
-      <Container maxWidth="xs">
          <form className={styles['login-form']}>
             <TextField
                sx={{ mb: 2, color: '7F96FF' }}
@@ -44,6 +43,5 @@ export const LoginForm = ({
             </Link>
             <Button onClick={handleLogin} buttonText="Submit" />
          </form>
-      </Container>
    )
 }

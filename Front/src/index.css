@@ -19,7 +19,7 @@
     src: url(../font/Ultra-Regular.ttf);
 }
 
-* {
+body {
     margin: 0;
 }
 h2 {

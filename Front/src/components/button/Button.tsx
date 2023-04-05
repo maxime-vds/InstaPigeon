@@ -6,9 +6,11 @@ interface ButtonProps {
   backgroundColor?: string | undefined;
   buttonText: string;
   iconComponent?: React.ReactNode;
+  color?: 'primary' | 'secondary'
+  disableElevation?: boolean | undefined
 }
 
-export const Button = ({ onClick, backgroundColor, iconComponent, buttonText }: ButtonProps) => {
+export const Button = ({ onClick, backgroundColor, iconComponent, buttonText, color, disableElevation}: ButtonProps) => {
   return (
     <>
       <StyledButton
@@ -18,7 +20,8 @@ export const Button = ({ onClick, backgroundColor, iconComponent, buttonText }: 
         endIcon={iconComponent}
         type="submit"
         variant="contained"
-        color="primary"
+        color={color}
+        disableElevation={disableElevation}
       >
         {buttonText}
       </StyledButton>

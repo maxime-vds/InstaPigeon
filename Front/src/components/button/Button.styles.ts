@@ -7,7 +7,7 @@ interface IStyledButton {
 
 export const StyledButton = styled(MuiButton)<IStyledButton>`
     background-color: ${props => props.backgroundcolor || '#5a558f'};
-    font-family: "poppins" 
+    font-family: "poppins"; 
 `
 export const StyledButtonWarning = styled(StyledButton)<IStyledButton>`
     background-color: ${props => props.backgroundcolor || '#BD9B45' }

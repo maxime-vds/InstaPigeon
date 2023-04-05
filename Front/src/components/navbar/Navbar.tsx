@@ -33,10 +33,10 @@ export default function Navbar() {
                {NoAuthNavbars.includes(pathname) ? '' : <NavbarBottomPhone />}
             </footer>
          ) : (
-            <React.Fragment>
+            <>
                <header>{/* <NavbarHeadersPc /> */}</header>
                <footer></footer>
-            </React.Fragment>
+            </>
          )}
       </div>
    )

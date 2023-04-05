@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
-import { BackgroundCard } from './BackgroundCard'
 import { LoginForm } from './LoginForm'
 import { useAuthStore } from '../../context/authStore'
 import { Box } from '@mui/system'
@@ -11,7 +9,6 @@ import styles from './LoginPage.module.css'
 
 function LoginPage() {
    const { authed, login } = useAuthStore()
-   const location = useLocation()
    const navigate = useNavigate()
 
    //inputState
@@ -51,8 +48,6 @@ function LoginPage() {
          .then((res) => {
             if (!res.ok) {
                console.log('failed to log in')
-               // navigate(state?.path || "/")
-               // catch error here?
             } else {
                login()
                console.log('logged in succesfully!')
@@ -71,31 +66,32 @@ function LoginPage() {
    // console.log(authed)
 
    return (
-      <>
-         <div className={styles['background-card']}>
-            <Box className={styles['box-background']}>
-               <h2>Look what the pigeon dragged in!</h2>
-               <p className={styles['paragraph']}>
-                  Glad to see you! if you ever get sick of our pigeon puns, why
-                  not join our flock and check out our job listings, so we can
-                  see even more of you!
-               </p>
+      <div className={styles['background-card']}>
+         <Box className={styles['box-background']}>
+            <h2>Look what the pigeon dragged in!</h2>
+            <p className={styles['paragraph']}>
+               Glad to see you! if you ever get sick of our pigeon puns, why not
+               join our flock and check out our job listings, so we can see even
+               more of you!
+            </p>
 
-               <div>
-                  <Box className={styles['box-loginform']}>
-                     <LoginForm
-                        handleLogin={handleLogin}
-                        setUsername={setUsername}
-                        usernameErr={usernameErr}
-                        setPassword={setPassword}
-                        passwordErr={passwordErr}
-                     />
-                  </Box>
-               </div>
-               <img src="../../public/RickyPigeon.png" alt="RickyPigeon" />
-            </Box>
-         </div>
-      </>
+            <div>
+               <Box className={styles['box-loginform']}>
+                  <LoginForm
+                     handleLogin={handleLogin}
+                     setUsername={setUsername}
+                     usernameErr={usernameErr}
+                     setPassword={setPassword}
+                     passwordErr={passwordErr}
+                  />
+               </Box>
+            </div>
+            <div className={styles['images-login']}>
+            <img src="../../public/RickyPigeon.png" alt="RickyPigeon" />
+            <img src="../../public/VeronicaPigeon.png" alt="VeronicaPigeon" />
+            </div>
+         </Box>
+      </div>
    )
 }
 
