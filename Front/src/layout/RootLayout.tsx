@@ -17,6 +17,8 @@ const {pathname} = useLocation()
       <Navbar />
       </header>
       <main>
+
+        <div>fjezpfije</div>
         <Outlet />
       </main>
     </div>
