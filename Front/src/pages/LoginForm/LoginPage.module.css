@@ -1,1 +1,71 @@
-/* put styles here */
+    .background-card {
+        display: flex;
+        justify-content: center;
+        background-color: #D9D9D9;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .background-card h2 {
+        text-align: center;
+        color: #D9D9D9;
+        margin: 10px;
+    }
+
+    .background-card .paragraph {
+        text-align: center;
+        color: #D9D9D9;
+        font-size: 13px;
+        margin: 20px;
+        font-family: worksans;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .box-background div {
+        display: flex;
+        justify-content: center;
+    }
+
+    .box-background {
+        position: relative;
+        background-color: #BD9B45;
+        margin: 20px;
+        height: 88vh;
+        width: 500px;
+        border-radius: 8px;
+    }
+
+    .box-loginform {
+        position: relative;
+        background-color: #D9D9D9;
+        margin-top: 8px;
+        height: 28vh;
+        border-radius: 8px;
+    }
+
+    .background-card img {
+        position: absolute;
+        width: 130%;
+        top: 28rem;
+        left: 3.5rem;
+    }
+
+    /* login form  */
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .login-form p {
+        /* font size is stretching box, how do I combat this ? be making the text collapse  */
+        font-size: 10px;
+        font-weight: bold;
+        font-family: worksans;
+        margin-top: 6px;
+        margin-bottom: 2.5rem;
+    }
+
+

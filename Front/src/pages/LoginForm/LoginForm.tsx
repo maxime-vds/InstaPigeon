@@ -3,6 +3,8 @@ import { Button } from '../../components/button/Button'
 import { Link } from '@mui/material'
 import AcUnitIcon from '@mui/icons-material/AcUnit'
 
+import styles from './LoginPage.module.css'
+
 interface IloginFormProps {
    handleLogin: (e: React.FormEvent<HTMLFormElement>) => void
    setUsername: React.Dispatch<React.SetStateAction<string>>
@@ -20,13 +22,7 @@ export const LoginForm = ({
 }: IloginFormProps) => {
    return (
       <Container maxWidth="xs">
-         <form
-            style={{
-               display: 'flex',
-               flexDirection: 'column',
-               marginTop: '20px',
-            }}
-         >
+         <form className={styles['login-form']}>
             <TextField
                sx={{ mb: 2, color: '7F96FF' }}
                onChange={(e) => setUsername(e.target.value)}
@@ -44,26 +40,9 @@ export const LoginForm = ({
                error={passwordErr}
             />
             <Link>
-               <p
-                  style={{
-                     fontSize: '9px',
-                     fontWeight: 'bold',
-                     fontFamily: 'worksans',
-                     textAlign: 'center',
-                     marginTop: '6px',
-                     marginBottom: '2.5rem',
-                  }}
-               >
-                  forgot your password? don't be ashamed, it happens
-               </p>
+               <p>forgot your password? don't be ashamed, it happens</p>
             </Link>
-            <Button
-               onClick={handleLogin}
-               buttonText="Submit"
-               // iconComponent={<AcUnitIcon />}
-               // iconComponent={<KeyboardArrowRight />}
-               // backgroundcolor="secondary"
-            />
+            <Button onClick={handleLogin} buttonText="Submit" />
          </form>
       </Container>
    )

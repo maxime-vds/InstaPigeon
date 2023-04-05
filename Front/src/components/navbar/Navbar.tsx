@@ -1,39 +1,43 @@
-import { useMediaQuery } from "@mui/material"
+import { useMediaQuery } from '@mui/material'
 
-import React from "react"
+import React from 'react'
 
-import { useLocation } from "react-router-dom"
+import { useLocation } from 'react-router-dom'
 
 //components
-import NavbarBottomPhone from "./NavbarBottomPhone"
-import NavbarHeadersPc from "./NavbarHeadersPc"
-import NavbarHeadersPhone from "./NavbarHeadersPhone"
-import NavbarAuth  from "./NavbarAuth"
+import NavbarBottomPhone from './NavbarBottomPhone'
+import NavbarHeadersPc from './NavbarHeadersPc'
+import NavbarHeader from './NavbarHeader'
+import NavbarAuth from './NavbarAuth'
 
 export default function Navbar() {
-  const isTabletScreen = useMediaQuery("(max-width: 1024px)")
-  const authed = sessionStorage.getItem("authed")
-  const {pathname} = useLocation()
-  const NoAuthNavbars = ["/", "/login", "/register"]
+   const isTabletScreen = useMediaQuery('(max-width: 1024px)')
 
+   const authed = sessionStorage.getItem('authed')
+   const { pathname } = useLocation()
+   const NoAuthNavbars = ['/', '/login', '/register']
 
-    return (
+   return (
       <div>
-        {isTabletScreen ? (
-          <React.Fragment>
+         <>
             <header>
-              {NoAuthNavbars.includes(pathname) ? <NavbarHeadersPhone /> : <NavbarAuth/>  }
+               {NoAuthNavbars.includes(pathname) ? (
+                  <NavbarHeader />
+               ) : (
+                  <NavbarAuth />
+               )}
             </header>
-            <footer>{NoAuthNavbars.includes(pathname)?  "" : <NavbarBottomPhone /> }</footer>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <header>
-              <NavbarHeadersPc />
-            </header>
-            <footer></footer>
-          </React.Fragment>
-        )}
+         </>
+         {isTabletScreen ? (
+            <footer>
+               {NoAuthNavbars.includes(pathname) ? '' : <NavbarBottomPhone />}
+            </footer>
+         ) : (
+            <React.Fragment>
+               <header>{/* <NavbarHeadersPc /> */}</header>
+               <footer></footer>
+            </React.Fragment>
+         )}
       </div>
-    )
+   )
 }
