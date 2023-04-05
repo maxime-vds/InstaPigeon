@@ -29,18 +29,18 @@
 
 .instapigeon-title h2 {
     font-size: 40px;
+    margin: 0;
     color: #5A558F;
 }
 
-/* .app-bar {
-    position: relative;
-    /* margin: -25px 0 0 0; */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .instapigeon-title h2 {
-        font-size: 30px;
+        font-size:30px;
         color: #5A558F;
     }
+
+    
 
 
 }
