@@ -1,3 +1,8 @@
+.Landing {
+    position: relative;
+    background-color: #7F96FF;
+    overflow: hidden;
+}
 .paragraph {
     font-family: poppins;
     color: #D9D9D9;
@@ -10,7 +15,6 @@
 }
 
 .purple-bg {
-    /* position: absolute; */
     background-color: #5A558F;
 }
 

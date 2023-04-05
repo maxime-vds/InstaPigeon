@@ -18,9 +18,11 @@
     font-family: worksans;
     font-weight: 500;
 }
+
 .desktop-links li:hover {
     text-decoration: underline
 }
+
 .desktop-links Button {
     margin: 10px 0 0 0;
 }
@@ -29,9 +31,10 @@
     font-size: 40px;
     color: #5A558F;
 }
+
 .app-bar {
     position: relative;
-    margin: -25px 0 0 0;
+    /* margin: -25px 0 0 0; */
 }
 
 @media screen and (max-width: 400px) {
@@ -39,11 +42,9 @@
         font-size: 30px;
         color: #5A558F;
     }
-    .app-bar {
-        position: relative;
-        margin: -15px 0 0 0;
-        
-    }
+
+    /* .app-bar {
+
+    } */
 
 }
-

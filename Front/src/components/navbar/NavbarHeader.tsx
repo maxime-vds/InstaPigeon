@@ -23,6 +23,7 @@ export default function NavbarHeader() {
 
    const toolbarStyles = {
       backgroundColor: pathname === '/' ? '#7F96FF' : '#D9D9D9',
+      // position: 'relative',
       display: 'flex',
       justifyContent: 'space-between',
    }
@@ -44,7 +45,7 @@ export default function NavbarHeader() {
             className={styles['app-bar']}
             elevation={0}
          >
-            <Toolbar style={toolbarStyles}>
+            <Toolbar sx={toolbarStyles}>
                {pathname === '/' ? (
                   <Button
                      buttonText="Login"

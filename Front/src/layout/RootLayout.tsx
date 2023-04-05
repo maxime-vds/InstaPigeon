@@ -14,11 +14,6 @@ const {pathname} = useLocation()
   return (
     <div className="RootLayout">
       <header>
-
-        {/* kill navbar here for account settings ?  seems pretty messy */}
-
-      {pathname === "/"}
-
       <Navbar />
       </header>
       <main>

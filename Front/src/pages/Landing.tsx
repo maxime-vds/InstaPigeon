@@ -22,13 +22,7 @@ export default function Landing() {
   return (
     <div
       className={styles.Landing}
-      style={{
-        position: "absolute",
-        backgroundColor: "#7F96FF",
-        width: "100%",
-        height: "335vh",
-        overflow: "hidden",
-      }}
+      
     >
       {showModal ? <BasicModal open={showModal} setOpen={setShowModal} /> : " "}
 
