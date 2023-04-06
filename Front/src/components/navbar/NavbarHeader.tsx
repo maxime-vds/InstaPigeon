@@ -52,6 +52,8 @@ export default function NavbarHeader() {
                      backgroundColor="#BD9B45"
                      onClick={navigateToLogin}
                   />
+           
+               
                ) : (
                   <>
                      <Link
