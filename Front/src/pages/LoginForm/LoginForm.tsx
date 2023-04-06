@@ -27,6 +27,7 @@ export const LoginForm = ({
                onChange={(e) => setUsername(e.target.value)}
                label="username"
                size="small"
+               
                required
                error={usernameErr}
             />
@@ -41,7 +42,7 @@ export const LoginForm = ({
             <Link>
                <p>forgot your password? don't be ashamed, it happens</p>
             </Link>
-            <Button onClick={handleLogin} buttonText="Submit" />
+            <Button onClick={handleLogin} buttonText="Login" />
          </form>
    )
 }
