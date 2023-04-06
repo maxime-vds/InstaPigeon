@@ -4,6 +4,15 @@ import { LoginForm } from './LoginForm'
 import { useAuthStore } from '../../context/authStore'
 import { Box } from '@mui/system'
 
+import { motion } from 'framer-motion'
+
+const loginPageVariants = {
+   
+}
+
+
+
+
 //styles
 import styles from './LoginPage.module.css'
 
@@ -66,7 +75,7 @@ function LoginPage() {
    // console.log(authed)
 
    return (
-      <div className={styles['background-card']}>
+      <motion.div className={styles['background-card']}>
          <Box className={styles['box-background']}>
             <h2>Look what the pigeon dragged in!</h2>
             <p className={styles['paragraph']}>
@@ -91,7 +100,7 @@ function LoginPage() {
             <img src="../../public/VeronicaPigeon.png" alt="VeronicaPigeon" />
             </div>
          </Box>
-      </div>
+      </motion.div>
    )
 }
 

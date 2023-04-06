@@ -62,7 +62,7 @@ export default function Landing() {
                <div className={isTabletScreen ? '' : styles['purple-bg']}>
                   <VeronicaPigeon />
 
-                  <p>
+                  <p className={styles['veronica-text']}>
                      this is veronica, she likes to dance when she's not eating
                      dead rats in the streets, she's single and ready to mingle!
                      though I wouldn't, because she's not taken a show, like
