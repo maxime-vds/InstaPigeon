@@ -3,10 +3,8 @@ import {
    Route,
    createBrowserRouter,
    RouterProvider,
-   Navigate,
 } from 'react-router-dom'
 import RootLayout from './layout/RootLayout'
-import { useState, useEffect } from 'react'
 
 //components
 import RegisterPage from './pages/Registerform/RegisterPage'
@@ -21,8 +19,6 @@ import Dashboard from './pages/Dashboard/Dashboard'
 
 //context
 import { RequireAuth } from './components/RequireAuth'
-import { AuthProvider } from './context/authContext'
-import { useAuthStore } from './context/authStore'
 
 //styles
 import { createTheme } from '@mui/material/styles'
@@ -43,38 +39,33 @@ const theme = createTheme({
 })
 
 function App() {
-   const { authed } = useAuthStore()
-
    const router = createBrowserRouter(
       createRoutesFromElements(
          <Route element={<RootLayout />}>
             <Route index element={<Landing />} />
             <Route path="/Register" element={<RegisterPage />} />
             <Route path="/Login" element={<LoginPage />} />
+            <Route path="/posts/:id" element={<Posts />} />
 
             <Route
                path="/Grid"
                element={
-                  <RequireAuth>
-                     <FotoGrid />
-                  </RequireAuth>
-               }
-            />
-            <Route path="/" element={<Landing />} />
-
-            <Route path="/posts/:id" element={<Posts />} />
-
-            <Route
-               path="/Dashboard"
-               element={
                   // <RequireAuth>
-                  <Dashboard />
+                     <FotoGrid />
                   // </RequireAuth>
                }
             />
 
-            <Route path="/Account" element={<AccountPage />} />
+            <Route
+               path="/Dashboard"
+               element={
+                  <RequireAuth>
+                     <Dashboard />
+                  </RequireAuth>
+               }
+            />
 
+            <Route path="/Account" element={<AccountPage />} />
             <Route path="/create" element={<CreatePage />} />
             <Route path="/home" element={<Home />} />
          </Route>

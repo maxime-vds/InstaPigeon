@@ -1,13 +1,11 @@
 .Landing {
     position: relative;
-    background-color: #7F96FF;
+    background-color: #5A558F;
     overflow: hidden;
+    height: 140vh;
 }
 
 .box-landing {
-    /* display:flex; */
-    /* justify-content:center; */
-    /* flex-direction:column; */
     margin-top: 20px;
 }
 
@@ -21,12 +19,13 @@
     font-size: 60px;
     text-align: center;
     margin: 0px 8px;
+    letter-spacing: 1px;
 }
 
 .header-landing p {
-    font-size: 25px;
+    font-size: 28px;
     text-align: center;
-    margin: 30px 300px;
+    margin: 30px 500px;
     font-family: poppins;
     color: #D9D9D9;
 }
@@ -34,9 +33,11 @@
 
 .illustration-wrap p {
     font-family: poppins;
+    font-size: 20px;
     color: #D9D9D9;
     text-align: center;
     margin: -40px 60px;
+
 }
 
 .purple-bg {
@@ -71,10 +72,28 @@ li {
 }
 
 @media screen and (max-width: 1024px) {
+    .Landing {
+        background-color: #7F96FF;
+        height: 330vh;
+    }
+
     .illustration-wrap {
         display: flex;
         flex-direction: column;
     }
+
+    .illustration-wrap p {
+        font-family: poppins;
+        color: #D9D9D9;
+        text-align: center;
+        margin: 20px 60px;
+    }
+
+    .purple-bg {
+        background-color: #5A558F;
+        height: 100vh;
+    }
+    
 
     .header-landing {
         margin-bottom: 30px;

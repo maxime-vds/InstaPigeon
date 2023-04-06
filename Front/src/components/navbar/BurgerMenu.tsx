@@ -20,7 +20,7 @@ export const BurgerMenu = ({
    return (
       <div className="burger-menu">
          <IconButton
-             sx={{}}
+            sx={{}}
             id="fade-button"
             aria-controls={open ? 'fade-menu' : undefined}
             aria-haspopup="true"
