@@ -42,7 +42,7 @@ export default function NavbarAuth() {
   return (
     <>
       <AppBar position="relative" elevation={0} sx={{ margin: "0" }}>
-        {/* changing  */}
+        
         <Toolbar style={toolbarStyles}>
           <h2 style={{ fontSize: "28px", color: "#D9D9D9" }}>InstaPigeon</h2>
 
@@ -59,7 +59,6 @@ export default function NavbarAuth() {
             >
               <MenuIcon />
 
-              {/* create styled component for burger menu */}
             </IconButton>
             <Menu
               id="fade-menu"

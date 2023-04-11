@@ -20,6 +20,7 @@ export default function Navbar() {
    return (
       <div>
          <>
+            {/* select navbar for no-auth pages */}
             <header>
                {NoAuthNavbars.includes(pathname) ? (
                   <NavbarHeader />
@@ -28,8 +29,10 @@ export default function Navbar() {
                )}
             </header>
          </>
+         {/* select footer for tablet and smartphone */}
          {isTabletScreen ? (
             <footer>
+               {/* only select footer on auth pages  */}
                {NoAuthNavbars.includes(pathname) ? '' : <NavbarBottomPhone />}
             </footer>
          ) : (

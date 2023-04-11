@@ -14,18 +14,12 @@ import { Button } from '../button/Button'
 import styles from './NavbarHeader.module.css'
 
 export default function NavbarHeader() {
-   const { pathname } = useLocation()
    const navigate = useNavigate()
+   const { pathname } = useLocation()
    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
    const open = Boolean(anchorEl)
 
    const isTabletScreen = useMediaQuery('(max-width: 1024px)')
-
-   const toolbarStyles = {
-      backgroundColor: pathname === '/' ? '#7F96FF' : '#D9D9D9',
-      display: 'flex',
-      justifyContent: 'space-between',
-   }
 
    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
       setAnchorEl(event.currentTarget)
@@ -41,11 +35,17 @@ export default function NavbarHeader() {
    return (
       <>
          <AppBar
-         sx={{position:"relative"}}
+            sx={{ position: 'relative' }}
             className={styles['app-bar']}
             elevation={0}
          >
-            <Toolbar sx={toolbarStyles}>
+            <Toolbar
+               // select backgroundColor for homepage
+               sx={{
+                  backgroundColor: pathname === '/' ? '#7F96FF' : '#D9D9D9',
+               }}
+            >
+               {/* select login-button for homepage */}
                {pathname === '/' ? (
                   <Button
                      buttonText="Login"
