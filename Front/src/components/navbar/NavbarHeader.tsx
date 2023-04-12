@@ -59,17 +59,14 @@ export default function NavbarHeader() {
                      />
 
                      {/* select burgermenu or links for homepage */}
-
                      {isTabletScreen ? (
-                        <>
-                           <BurgerMenu
-                              handleClick={handleClick}
-                              handleClose={handleClose}
-                              pathname={pathname}
-                              open={open}
-                              anchorEl={anchorEl}
-                           />
-                        </>
+                        <BurgerMenu
+                           handleClick={handleClick}
+                           handleClose={handleClose}
+                           pathname={pathname}
+                           open={open}
+                           anchorEl={anchorEl}
+                        />
                      ) : (
                         <ul className={styles['desktop-links']}>
                            <span>
