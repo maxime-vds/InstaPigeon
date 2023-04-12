@@ -14,9 +14,17 @@
     font-family: worksans-light;
     src: url(../font/WorkSans-Light.ttf);
 }
+@font-face {
+    font-family: ultra;
+    src: url(../font/Ultra-Regular.ttf);
+}
 
-
-
+* {
+    margin: 0;
+}
 h2 {
-    font-family: 'Poppins'
+    font-family: 'ultra'
+}
+h3 {
+    font-family: 'poppins'
 }

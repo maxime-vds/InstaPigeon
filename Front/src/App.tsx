@@ -1,48 +1,106 @@
-import { createRoutesFromElements, Route, createBrowserRouter, RouterProvider, Router, Routes } from "react-router-dom"
-import RootLayout from "./components/Navbar"
-import Register from "./components/Register"
-import Login from "./components/Login"
-import NavbarHeadersPc from "./navbar/navHeadPc"
-import NavbarBottomPhone from "./navbar/navBotPhone"
-import Landing from "./components/Landing"
-import { AuthContext, AuthProvider} from "./context/authContext"
+import {
+  createRoutesFromElements,
+  Route,
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom"
+import RootLayout from "./layout/RootLayout"
+import { useState } from "react"
+
+//components
+import RegisterPage from "./pages/registerform/RegisterPage"
+import LoginPage from "./pages/loginForm/LoginPage"
+import CreatePage from "./pages/Create/CreatePage"
+import Posts from "./pages/FotoGrid/Posts"
+
+import Landing from "./pages/Landing"
+import FotoGrid from "./pages/FotoGrid/FotoGrid"
+import Dashboard from "./pages/Dashboard/Dashboard"
+import { RequireAuth } from "./components/RequireAuth"
+
+//context
+import { AuthProvider } from "./context/authContext"
 import { useAuthStore } from "./context/authStore"
-import { useSetLoginUser } from "./hooks"
-import RowAndColumnSpacing from "./components/test"
-import NestedGrid from "./components/test"
 
+//styles
+import { createTheme } from "@mui/material/styles"
+import { ThemeProvider } from "@mui/material/styles"
+import { StyledEngineProvider } from "@mui/material/styles"
 
-    
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#5A558F",
+    },
+    secondary: {
+      main: "#D9D9D9",
+    },
+  },
+})
+
 function App() {
+  const { authed } = useAuthStore()
+  const [gotIt, setGotIt] = useState<boolean>(false)
 
-const router = createBrowserRouter(
+
+
+  function TryLog ():void {
+    console.log("got it")
+    setGotIt(true)
+
+
+  }
+
+
+
+
+  const router = createBrowserRouter(
     createRoutesFromElements(
-            
-        <Route path="/" element={<RootLayout/>}>
-        
-            <Route index element={<Landing/>}/>
-            <Route path="/Register" element={<Register/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/nav" element={<NavbarBottomPhone/>}/>
-            <Route path="/navUp" element={<NavbarHeadersPc/>}/>
-            <Route path="/landing" element={<Landing/>}/>
-            <Route path="/grid" element={<NestedGrid/>}/>
-            
-        </Route>
+      <Route element={<RootLayout />}>
+        <Route index element={<Landing />} />
+        <Route path="/Register" element={<RegisterPage />} />
+        <Route path="/Login" element={<LoginPage TryLog={TryLog} />} />
 
-            )
-        )
+      {gotIt ?  
+
+        <Route
+          path="/Grid"
+          element={
 
 
+            // <RequireAuth>
+            <FotoGrid />
+            // </RequireAuth>
+          }
+        />
+
+         :  <Route path="/" element={<Landing/>}/> }
 
 
-    return(
+        <Route path="/posts/:id" element={<Posts />} />
 
-        <AuthProvider>
-        <RouterProvider router={router}/>
-        </AuthProvider>
-
-        )
-    }
+        <Route
+          path="/Dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        />
+        <Route path="/create" element={<CreatePage />} />
+      </Route>
+    )
+  )
+  return (
+    <>
+      <StyledEngineProvider>
+        <ThemeProvider theme={theme}>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </StyledEngineProvider>
+    </>
+  )
+}
 
 export default App
