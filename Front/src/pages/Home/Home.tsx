@@ -1,7 +1,4 @@
 import Comment from "../../components/comment"
-import Grid from "../../components/Grid"
-import SimpleBackdrop from "../Dashboard/clickPhotoDashboard"
-import StandardImageList from "../Dashboard/testDash"
 
 
 const Home = () => {

@@ -1,11 +1,10 @@
 .account-state {
-    display: flex; 
-    flex-wrap: nowrap; 
-    margin:20px 0px;
-
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 10px;
 }
 
-.account-state > div {
+.account-state>div {
     text-align: center;
     margin: 0px 14px;
 

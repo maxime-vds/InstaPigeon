@@ -1,5 +1,3 @@
-import * as React from 'react'
-import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
 import { motion } from 'framer-motion'
@@ -8,16 +6,16 @@ import styles from './BasicModal.module.css'
 
 const modalVariants = {
    hidden: {
-    y:1000,
-    x: 0
+      y: 1000,
+      x: 0,
    },
    visible: {
-    x:0,
-    y:0,
-   
-    transition: {
-      delay: 0.5
-    }
+      x: 0,
+      y: 0,
+
+      transition: {
+         delay: 0.5,
+      },
    },
 }
 
@@ -32,10 +30,12 @@ export default function BasicModal({ open, setOpen }: IbasicModalProps) {
    return (
       <div>
          <Modal open={open} onClose={handleClose}>
-            <motion.div className={styles['basic-modal']}
-            variants={modalVariants}
-            initial="hidden"
-            animate="visible">
+            <motion.div
+               className={styles['basic-modal']}
+               variants={modalVariants}
+               initial="hidden"
+               animate="visible"
+            >
                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                   Cookies are great and so are you!
                </Typography>

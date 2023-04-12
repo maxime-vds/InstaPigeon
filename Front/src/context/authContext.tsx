@@ -13,4 +13,6 @@ export const AuthContext = createContext<IAuthContext>(initialContext);
 export const AuthProvider = ({ children }: IProviderProps) => (
   <AuthContext.Provider value={useAuthStore()}>{children}</AuthContext.Provider>
 );
+
+
 //create provider?? don't 100% understand
