@@ -19,7 +19,7 @@
     src: url(../font/Ultra-Regular.ttf);
 }
 
-* {
+body {
     margin: 0;
 }
 h2 {
@@ -27,4 +27,9 @@ h2 {
 }
 h3 {
     font-family: 'poppins'
+}
+
+p {
+    font-family: 'worksans';
+
 }

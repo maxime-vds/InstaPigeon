@@ -1,28 +1,29 @@
 import { useState } from "react"
 export interface IAuthContext {
-  authed: any
+  authed: boolean
   login(): void
   logout(): void
 }
 // create interface for state
 
 export const initialContext: IAuthContext = {
-  authed: undefined || true || false,
-  login: async () => null,
-  logout: async () => null,
+  authed: true || false,
+  login: () => {},
+  logout: () => {},
 }
 // set initial values
 
-export const useAuthStore = () => {
-  //can't seem to change the state here 
-  const [authed, setLoginUser] = useState<any>()
+export const useAuthStore = (): IAuthContext => {
+  //can't seem to change the state here
+  const [authed, setLoginUser] = useState<boolean>(false)
 
-  function login() {
+  const login =  ()  => {
     setLoginUser(true)
-    // sessionStorage.setItem("auth", "true")
+    sessionStorage.setItem("auth", "true")
   }
   function logout() {
     setLoginUser(false)
+    sessionStorage.setItem("auth", "false")
   }
 
   return {

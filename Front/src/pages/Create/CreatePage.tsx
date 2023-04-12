@@ -1,65 +1,67 @@
-import { useState } from "react"
-import { useFetch } from "../../hooks/useFetch"
+import { useState } from 'react'
+import { useFetch } from '../../hooks/useFetch'
+import { Button } from '../../components/button/Button'
+import { Input } from '@mui/material'
+
+import { Container, TextField, Link } from '@mui/material'
 
 const CreatePage = () => {
+   const [id, setId] = useState<number>()
+   const [caption, setCaption] = useState<string>('a')
+   const [comments, setComments] = useState<string>('a')
+   const [likes, setLikes] = useState<number>(0)
+   const [follow, setFollow] = useState<boolean>(true)
+   const [image, setImageUrl] = useState<string>('a')
 
+   const { postData, data, error } = useFetch(
+      'http://localhost:3000/posts',
+      'POST'
+   )
 
-  const [id, setId] = useState<number>()
-  const [caption, setCaption] = useState<string>("a")
-  const [comments, setComments] = useState<string>("a")
-  const [likes, setLikes] = useState<number>(0)
-  const [follow, setFollow] = useState<boolean>(true)
-  const [image, setImageUrl] = useState<string>("a")
+   const handleSubmit = (e: { preventDefault: () => void }) => {
+      e.preventDefault()
 
+      console.log(id, caption, comments, likes, follow, image)
 
-  const {postData, data, error } = useFetch("http://localhost:3000/posts", 'POST')
+      postData({ caption, comments, likes, follow, image })
+   }
 
+   // pass in : caption="required", comments: "", likes : 0, image="image.svg, required"
 
+   return (
+      <Container maxWidth="xs">
+         <form
+            style={{
+               display: 'flex',
+               flexDirection: 'column',
+               marginTop: '10%',
+            }}
+         >
+            <TextField
+               sx={{ mb: 2, color: '7F96FF' }}
+               label="caption"
+               size="medium"
+               required
+            />
 
+            <TextField
+               sx={{ mb: 2, color: '7F96FF' }}
+               type="file"
+               size="medium"
+               required
+            />
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-        e.preventDefault()
+            {/* <label htmlFor="file">choose a file</label>
+            <input
+               id="file"
+               style={{ marginBottom: '10px', opacity: '0%' }}
+               type="file"
+            /> */}
 
-    console.log(id, caption, comments, likes, follow, image);
-
-      postData({caption, comments, likes, follow, image})
-
-    }
-
-
-
-
-    // pass in : caption="required", comments: "", likes : 0, image="image.svg, required"
-
-  return (
-    <>
-      <h2 className="title-post">Add A Post</h2>
-
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>caption</span>
-          <input
-            type="text"
-            onChange={(e) => setCaption(e.target.value)}
-            value={caption}
-            required
-          ></input>
-        </label>
-
-
-        <label>
-          <span>image</span>
-          <textarea
-            onChange={(e) => setImageUrl(e.target.value)}
-            value={image}
-            required
-          ></textarea>
-        </label>
-
-        <button className="btn">submit</button>
-      </form>
-    </>
-  )
+            <Button buttonText="Submit" />
+         </form>
+      </Container>
+   )
 }
 
 export default CreatePage
