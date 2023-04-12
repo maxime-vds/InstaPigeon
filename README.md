@@ -6,9 +6,18 @@ an instagram for pigeons
 
 -  a picture sharing platform for sharing pictures of pigeons you see in the street ;
 
-// plus a slogan
+![login](./login.png)
+![grid](./grid.png)
 
-// two screenshots
+## figma prototypes :
+
+[desktop](./instap-desktop.pdf)
+[mobile](./instap-phone.pdf)
+[styleguide](./instap-styleguide.pdf)
+
+to add :
+
+// plus a slogan
 
 // link for maguette
 
