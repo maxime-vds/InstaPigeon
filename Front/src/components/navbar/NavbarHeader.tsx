@@ -21,6 +21,15 @@ export default function NavbarHeader() {
 
    const isTabletScreen = useMediaQuery('(max-width: 1024px)')
 
+   {
+      /* select color of navbar on homepage */
+   }
+   const toolbarStyles = {
+      backgroundColor: pathname === '/' ? '#7F96FF' : '#D9D9D9',
+      display: 'flex',
+      justifyContent: 'space-between',
+   }
+
    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
       setAnchorEl(event.currentTarget)
    }
@@ -39,19 +48,54 @@ export default function NavbarHeader() {
             className={styles['app-bar']}
             elevation={0}
          >
-            <Toolbar
-               // select backgroundColor for homepage
-               sx={{
-                  backgroundColor: pathname === '/' ? '#7F96FF' : '#D9D9D9',
-               }}
-            >
-               {/* select login-button for homepage */}
+            <Toolbar sx={toolbarStyles}>
+               {/* select login button for homepage */}
                {pathname === '/' ? (
-                  <Button
-                     buttonText="Login"
-                     backgroundColor="#BD9B45"
-                     onClick={navigateToLogin}
-                  />
+                  <>
+                     <Button
+                        buttonText="Login"
+                        backgroundColor="#BD9B45"
+                        onClick={navigateToLogin}
+                     />
+
+                     {/* select burgermenu or links for homepage */}
+                     {isTabletScreen ? (
+                        <BurgerMenu
+                           handleClick={handleClick}
+                           handleClose={handleClose}
+                           pathname={pathname}
+                           open={open}
+                           anchorEl={anchorEl}
+                        />
+                     ) : (
+                        <ul className={styles['desktop-links']}>
+                           <span>
+                              <Link
+                                 underline="none"
+                                 component={RouterLink}
+                                 to="/"
+                              >
+                                 <li>Home</li>
+                              </Link>
+                              <Link
+                                 underline="none"
+                                 component={RouterLink}
+                                 to="/"
+                              >
+                                 <li>About</li>
+                              </Link>
+                           </span>
+                           <RouterLink to="/">
+                              <Button
+                                 buttonText="Contact"
+                                 backgroundColor="#BD9B45"
+                                 color="secondary"
+                                 disableElevation={true}
+                              ></Button>
+                           </RouterLink>
+                        </ul>
+                     )}
+                  </>
                ) : (
                   <>
                      <Link
