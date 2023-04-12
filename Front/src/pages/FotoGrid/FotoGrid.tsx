@@ -8,7 +8,7 @@ const FotoGrid = () => {
 
    return (
       <>
-         <div
+         {/* <div
             className="background"
             style={{
                display: 'absolute',
@@ -16,13 +16,13 @@ const FotoGrid = () => {
                width: '100%',
                height: '100%',
             }}
-         >
+         > */}
             <div className="home">
                {error && <p className="error">{error}</p>}
                {isPending && <p className="loading">Loading...</p>}
                {data && <GridList posts={data} />}
             </div>
-         </div>
+         {/* </div> */}
       </>
    )
 }

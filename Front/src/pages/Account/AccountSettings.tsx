@@ -22,7 +22,6 @@ export const AccountSettings = ({ setSettingsNav }: IsettingsNavProp) => {
    return (
       <>
          {/* fetch username and bio from res object and input here in the label tag */}
-
          <Container maxWidth="xs" sx={{ overflow: 'hidden', marginTop: '1em' }}>
             <Button
                onClick={handleClick}
@@ -48,7 +47,6 @@ export const AccountSettings = ({ setSettingsNav }: IsettingsNavProp) => {
                   <CircleIcon sx={{ fontSize: '600%', margin: '0% 33%' }} />
 
                   {/* launch  modal, to input new picture */}
-
                   <p>
                      <Link to="/account">Edit change profile picture</Link>
                   </p>

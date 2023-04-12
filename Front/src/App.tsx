@@ -45,13 +45,13 @@ function App() {
             <Route path="/Register" element={<RegisterPage />} />
             <Route path="/Login" element={<LoginPage />} />
             <Route path="/posts/:id" element={<Posts />} />
-
+               
             <Route
                path="/Grid"
                element={
-                  // <RequireAuth>
+                  <RequireAuth>
                      <FotoGrid />
-                  // </RequireAuth>
+                  </RequireAuth>
                }
             />
             <Route path="/Account" element={<AccountPage />} />
