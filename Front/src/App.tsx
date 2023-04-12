@@ -15,7 +15,6 @@ import { AccountPage } from './pages/Account/AccountPage'
 
 import Landing from './pages/Landing'
 import FotoGrid from './pages/FotoGrid/FotoGrid'
-import Dashboard from './pages/Dashboard/Dashboard'
 
 //context
 import { RequireAuth } from './components/RequireAuth'
@@ -55,16 +54,6 @@ function App() {
                   // </RequireAuth>
                }
             />
-
-            <Route
-               path="/Dashboard"
-               element={
-                  <RequireAuth>
-                     <Dashboard />
-                  </RequireAuth>
-               }
-            />
-
             <Route path="/Account" element={<AccountPage />} />
             <Route path="/create" element={<CreatePage />} />
             <Route path="/home" element={<Home />} />
