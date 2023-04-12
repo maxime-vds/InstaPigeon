@@ -13,7 +13,7 @@ const FotoGrid = () => {
         style={{
           display: "absolute",
           backgroundColor: "#D9D9D9",
-          width: "100vw",
+          width: "100%",
           height: "100%",
         }}
       >

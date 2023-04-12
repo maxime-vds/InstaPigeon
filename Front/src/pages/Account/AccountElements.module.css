@@ -1,0 +1,12 @@
+.account-state {
+    display: flex; 
+    flex-wrap: nowrap; 
+    margin:20px 0px;
+
+}
+
+.account-state > div {
+    text-align: center;
+    margin: 0px 14px;
+
+}

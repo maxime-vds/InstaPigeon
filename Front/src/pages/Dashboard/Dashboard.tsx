@@ -1,6 +1,12 @@
+import SimpleBackdrop from "./clickPhotoDashboard"
+
 const Dashboard = () => {
   return (
-  <div>Dashboard</div>
+  <div>Dashboard
+
+<SimpleBackdrop/>
+
+  </div>
   )
 }
 
