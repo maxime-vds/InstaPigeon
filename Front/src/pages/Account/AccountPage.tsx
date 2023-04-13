@@ -8,7 +8,7 @@ export const AccountPage = () => {
    const url = 'http://localhost:3000/posts'
    const { data, isPending, error } = useFetch(url)
 
-   const [settingsNav, setSettingsNav] = useState<boolean>(false)
+   const [settingsNav, setSettingsNav] = useState<boolean>(true)
 
    return (
       <div>
@@ -20,9 +20,7 @@ export const AccountPage = () => {
                height: '100%',
             }}
          >
-            {/* Account elements */}
-
-            {!settingsNav ? (
+            {settingsNav ? (
                <>
                   <AccountElements setSettingsNav={setSettingsNav} />
 
@@ -37,6 +35,7 @@ export const AccountPage = () => {
                </>
             ) : (
                <>
+                  {/*  turn this into a seperate module component */}
                   <AccountSettings setSettingsNav={setSettingsNav} />
                </>
             )}

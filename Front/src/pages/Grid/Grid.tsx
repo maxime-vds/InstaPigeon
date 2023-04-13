@@ -6,7 +6,6 @@ import GridList from './GridList'
 const Grid = () => {
    const url = 'http://localhost:3000/posts'
    const { data, isPending, error, postData } = useFetch(url)
-   const {id} = useParams()
    return (
       <>
          {/* <div
@@ -18,11 +17,11 @@ const Grid = () => {
                height: '100%',
             }}
          > */}
-            <div className="home">
-               {error && <p className="error">{error}</p>}
-               {isPending && <p className="loading">Loading...</p>}
-               {data && <GridList posts={data} id={id} />}
-            </div>
+         <div className="home">
+            {error && <p className="error">{error}</p>}
+            {isPending && <p className="loading">Loading...</p>}
+            {data && <GridList posts={data} />}
+         </div>
          {/* </div> */}
       </>
    )

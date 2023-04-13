@@ -75,8 +75,6 @@ function LoginPage() {
       }
    }, [authed])
 
-   // console.log(authed)
-
    return (
       <div className={styles['background-card']}>
          <Box className={styles['box-background']}>

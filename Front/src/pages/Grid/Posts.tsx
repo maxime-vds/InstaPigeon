@@ -9,45 +9,69 @@ import { useFetch } from '../../hooks/useFetch'
 import styles from './Posts.module.css'
 
 interface postProps {
+   postModal: boolean
    setPostModal: React.Dispatch<React.SetStateAction<boolean>>
    id: Number
 }
 
-const Posts = ({ setPostModal, id }: postProps) => {
+const Posts = ({ postModal, setPostModal, id }: postProps) => {
    const url = 'http://localhost:3000/posts/' + id
    const { data: card, isPending, error, postData } = useFetch(url)
+
+   const clickHandler = () => {
+      console.log('click')
+      setPostModal(false)
+      // true launches modal
+      if (postModal) {
+         document.body.style.overflow = 'scroll'
+      }
+   }
 
    return (
       <>
          <Box
+            onClick={clickHandler}
             sx={{
+               zIndex: 0,
+               position: 'absolute',
                width: '100%',
-               display: 'flex',
-               flexDirection: 'column',
-               alignItems: 'center',
             }}
          >
-            {error && <p className="error">{error}</p>}
-            {isPending && <p className="loading">Loading...</p>}
-            {card && (
-               <div className={styles.singleCard}>
-                  <div
-                     style={{ textDecoration: 'none', color: 'black' }}
-                     onClick={() => setPostModal(false)}
-                  >
-                     <div>
-                        <img src={card.image} />
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+               {error && <p className="error">{error}</p>}
+               {isPending && <p className="loading">Loading...</p>}
+               {card && (
+                  <div className={styles.singleCard}>
+                     <div style={{ textDecoration: 'none', color: 'black' }}>
+                        <div>
+                           <img src={card.image} />
 
-                        <p>
-                           {card.caption},{card.id}
-                        </p>
+                           <p>
+                              {card.caption},{card.id}
+                           </p>
+                        </div>
                      </div>
                   </div>
-               </div>
-            )}
-         </Box>
+               )}
+               <div
+                  className="background-modal"
+                  style={{
+                     zIndex: -1,
+                     position: 'absolute',
+                     backgroundColor: '#D9D9D9',
+                     height: '200%',
+                     width: '100%',
+                     opacity: '50%',
+                     margin: 0,
+                  }}
+               ></div>
+            </div>
 
-         <Cardbar />
+            {/* put mediaquerry on the margin on 1024 as well ?*/}
+            <div className={styles.cardbar}>
+               <Cardbar />
+            </div>
+         </Box>
       </>
    )
 }
