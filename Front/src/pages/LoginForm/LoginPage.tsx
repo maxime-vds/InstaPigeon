@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LoginForm } from './LoginForm'
@@ -48,9 +50,19 @@ function LoginPage() {
          .then((res) => {
             if (!res.ok) {
                console.log('failed to log in')
+               toast.error('error Login', {
+                  theme: 'colored',
+                  hideProgressBar: true,
+                  autoClose: 1000,
+               })
             } else {
                login()
                console.log('logged in succesfully!')
+               toast.success('Success Login', {
+                  theme: 'colored',
+                  hideProgressBar: true,
+                  autoClose: 500,
+               })
             }
          })
    }
@@ -59,7 +71,7 @@ function LoginPage() {
 
    useEffect(() => {
       if (authed) {
-         navigate('/grid')
+         setTimeout(() => navigate('/grid'), 700)
       }
    }, [authed])
 
@@ -94,6 +106,7 @@ function LoginPage() {
                />
             </div>
          </Box>
+         <ToastContainer />
       </div>
    )
 }
