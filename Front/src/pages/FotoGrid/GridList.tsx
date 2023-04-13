@@ -7,12 +7,7 @@ import styles from './GridList.module.css'
 const GridList = ({ posts }: any) => {
    return (
       <>
-         <Box
-            sx={{
-               display: 'grid',
-               gridTemplateColumns: '1fr 1fr 1fr',
-            }}
-         >
+         <div className={styles.box}>
             {posts &&
                posts.map((post: any) => (
                   <>
@@ -28,7 +23,8 @@ const GridList = ({ posts }: any) => {
                      </div>
                   </>
                ))}
-         </Box>
+
+         </div>
       </>
    )
 }

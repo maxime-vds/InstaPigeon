@@ -8,9 +8,9 @@ import { Comments } from "./Comments"
 
 const Cardbar = () => {
   // am I supposed to get the number of likes from the json file here ? but that would mean two fetch requests...
-
   // on refresh we're reinstallizing to 999
   // am I already getting the data ?
+
   const { id } = useParams()
   const url = "http://localhost:3000/posts/" + id
   const [likes, setLikes] = useState<number>(999)

@@ -1,25 +1,58 @@
+.box {
+    display: grid;
+    margin: 10px;
+    grid-gap: 50px 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .card {
     text-align: center;
     background-color: #5A558F;
     border-radius: 10px;
-    margin: 2px;
+    height: 40rem;
+    margin: 10px;
     border-radius: 5px;
 }
+
 .card-top {
     width: 100%;
     border-radius: 10px;
 }
+
 img {
     width: 100%;
     border-radius: 5px;
 
-}  
+}
+
 .card-bottom {
     background-color: #5A558F;
     width: 100%;
     border-radius: "0 0 10px 10px";
 }
+
 .paragraph {
     font-size: 15px;
     color: #D9D9D9;
+}
+
+
+@media screen and (max-width: 500px) {
+    .box {
+        display: grid;
+        margin: 0px;
+        grid-gap: 2px 0px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card {
+        text-align: center;
+        background-color: #5A558F;
+        border-radius: 10px;
+        height: 100%;
+        margin: 3px;
+        border-radius: 5px;
+    }
+
+
 }

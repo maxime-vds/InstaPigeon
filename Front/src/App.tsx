@@ -42,19 +42,19 @@ function App() {
       createRoutesFromElements(
          <Route element={<RootLayout />}>
             <Route index element={<Landing />} />
-            <Route path="/Register" element={<RegisterPage />} />
-            <Route path="/Login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/posts/:id" element={<Posts />} />
                
             <Route
-               path="/Grid"
+               path="/grid"
                element={
                   <RequireAuth>
                      <FotoGrid />
                   </RequireAuth>
                }
             />
-            <Route path="/Account" element={<AccountPage />} />
+            <Route path="/account" element={<AccountPage />} />
             <Route path="/create" element={<CreatePage />} />
             <Route path="/home" element={<Home />} />
          </Route>
