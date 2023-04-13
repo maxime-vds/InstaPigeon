@@ -86,7 +86,7 @@ export default function NavbarAuth() {
                 onClick={handleClose}
                 style={{ height: open ? "80px" : "auto", fontSize: "24px" }}
               >
-                Logout
+               Logout
               </MenuItem>
             </Menu>
           </div>

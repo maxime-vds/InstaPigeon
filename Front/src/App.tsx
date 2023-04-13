@@ -24,6 +24,7 @@ import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material/styles'
 import { StyledEngineProvider } from '@mui/material/styles'
 import Home from './pages/Home/Home'
+import CustomizedSnackbars from './components/toast/toast'
 
 const theme = createTheme({
    palette: {
@@ -50,13 +51,14 @@ function App() {
                path="/Grid"
                element={
                   // <RequireAuth>
-                     <FotoGrid />
+                  <FotoGrid />
                   // </RequireAuth>
                }
             />
             <Route path="/Account" element={<AccountPage />} />
             <Route path="/create" element={<CreatePage />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/toast" element={<CustomizedSnackbars />} />
          </Route>
       )
    )
