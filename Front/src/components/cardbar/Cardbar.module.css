@@ -1,0 +1,6 @@
+.card-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row; 
+    margin: 0px 40px;
+}

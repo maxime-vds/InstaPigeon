@@ -1,6 +1,6 @@
 import { useFetch } from '../../hooks/useFetch'
 import { useState } from 'react'
-import GridList from '../FotoGrid/GridList'
+import GridList from '../Grid/GridList'
 import { AccountElements } from './AccountElements'
 import { AccountSettings } from './AccountSettings'
 

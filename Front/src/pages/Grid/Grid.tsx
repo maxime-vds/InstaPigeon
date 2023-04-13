@@ -1,11 +1,12 @@
 import { useFetch } from '../../hooks/useFetch'
+import { useParams } from 'react-router-dom'
 
 import GridList from './GridList'
 
-const FotoGrid = () => {
+const Grid = () => {
    const url = 'http://localhost:3000/posts'
    const { data, isPending, error, postData } = useFetch(url)
-
+   const {id} = useParams()
    return (
       <>
          {/* <div
@@ -20,11 +21,11 @@ const FotoGrid = () => {
             <div className="home">
                {error && <p className="error">{error}</p>}
                {isPending && <p className="loading">Loading...</p>}
-               {data && <GridList posts={data} />}
+               {data && <GridList posts={data} id={id} />}
             </div>
          {/* </div> */}
       </>
    )
 }
 
-export default FotoGrid
+export default Grid

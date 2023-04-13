@@ -10,11 +10,11 @@ import RootLayout from './layout/RootLayout'
 import RegisterPage from './pages/Registerform/RegisterPage'
 import LoginPage from './pages/LoginForm/LoginPage'
 import CreatePage from './pages/Create/CreatePage'
-import Posts from './pages/FotoGrid/Posts'
+import Posts from './pages/Grid/Posts'
 import { AccountPage } from './pages/Account/AccountPage'
 
 import Landing from './pages/Landing'
-import FotoGrid from './pages/FotoGrid/FotoGrid'
+import Grid from './pages/Grid/Grid'
 
 //context
 import { RequireAuth } from './components/RequireAuth'
@@ -24,7 +24,6 @@ import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material/styles'
 import { StyledEngineProvider } from '@mui/material/styles'
 import Home from './pages/Home/Home'
-{/*import Toast from './components/toast/toast'**/}
 
 const theme = createTheme({
    palette: {
@@ -45,20 +44,19 @@ function App() {
             <Route index element={<Landing />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/posts/:id" element={<Posts />} />
-               
+            {/* <Route path="/posts/:id" element={<Posts setPostModal={{}} />} /> */}
             <Route
                path="/grid"
                element={
                   <RequireAuth>
-                     <FotoGrid />
+                     <Grid />
                   </RequireAuth>
                }
             />
+
             <Route path="/account" element={<AccountPage />} />
             <Route path="/create" element={<CreatePage />} />
             <Route path="/home" element={<Home />} />
-            {/*<Route path="/toast" element={<Toast />} />*/}
          </Route>
       )
    )
