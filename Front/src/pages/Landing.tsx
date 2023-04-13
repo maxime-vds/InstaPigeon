@@ -20,7 +20,7 @@ export default function Landing() {
    const [showModal, setShowModal] = useState<boolean | null>(true)
    const navigate = useNavigate()
    const isTabletScreen = useMediaQuery('(max-width: 1024px)')
-   const isMobileScreen = useMediaQuery('(max-width: 600px)')
+   const isMobileScreen = useMediaQuery('(max-width: 600px)') 
    return (
       <div className={styles.Landing}>
          {showModal ? (
@@ -71,7 +71,7 @@ export default function Landing() {
                </div>
 
                <div className={styles['purple-bg']}>
-                  <FreddyPigeon height={isMobileScreen ? 290 : 400}/>
+                  <FreddyPigeon height={isMobileScreen ? 290 : 500}/>
 
                   <p>
                      Freddy, really likes candy for some reason. You'd think
