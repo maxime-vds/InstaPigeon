@@ -7,42 +7,41 @@ import styles from './LoginPage.module.css'
 
 interface IloginFormProps {
    handleLogin: (e: React.FormEvent<HTMLFormElement>) => void
-   setUsername: React.Dispatch<React.SetStateAction<string>>
-   usernameErr: boolean
+   setEmail: React.Dispatch<React.SetStateAction<string>>
+   emailErr: boolean
    setPassword: React.Dispatch<React.SetStateAction<string>>
    passwordErr: boolean
 }
 
 export const LoginForm = ({
    handleLogin,
-   setUsername,
-   usernameErr,
+   setEmail,
+   emailErr,
    setPassword,
    passwordErr,
 }: IloginFormProps) => {
    return (
-         <form className={styles['login-form']}>
-            <TextField
-               sx={{ mb: 2, color: '7F96FF' }}
-               onChange={(e) => setUsername(e.target.value)}
-               label="username"
-               size="small"
-               
-               required
-               error={usernameErr}
-            />
-            <TextField
-               onChange={(e) => setPassword(e.target.value)}
-               label="password"
-               type="password"
-               size="small"
-               required
-               error={passwordErr}
-            />
-            <Link>
-               <p>forgot your password? don't be ashamed, it happens</p>
-            </Link>
-            <Button onClick={handleLogin} buttonText="Login" />
-         </form>
+      <form className={styles['login-form']}>
+         <TextField
+            sx={{ mb: 2, color: '7F96FF' }}
+            onChange={(e) => setEmail(e.target.value)}
+            label="email"
+            size="small"
+            required
+            error={emailErr}
+         />
+         <TextField
+            onChange={(e) => setPassword(e.target.value)}
+            label="password"
+            type="password"
+            size="small"
+            required
+            error={passwordErr}
+         />
+         <Link>
+            <p>forgot your password? don't be ashamed, it happens</p>
+         </Link>
+         <Button onClick={handleLogin} buttonText="Login" />
+      </form>
    )
 }

@@ -15,8 +15,12 @@ interface postProps {
 }
 
 const Posts = ({ postModal, setPostModal, id }: postProps) => {
-   const url = 'http://localhost:3000/posts/' + id
+   const url = 'http://localhost:5000/allpost/' + id
    const { data: card, isPending, error, postData } = useFetch(url)
+
+
+   console.log(card);
+   
 
    const clickHandler = () => {
       console.log('click')

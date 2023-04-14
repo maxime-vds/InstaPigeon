@@ -7,7 +7,7 @@ import Cardbar from '../../components/cardbar/Cardbar'
 
 import { useMediaQuery } from '@mui/material'
 
-const GridList = ({ posts }: any) => {
+const GridList = ({ data }: any) => {
    const isTabletScreen = useMediaQuery('(max-width: 1024px)')
    const [postModal, setPostModal] = useState<boolean>(false)
    const [postID, setPostID] = useState<Number>(0)
@@ -20,6 +20,10 @@ const GridList = ({ posts }: any) => {
          document.body.style.overflow = 'hidden'
       }
    }
+
+   const posts = data.posts;
+   // console.log(posts);
+   
 
    return (
       <>
@@ -47,7 +51,9 @@ const GridList = ({ posts }: any) => {
                                  color: 'black',
                               }}
                            >
-                              <img src={post.image} key={post.id} />
+                              <img src={post.photo} key={post.id} />
+                              <div><h2>{post.body}</h2></div>
+                              <div><h2>{post.title}</h2></div>
                            </div>
                         </div>
 

@@ -4,8 +4,12 @@ import { useParams } from 'react-router-dom'
 import GridList from './GridList'
 
 const Grid = () => {
-   const url = 'http://localhost:3000/posts'
+   const url = 'http://localhost:5000/allpost'
    const { data, isPending, error, postData } = useFetch(url)
+
+   console.log(data);
+   
+
    return (
       <>
          {/* <div
@@ -20,7 +24,7 @@ const Grid = () => {
          <div className="home">
             {error && <p className="error">{error}</p>}
             {isPending && <p className="loading">Loading...</p>}
-            {data && <GridList posts={data} />}
+            {data && <GridList data={data} />}
          </div>
          {/* </div> */}
       </>

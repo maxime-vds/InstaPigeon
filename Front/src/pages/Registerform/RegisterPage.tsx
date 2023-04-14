@@ -13,7 +13,7 @@ function RegisterPage() {
    //inputStates
    const [firstname, setFirstname] = useState<string>('')
    const [lastname, setLastname] = useState<string>('')
-   const [username, setUsername] = useState<string>('')
+   const [name, setUsername] = useState<string>('')
    const [email, setEmail] = useState<string>('')
    const [password, setPassword] = useState<string>('')
    const [passwordAgain, setPasswordAgain] = useState<string>('')
@@ -31,18 +31,13 @@ function RegisterPage() {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({
-            firstname,
-            lastname,
-            username,
+            name,
             email,
             password,
          }),
       }
       try {
-         const response = await fetch(
-            'https://apilogin.herokuapp.com/api/auth/signup',
-            settings
-         )
+         const response = await fetch('http://localhost:5000/signup', settings)
       } catch (err) {
          console.log(err)
       }
@@ -66,7 +61,7 @@ function RegisterPage() {
       if (lastname === '') {
          setLastnameErr(true)
       }
-      if (username === '') {
+      if (name === '') {
          setUsernameErr(true)
       }
       if (password === '') {

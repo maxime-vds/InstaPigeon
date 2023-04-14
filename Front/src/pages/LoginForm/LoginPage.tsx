@@ -14,11 +14,11 @@ function LoginPage() {
    const navigate = useNavigate()
 
    //inputState
-   const [username, setUsername] = useState<string>('')
+   const [email, setEmail] = useState<string>('')
    const [password, setPassword] = useState<string>('')
 
    //errorStates
-   const [usernameErr, setUsernameErr] = useState<boolean>(false)
+   const [emailErr, setEmailErr] = useState<boolean>(false)
    const [passwordErr, setPasswordErr] = useState<boolean>(false)
 
    const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
@@ -27,24 +27,24 @@ function LoginPage() {
       console.log('handleLogin launched')
       console.log(authed)
 
-      setUsernameErr(false)
+      setEmailErr(false)
       setPasswordErr(false)
 
       // form validation
 
       // put this in a seperate hook ?
 
-      if (username === '') {
-         setUsernameErr(true)
+      if (email === '') {
+         setEmailErr(true)
       }
       if (password === '') {
          setPasswordErr(true)
       }
 
-      fetch('https://apilogin.herokuapp.com/api/auth/signin', {
+      fetch('http://localhost:5000/signin', {
          method: 'POST',
          headers: { 'Content-type': 'application/json' },
-         body: JSON.stringify({ username, password }),
+         body: JSON.stringify({ email, password }),
       })
          // just gonna do a res.ok check here but might need some extra checks
          .then((res) => {
@@ -89,8 +89,8 @@ function LoginPage() {
                <Box className={styles['box-loginform']}>
                   <LoginForm
                      handleLogin={handleLogin}
-                     setUsername={setUsername}
-                     usernameErr={usernameErr}
+                     setEmail={setEmail}
+                     emailErr={emailErr}
                      setPassword={setPassword}
                      passwordErr={passwordErr}
                   />

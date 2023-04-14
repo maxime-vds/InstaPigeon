@@ -12,6 +12,7 @@ import LoginPage from './pages/LoginForm/LoginPage'
 import CreatePage from './pages/Create/CreatePage'
 import Posts from './pages/Grid/Posts'
 import { AccountPage } from './pages/Account/AccountPage'
+import CreatePost from './pages/Create/CreatePage'
 
 import Landing from './pages/Landing'
 import Grid from './pages/Grid/Grid'
@@ -55,7 +56,7 @@ function App() {
             />
 
             <Route path="/account" element={<AccountPage />} />
-            <Route path="/create" element={<CreatePage />} />
+            <Route path="/create" element={<CreatePost />} />
             <Route path="/home" element={<Home />} />
          </Route>
       )
