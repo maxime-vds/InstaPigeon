@@ -4,6 +4,7 @@
     background-color: #D9D9D9;
     overflow: hidden;
     height: 93.6vh;
+    
 }
 
 .register-page h2 {
@@ -26,20 +27,22 @@
     position: relative;
     background-color: #BD9B45;
     margin: 20px 0 80px 0;
-    height: 90%;
+    height: 88%;
     width: 500px;
     border-radius: 8px;
+    margin-top: 50px;
 }
 
 .register-form {
     display: flex;
     justify-content: center;
+    margin: -12px;
 }
 
 .box-register {
     position: relative;
     background-color: #D9D9D9;
-    margin-top: 10px;
+    margin-top: 10px;    
     padding-top: 15px;
     height: 27rem;
     border-radius: 8px;
@@ -53,6 +56,7 @@
         height: 95%;
         width: 90%;
         border-radius: 8px;
+        margin-top: 18px;
     }
     .register-page {
         display: flex;
@@ -76,4 +80,17 @@
         font-family: worksans;
         margin-bottom: 20px;
     }
+}
+
+
+@media screen and (min-width: 1300px){
+    .box-bg {
+        position: relative;
+        background-color: #BD9B45;
+        margin: 20px 0 80px 0;
+        height: 96%;
+        width: 500px;
+        border-radius: 8px;
+    }
+
 }
