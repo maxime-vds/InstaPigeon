@@ -1,5 +1,6 @@
 import { useFetch } from '../../hooks/useFetch'
-import Likes from './Likes'
+// import {Likes} from './Likes'
+import Likes from '@mui/icons-material/FavoriteBorderSharp'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Box } from '@mui/system'
@@ -7,40 +8,36 @@ import { Account } from './Account'
 import { Comments } from './Comments'
 import { Button } from '../button/Button'
 
-
 import styles from './Cardbar.module.css'
 
-const Cardbar = () => {
-   // am I supposed to get the number of likes from the json file here ? but that would mean two fetch requests...
-   // on refresh we're reinstallizing to 999
-   // am I already getting the data ?
+interface ICardbarProps {
+   id: string
+   // onClick: () => void
+}
 
-   // const { id } = useParams()
-   // const url = "http://localhost:3000/posts/" + id
-   // const [likes, setLikes] = useState<number>(999)
 
-   // function postLikes(e: { preventDefault: () => void }) {
-   //   e.preventDefault()
-   //   console.log("click love")
+const Cardbar = ({id}:ICardbarProps) => {
 
-   //   setLikes((prevLikes) => prevLikes + 1)
+   function postLikes(id:string) {
+      console.log('click like')
+      console.log(id);
+      
+      // this fetch request is crashing the server
 
-   const postLikes = () => console.log('click love')
-
-   //     method: "PATCH",
-   //     headers: {
-   //       "Content-type": "application/json",
-   //     },
-   //     body: JSON.stringify({ likes }),
-   //   }
-   //   fetch(url, putLikes)
-   //     .then((res) => res.json())
-   //     .then((data) => console.log(data))
-   //     .catch((err) => console.log(err))
-
-   //}
-
-   // fetch and post to db
+      fetch('http://localhost:5000/like', {
+         method: 'put',
+         headers: {
+            'Content-Type':'application/json',
+            'Authorization':'Bearer '+localStorage.getItem('jwt')
+         },
+         body:JSON.stringify({
+            postId:id
+         })
+      }).then(res => res.json())
+      .then(result => {
+         console.log(result);
+      })
+   }
 
    function postFollows() {
       console.log('click follows')
@@ -51,8 +48,8 @@ const Cardbar = () => {
          <Account />
 
          <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          {/* <Button buttonText='follow'/> */}
-            <Likes like={postLikes} />
+            {/* <Button buttonText='follow'/> */}
+            <Likes onClick={()=>postLikes(id)}/>
             <Comments />
          </div>
       </div>

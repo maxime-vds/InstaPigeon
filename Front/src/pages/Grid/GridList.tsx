@@ -10,10 +10,10 @@ import { useMediaQuery } from '@mui/material'
 const GridList = ({ data }: any) => {
    const isTabletScreen = useMediaQuery('(max-width: 1024px)')
    const [postModal, setPostModal] = useState<boolean>(false)
-   const [postID, setPostID] = useState<Number>(0)
+   const [postID, setPostID] = useState<string>('')
 
-   const clickHandler = (id: number) => {
-      setPostID(id)
+   const clickHandler = (photo: string) => {
+      setPostID(photo)
       setPostModal(true)
 
       if (!postModal) {
@@ -21,9 +21,7 @@ const GridList = ({ data }: any) => {
       }
    }
 
-   const posts = data.posts;
-   // console.log(posts);
-   
+   const posts = data.posts
 
    return (
       <>
@@ -32,7 +30,7 @@ const GridList = ({ data }: any) => {
                <Posts
                   postModal={postModal}
                   setPostModal={setPostModal}
-                  id={postID}
+                  photo={postID}
                />
             ) : (
                ' '
@@ -41,23 +39,24 @@ const GridList = ({ data }: any) => {
                posts.map((post: any) => (
                   <>
                      {/* problem with the unique id ?  */}
-                     <div className="wrapper" key={post.id}>
-                        <div className={styles.card}>
-                           <div
-                              key={post.id}
-                              onClick={() => clickHandler(post.id)}
-                              style={{
-                                 textDecoration: 'none',
-                                 color: 'black',
-                              }}
-                           >
-                              <img src={post.photo} key={post.id} />
-                              <div><h2>{post.body}</h2></div>
-                              <div><h2>{post.title}</h2></div>
-                           </div>
+                     <div className="wrapper" key={post._id}>
+                        {/* <div className={styles.card}> */}
+                        <div
+                           key={post._id}
+                           onClick={() => clickHandler(post.photo)}
+                           style={{
+                              textDecoration: 'none',
+                              color: 'black',
+                           }}
+                        >
+                           <img src={post.photo} key={post._id} />
+                           {/* <div><h2>{post._id}</h2></div> */}
                         </div>
+                        {/* </div> */}
 
-                        <div>{isTabletScreen ? '' : <Cardbar />}</div>
+                        <>
+                           {isTabletScreen ? '' : <Cardbar id={post._id} />}
+                        </>
                      </div>
                   </>
                ))}

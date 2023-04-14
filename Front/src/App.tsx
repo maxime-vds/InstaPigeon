@@ -49,9 +49,9 @@ function App() {
             <Route
                path="/grid"
                element={
-                  <RequireAuth>
+                  // <RequireAuth>
                      <Grid />
-                  </RequireAuth>
+                  // </RequireAuth>
                }
             />
 

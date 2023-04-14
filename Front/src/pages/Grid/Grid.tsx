@@ -7,9 +7,6 @@ const Grid = () => {
    const url = 'http://localhost:5000/allpost'
    const { data, isPending, error, postData } = useFetch(url)
 
-   console.log(data);
-   
-
    return (
       <>
          {/* <div

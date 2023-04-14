@@ -18,8 +18,10 @@ const CreatePost = () => {
    const [url, setUrl] = useState('')
    useEffect(() => {
       if (url) {
-         fetch('/createpost', {
-            method: 'post',
+         console.log(url)
+
+         fetch('http://localhost:5000/createpost', {
+            method: 'POST',
             headers: {
                'Content-Type': 'application/json',
                Authorization: 'Bearer ' + localStorage.getItem('jwt'),
@@ -42,7 +44,10 @@ const CreatePost = () => {
       }
    }, [url])
 
-   const postDetails = () => {
+   const postDetails = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      console.log(image)
+
       const data = new FormData()
       data.append('file', image)
       data.append('upload_preset', 'Sebagram')
@@ -52,7 +57,11 @@ const CreatePost = () => {
          body: data,
       })
          .then((res) => res.json())
+         // .then((res) => console.log(res))
+
          .then((data) => {
+            console.log(data)
+
             setUrl(data.url)
          })
          .catch((err) => {
@@ -60,30 +69,9 @@ const CreatePost = () => {
          })
    }
 
-   // const CreatePage = () => {
-   //    const [title, setTitle] = useState('')
-   //    const [body, setBody] = useState('')
-   //    const [photo, setPhoto] = useState('')
-
-   //    const { postData, data, error } = useFetch(
-   //       'https://api.cloudinary.com/v1_1/dz9k0tal4/image/upload%22,%7B',
-   //       'POST'
-   //    )
-
-   //    const handleSubmit = (e: { preventDefault: () => void }) => {
-   //       e.preventDefault()
-
-   //       console.log(title, body, photo)
-
-   //       postData({ title, body, photo })
-   //    }
-
-   //    // pass in : caption="required", comments: "", likes : 0, image="image.svg, required"
-
    return (
       <Container maxWidth="xs">
          <form
-            onSubmit={postDetails}
             style={{
                display: 'flex',
                flexDirection: 'column',
@@ -107,16 +95,6 @@ const CreatePost = () => {
                onChange={(e) => setBody(e.target.value)}
                value={body}
             />
-            {/* <TextField
-               sx={{ mb: 2, color: '7F96FF' }}
-
-               type="file"
-               label="photo"
-               size="medium"
-               required
-               onChange={(e) => setImage(e.target.files[0])}
-               value={image}
-            /> */}
 
             <input
                type="file"
@@ -125,29 +103,7 @@ const CreatePost = () => {
                }
             ></input>
 
-            {/* <Input
-                  sx={{ mb: 2, color: '7F96FF' }}
-                  type="file"
-                  size="medium"
-                  required
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => setImage(e.target.files?.[0] as File)}
-                  value={image}
-               /> */}
-            {/* <TextField
-               sx={{ mb: 2, color: '7F96FF' }}
-               type="file"
-               size="medium"
-               required
-            /> */}
-
-            {/* <label htmlFor="file">choose a file</label>
-            <input
-               id="file"
-               style={{ marginBottom: '10px', opacity: '0%' }}
-               type="file"
-            /> */}
-
-            <Button buttonText="Submit" />
+            <Button buttonText="Submit" onClick={(e) => postDetails(e)} />
          </form>
       </Container>
    )

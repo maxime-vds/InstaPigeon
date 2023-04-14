@@ -11,17 +11,10 @@ import styles from './Posts.module.css'
 interface postProps {
    postModal: boolean
    setPostModal: React.Dispatch<React.SetStateAction<boolean>>
-   id: Number
+   photo: string
 }
 
-const Posts = ({ postModal, setPostModal, id }: postProps) => {
-   const url = 'http://localhost:5000/allpost/' + id
-   const { data: card, isPending, error, postData } = useFetch(url)
-
-
-   console.log(card);
-   
-
+const Posts = ({ postModal, setPostModal, photo }: postProps) => {
    const clickHandler = () => {
       console.log('click')
       setPostModal(false)
@@ -42,21 +35,15 @@ const Posts = ({ postModal, setPostModal, id }: postProps) => {
             }}
          >
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-               {error && <p className="error">{error}</p>}
-               {isPending && <p className="loading">Loading...</p>}
-               {card && (
-                  <div className={styles.singleCard}>
-                     <div style={{ textDecoration: 'none', color: 'black' }}>
-                        <div>
-                           <img src={card.image} />
+               <div className={styles.singleCard}>
+                  <div style={{ textDecoration: 'none', color: 'black' }}>
+                     <div>
+                        <img src={photo} />
 
-                           <p>
-                              {card.caption},{card.id}
-                           </p>
-                        </div>
+                        <p></p>
                      </div>
                   </div>
-               )}
+               </div>
                <div
                   className="background-modal"
                   style={{
@@ -73,7 +60,8 @@ const Posts = ({ postModal, setPostModal, id }: postProps) => {
 
             {/* put mediaquerry on the margin on 1024 as well ?*/}
             <div className={styles.cardbar}>
-               <Cardbar />
+               {/* can't use the same cardbar in two different places */}
+               {/* <Cardbar /> */}
             </div>
          </Box>
       </>
