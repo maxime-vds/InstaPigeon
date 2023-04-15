@@ -1,5 +1,6 @@
 import { useState, useEffect, ChangeEvent } from 'react'
 import { useFetch } from '../../hooks/useFetch'
+import { useNavigate } from 'react-router-dom'
 import { Button } from '../../components/button/Button'
 import { Input } from '@mui/material'
 
@@ -12,6 +13,7 @@ interface changeProps {
       | void
 }
 const CreatePost = () => {
+   const navigate = useNavigate()
    const [title, setTitle] = useState('')
    const [body, setBody] = useState('')
    const [image, setImage] = useState<File | string | Blob>('')
@@ -35,7 +37,10 @@ const CreatePost = () => {
             .then((res) => res.json())
             .then((data) => {
                if (data.error) {
+                  console.log(data.error);
+                  
                } else {
+                  navigate('/grid')
                }
             })
             .catch((err) => {
@@ -57,7 +62,6 @@ const CreatePost = () => {
          body: data,
       })
          .then((res) => res.json())
-         // .then((res) => console.log(res))
 
          .then((data) => {
             console.log(data)

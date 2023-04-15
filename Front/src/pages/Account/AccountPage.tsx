@@ -27,10 +27,9 @@ export const AccountPage = () => {
                   <div className="AccountGrid">
                      {error && <p className="error">{error}</p>}
                      {isPending && <p className="loading">Loading...</p>}
-
                      {/* sort the cards first here ?  */}
 
-                     {data && <GridList posts={data} />}
+                     {/* {data && <GridList posts={data} />} */}
                   </div>
                </>
             ) : (

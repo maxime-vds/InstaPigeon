@@ -1,6 +1,16 @@
+
 .card-wrapper {
-    display: flex;
+    display: flex; 
     justify-content: space-between;
-    flex-direction: row; 
-    margin: 0px 40px;
+    height: 30px;
+    margin: 0px 20px;
+    
+}
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 5px;
+}
+.likes:hover {
+    background-color: brown;
 }

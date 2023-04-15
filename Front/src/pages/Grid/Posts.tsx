@@ -19,9 +19,9 @@ const Posts = ({ postModal, setPostModal, photo }: postProps) => {
       console.log('click')
       setPostModal(false)
       // true launches modal
-      if (postModal) {
-         document.body.style.overflow = 'scroll'
-      }
+      // if (postModal) {
+      //    document.body.style.overflow = 'scroll'
+      // }
    }
 
    return (
@@ -29,7 +29,7 @@ const Posts = ({ postModal, setPostModal, photo }: postProps) => {
          <Box
             onClick={clickHandler}
             sx={{
-               zIndex: 0,
+               zIndex: 1,
                position: 'absolute',
                width: '100%',
             }}

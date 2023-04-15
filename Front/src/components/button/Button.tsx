@@ -6,7 +6,7 @@ interface ButtonProps {
    backgroundColor?: string | undefined
    buttonText: string
    iconComponent?: React.ReactNode
-   color?: 'primary' | 'secondary'
+   color?: 'primary' | 'secondary' 
    disableElevation?: boolean | undefined
    size?: 'small' | 'medium' | 'large'
 
