@@ -6,10 +6,9 @@ interface ButtonProps {
    backgroundColor?: string | undefined
    buttonText: string
    iconComponent?: React.ReactNode
-   color?: 'primary' | 'secondary' 
+   color?: 'primary' | 'secondary' | 'warning'
    disableElevation?: boolean | undefined
    size?: 'small' | 'medium' | 'large'
-
 }
 
 export const Button = ({

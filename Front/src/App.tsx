@@ -17,6 +17,8 @@ import CreatePost from './pages/Create/CreatePage'
 import Landing from './pages/Landing'
 import Grid from './pages/Grid/Grid'
 
+import Home from './pages/Home/Home'
+
 //context
 import { RequireAuth } from './components/RequireAuth'
 
@@ -24,7 +26,6 @@ import { RequireAuth } from './components/RequireAuth'
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material/styles'
 import { StyledEngineProvider } from '@mui/material/styles'
-import Home from './pages/Home/Home'
 
 const theme = createTheme({
    palette: {
@@ -34,6 +35,9 @@ const theme = createTheme({
       secondary: {
          main: '#D9D9D9',
          dark: '#5C5C5C',
+      },
+      warning: {
+         main: '#7F96FF',
       },
    },
 })
@@ -50,7 +54,7 @@ function App() {
                path="/grid"
                element={
                   // <RequireAuth>
-                     <Grid />
+                  <Grid />
                   // </RequireAuth>
                }
             />

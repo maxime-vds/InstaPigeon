@@ -30,10 +30,6 @@ function LoginPage() {
       setEmailErr(false)
       setPasswordErr(false)
 
-      // form validation
-
-      // put this in a seperate hook ?
-
       if (email === '') {
          setEmailErr(true)
       }
@@ -41,57 +37,53 @@ function LoginPage() {
          setPasswordErr(true)
       }
 
-         fetch('http://localhost:5000/signin', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-               email,
-               password,
-            }),
+      fetch('http://localhost:5000/signin', {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({
+            email,
+            password,
+         }),
+      })
+         .then((res) => res.json())
+         .then((data) => {
+            console.log(data)
+
+            if (data.error) {
+               console.log(data.error)
+            } else {
+               localStorage.setItem('jwt', data.token)
+               localStorage.setItem('user', JSON.stringify(data.user))
+               navigate('/grid')
+            }
          })
-            .then((res) => res.json())
-            .then((data) => {
-               console.log(data);
-               
-               if (data.error) {
-                  console.log(data.error)
-               }else {
-                  localStorage.setItem("jwt", data.token)
-                  localStorage.setItem("user", JSON.stringify(data.user))
-                  navigate('/grid')
-               }
-   
-            })
-   
-      }
-// don't forget to put the toasts back in before deleting this
+   }
+   // don't forget to put the toasts back in before deleting this
 
-
-
-      // fetch('http://localhost:5000/signin', {
-      //    method: 'POST',
-      //    headers: { 'Content-type': 'application/json' },
-      //    body: JSON.stringify({ email, password }),
-      // })
-      //    // just gonna do a res.ok check here but might need some extra checks
-      //    .then((res) => {
-      //       if (!res.ok) {
-      //          console.log('failed to log in')
-      //          toast.error('error Login', {
-      //             theme: 'colored',
-      //             hideProgressBar: true,
-      //             autoClose: 1000,
-      //          })
-      //       } else {
-      //          login()
-      //          console.log('logged in succesfully!')
-      //          toast.success('Success Login', {
-      //             theme: 'colored',
-      //             hideProgressBar: true,
-      //             autoClose: 500,
-      //          })
-      //       }
-      //    })
+   // fetch('http://localhost:5000/signin', {
+   //    method: 'POST',
+   //    headers: { 'Content-type': 'application/json' },
+   //    body: JSON.stringify({ email, password }),
+   // })
+   //    // just gonna do a res.ok check here but might need some extra checks
+   //    .then((res) => {
+   //       if (!res.ok) {
+   //          console.log('failed to log in')
+   //          toast.error('error Login', {
+   //             theme: 'colored',
+   //             hideProgressBar: true,
+   //             autoClose: 1000,
+   //          })
+   //       } else {
+   //          login()
+   //          console.log('logged in succesfully!')
+   //          toast.success('Success Login', {
+   //             theme: 'colored',
+   //             hideProgressBar: true,
+   //             autoClose: 500,
+   //          })
+   //       }
+   //    })
 
    // navigation on if(data) via useEffect
 

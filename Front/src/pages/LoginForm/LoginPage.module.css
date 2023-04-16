@@ -70,7 +70,7 @@
     }
 
     .login-form p {
-        /* font size is stretching box, how do I combat this ? be making the text collapse  */
+        /* font size is stretching box, how do I combat this ?  */
         font-size: 11px;
         font-weight: bold;
         font-family: worksans;
