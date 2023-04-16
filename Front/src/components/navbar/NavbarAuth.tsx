@@ -14,18 +14,12 @@ import styles from './NavbarAuth.module.css'
 
 export default function NavbarAuth() {
    const authed = ['/']
-   const { pathname } = useLocation()
    const navigate = useNavigate()
+   const { pathname } = useLocation()
    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
    const open = Boolean(anchorEl)
 
    const isTabletScreen = useMediaQuery('(max-width: 1024px)')
-
-   const toolbarStyles = {
-      backgroundColor: '#5C5C5C',
-      display: 'flex',
-      justifyContent: 'space-between',
-   }
 
    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
       setAnchorEl(event.currentTarget)
@@ -41,10 +35,10 @@ export default function NavbarAuth() {
    return (
       <>
          <AppBar position="relative" elevation={0} sx={{ margin: '0' }}>
-            <Toolbar style={toolbarStyles}>
-               <h2 style={{ fontSize: '24px', color: '#D9D9D9' }}>
-                  InstaPigeon
-               </h2>
+            <Toolbar className={styles.toolbar}>
+               <Link underline="none" component={RouterLink} to="/grid">
+                  <h2>InstaPigeon</h2>
+               </Link>
                <div>
                   {isTabletScreen ? (
                      <BurgerMenu
@@ -62,10 +56,10 @@ export default function NavbarAuth() {
                               <li>Home</li>
                            </Link>
                            <Link underline="none" component={RouterLink} to="/">
-                              <li>About</li>
+                              <li>Profile</li>
                            </Link>
                         </span>
-                        <RouterLink to="/">
+                        <RouterLink to="/create">
                            <Button
                               buttonText="create post"
                               backgroundColor="#BD9B45"
