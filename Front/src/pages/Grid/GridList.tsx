@@ -22,7 +22,6 @@ const GridList = ({ data, setUpdatePost }: GridListProps) => {
 
       setPostModal(true)
       setPost(post)
-
       // if (!postModal) {
       //    document.body.style.overflow = 'hidden'
       // }
@@ -36,6 +35,7 @@ const GridList = ({ data, setUpdatePost }: GridListProps) => {
             {postModal ? (
                <Posts
                   setPostModal={setPostModal}
+                  setUpdatePost={setUpdatePost}
                   post={post}
                />
             ) : (

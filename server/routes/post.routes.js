@@ -127,10 +127,7 @@ router.put('/comment', requireLogin, async (req, res) => {
   });
   
 
-
-
-
-
+  // with callback, no longer valid for mongo 
 
 // router.put('/comment',requireLogin,(req,res)=>{
 //     const comment = {
