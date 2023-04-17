@@ -14,12 +14,14 @@ type GridListProps = {
 
 const GridList = ({ data, setUpdatePost }: GridListProps) => {
    const [postModal, setPostModal] = useState<boolean>(false)
-   const [postID, setPostID] = useState<string>('')
+   const [post, setPost] = useState<object>({})
    const isTabletScreen = useMediaQuery('(max-width: 1024px)')
 
-   const clickHandler = (photo: string) => {
-      setPostID(photo)
+   const clickHandler = (post: object) => {
+      // pass post data
+
       setPostModal(true)
+      setPost(post)
 
       // if (!postModal) {
       //    document.body.style.overflow = 'hidden'
@@ -33,9 +35,8 @@ const GridList = ({ data, setUpdatePost }: GridListProps) => {
          <div className={styles.box}>
             {postModal ? (
                <Posts
-                  postModal={postModal}
                   setPostModal={setPostModal}
-                  photo={postID}
+                  post={post}
                />
             ) : (
                ' '
@@ -43,23 +44,22 @@ const GridList = ({ data, setUpdatePost }: GridListProps) => {
             {posts &&
                posts.map((post: any) => (
                   <div key={post._id}>
-                        <div className={styles.card}>
-                           <div
-                              // key={post._id}
-                              onClick={() => clickHandler(post.photo)}
-                              style={{
-                                 textDecoration: 'none',
-                                 color: 'black',
-                              }}
-                           >
-                              <div className={styles['img-wrapper']}>
-                                 <img src={post.photo} />
-                              </div>
-                              {/* <div>
+                     <div className={styles.card}>
+                        <div
+                           onClick={() => clickHandler(post)}
+                           style={{
+                              textDecoration: 'none',
+                              color: 'black',
+                           }}
+                        >
+                           <div className={styles['img-wrapper']}>
+                              <img src={post.photo} />
+                           </div>
+                           {/* <div>
                                  <p>{post.likes.length}</p>
                               </div> */}
-                           </div>
                         </div>
+                     </div>
                      {isTabletScreen ? (
                         ''
                      ) : (
