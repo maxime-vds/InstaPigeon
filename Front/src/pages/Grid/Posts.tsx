@@ -5,29 +5,29 @@ import Cardbar from '../../components/cardbar/Cardbar'
 import { Box } from '@mui/system'
 //components
 import { usePostComment } from '../../hooks/usePostComment'
+import { useFetch } from '../../hooks/useFetch'
 //styles
 import styles from './Posts.module.css'
 
 type postProps = {
    setPostModal: React.Dispatch<React.SetStateAction<boolean>>
+   setUpdatePost: React.Dispatch<React.SetStateAction<boolean>>
    post: any
 }
 
 // put stylings in module
 
-const Posts = ({ setPostModal, post }: postProps) => {
-   const { addComment, comments, error, isPending } = usePostComment()
-   const [text, setText] = useState<string>('')
+const Posts = ({ setPostModal, setUpdatePost, post }: postProps) => {
+   const [localUpdate, setLocalUpdate] = useState<boolean>(false)
+   const { addComment, comments, setComments, error, isPending } =
+      usePostComment()
 
-   // const comments = post.comments
    useEffect(() => {
-      setText('')
-   }, [post])
+      const getText = post.comments.map((item: any) => item.text)
+      setComments(getText)
+   }, [post, localUpdate])
 
-   const submitHandler = async (
-      e: React.FormEvent<HTMLFormElement>,
-      id: string
-   ) => {
+   const submitHandler = (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault()
 
       const inputElement = e.currentTarget[0] as HTMLInputElement
@@ -40,8 +40,11 @@ const Posts = ({ setPostModal, post }: postProps) => {
             text: commentText,
             id,
          }
-         await addComment(postObject)
+         addComment(postObject)
+         setUpdatePost(true)
+         setLocalUpdate(true)
          inputElement.value = ''
+         setLocalUpdate(false)
       }
    }
 
@@ -52,8 +55,6 @@ const Posts = ({ setPostModal, post }: postProps) => {
       //    document.body.style.overflow = 'scroll'
       // }
    }
-
-   console.log(comments)
 
    return (
       <>
@@ -69,8 +70,8 @@ const Posts = ({ setPostModal, post }: postProps) => {
                   <div style={{ textDecoration: 'none', color: 'black' }}>
                      <div>
                         <img src={post.photo} />
-                        {comments.map((comment: string) => (
-                           <p>{comment}</p>
+                        {comments.map((comment: any) => (
+                           <p key={post.comments._id}>{comment}</p>
                         ))}
                      </div>
                   </div>
