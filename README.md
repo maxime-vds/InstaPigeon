@@ -6,14 +6,14 @@ an instagram for pigeons
 
 -  a picture sharing platform for sharing pictures of pigeons you see in the street ;
 
-![login](./login.png)
-![grid](./grid.png)
+![login](./readme-assets/login.png)
+![grid](./readme-assets/grid.png)
 
 ## figma prototypes :
 
-[desktop](./instap-desktop.pdf)
-[mobile](./instap-phone.pdf)
-[styleguide](./instap-styleguide.pdf)
+[desktop](./readme-assets/instap-desktop.pdf)
+[mobile](./readme-assets/instap-phone.pdf)
+[styleguide](./readme-assets/instap-styleguide.pdf)
 
 to add :
 

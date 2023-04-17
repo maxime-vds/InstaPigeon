@@ -8,6 +8,7 @@ interface IBurgerMenuProps {
    pathname: string
    open: boolean
    anchorEl: HTMLElement | null
+   color: 'primary' | 'secondary' | 'warning' 
 }
 
 export const BurgerMenu = ({
@@ -16,6 +17,7 @@ export const BurgerMenu = ({
    pathname,
    open,
    anchorEl,
+   color
 }: IBurgerMenuProps) => {
    return (
       <div className="burger-menu">
@@ -27,7 +29,7 @@ export const BurgerMenu = ({
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
             edge="start"
-            color="primary"
+            color={color}
          >
             <MenuIcon />
          </IconButton>

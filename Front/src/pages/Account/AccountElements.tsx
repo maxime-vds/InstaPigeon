@@ -11,7 +11,7 @@ interface IsettingsNavProp {
 
 export const AccountElements = ({ setSettingsNav }: IsettingsNavProp) => {
    function handleSettingsClick() {
-      setSettingsNav(true)
+      setSettingsNav(false)
    }
 
    // all of these inputs are supposed to be dynamic obviously
@@ -38,22 +38,16 @@ export const AccountElements = ({ setSettingsNav }: IsettingsNavProp) => {
                <p>following</p>
             </div>
          </div>
-         <div style={{ margin: 10 }}>
+         <div className={styles['account-bio']}>
             <p>I like stuff, but also junk and some things</p>
             <p>rickymatato.com</p>
             <p>rickymatato@gmail.com</p>
          </div>
 
-         <div
-            style={{
-               display: 'flex',
-               gap: '10px',
-               margin: '10px 20px 10px 5px',
-            }}
-         >
+         <div className={styles.buttons}>
             <Button buttonText="Settings" onClick={handleSettingsClick} />
 
-            <Button buttonText="Search" />
+            {/* <Button buttonText="Search" /> */}
          </div>
       </>
    )

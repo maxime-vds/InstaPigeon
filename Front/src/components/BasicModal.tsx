@@ -36,7 +36,7 @@ export default function BasicModal({ open, setOpen }: IbasicModalProps) {
                initial="hidden"
                animate="visible"
             >
-               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+               <Typography sx={{ mt: 2 }}>
                   Cookies are great and so are you!
                </Typography>
 

@@ -1,65 +1,73 @@
-import { useFetch } from "../../hooks/useFetch"
-import Likes from "./Likes"
-import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
-import { Box } from "@mui/system"
-import { Account } from "./Account"
-import { Comments } from "./Comments"
+import { useFetch } from '../../hooks/useFetch'
+// import {Likes} from './Likes'
+import Likes from '@mui/icons-material/FavoriteBorderSharp'
+import Comments from '@mui/icons-material/MapsUgcRounded'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Box } from '@mui/system'
+import { Account } from './Account'
+// import { Comments } from './Comments'
+import { Button } from '../button/Button'
 
-const Cardbar = () => {
-  // am I supposed to get the number of likes from the json file here ? but that would mean two fetch requests...
+import styles from './Cardbar.module.css'
 
-  // on refresh we're reinstallizing to 999
-  // am I already getting the data ?
-  const { id } = useParams()
-  const url = "http://localhost:3000/posts/" + id
-  const [likes, setLikes] = useState<number>(999)
+interface ICardbarProps {
+   post: any
+   setUpdatePost: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-  function postLikes(e: { preventDefault: () => void }) {
-    e.preventDefault()
-    console.log("click love")
+const Cardbar = ({ post, setUpdatePost }: ICardbarProps) => {
+   function postLikes(e: React.MouseEvent<SVGSVGElement>, like: string) {
+      e.preventDefault()
+      console.log('click like')
+      console.log(like)
 
-    setLikes((prevLikes) => prevLikes + 1)
+      // this fetch request is crashing the server
+      fetch('http://localhost:5000/like', {
+         method: 'put',
+         headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + localStorage.getItem('jwt'),
+         },
+         body: JSON.stringify({
+            postId: like,
+         }),
+      })
+         .then((res) => res.json())
+         .then((result) => {
+            console.log(result)
+            setUpdatePost(true)
+         })
+   }
 
-    const putLikes = {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ likes }),
-    }
-    fetch(url, putLikes)
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err))
-  }
+   function postFollows() {
+      console.log('click follows')
+   }
 
-  // fetch and post to db
-
-  function postFollows() {
-    console.log("click follows")
-  }
-
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        margin: "0px 20px",
-      }}
-    >
-      <div>
-        <Account />
+   return (
+      <div className={styles['card-wrapper']}>
+         <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+            <Button
+               buttonText="follow"
+               size="small"
+               backgroundColor='transparent'
+               disableElevation
+            ></Button>
+         </div>
+         <div className={styles.icons}>
+            <p
+               style={{
+                  margin: 0,
+                  padding: 0,
+               }}
+            >
+               {post.likes.length}
+            </p>
+               <Likes className={styles.likes} onClick={(e) => postLikes(e, post._id)} />
+            <Comments />
+         </div>
       </div>
-
-      <div style={{ display: "flex" }}>
-        <Likes like={postLikes} />
-        <div style={{ marginLeft: "10px" }}>
-          <Comments />
-        </div>
-      </div>
-    </Box>
-  )
+   )
 }
 
 export default Cardbar

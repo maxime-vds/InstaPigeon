@@ -66,6 +66,7 @@ export default function NavbarHeader() {
                            pathname={pathname}
                            open={open}
                            anchorEl={anchorEl}
+                           color="secondary"
                         />
                      ) : (
                         <ul className={styles['desktop-links']}>
@@ -115,6 +116,7 @@ export default function NavbarHeader() {
                            pathname={pathname}
                            open={open}
                            anchorEl={anchorEl}
+                           color="secondary"
                         />
                      ) : (
                         <ul className={styles['desktop-links']}>

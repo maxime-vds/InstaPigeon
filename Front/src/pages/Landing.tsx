@@ -20,7 +20,7 @@ export default function Landing() {
    const [showModal, setShowModal] = useState<boolean | null>(true)
    const navigate = useNavigate()
    const isTabletScreen = useMediaQuery('(max-width: 1024px)')
-
+   const isMobileScreen = useMediaQuery('(max-width: 600px)') 
    return (
       <div className={styles.Landing}>
          {showModal ? (
@@ -50,7 +50,7 @@ export default function Landing() {
 
             <div className={styles['illustration-wrap']}>
                <div className={styles['purple-bg']}>
-                  <RickyPigeon />
+                  <RickyPigeon height={isMobileScreen ? 300 : 500}/>
                   <p>
                      This is Ricky, raised on greasy pizza found in the trash
                      and monster energy mixed with starbucks coffee Don’t let
@@ -60,7 +60,7 @@ export default function Landing() {
                </div>
 
                <div className={isTabletScreen ? '' : styles['purple-bg']}>
-                  <VeronicaPigeon />
+                  <VeronicaPigeon height={isMobileScreen ? 300 : 500}/>
 
                   <p className={styles['veronica-text']}>
                      this is veronica, she likes to dance when she's not eating
@@ -71,7 +71,7 @@ export default function Landing() {
                </div>
 
                <div className={styles['purple-bg']}>
-                  <FreddyPigeon />
+                  <FreddyPigeon height={isMobileScreen ? 290 : 500}/>
 
                   <p>
                      Freddy, really likes candy for some reason. You'd think

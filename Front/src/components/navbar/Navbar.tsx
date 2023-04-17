@@ -1,7 +1,4 @@
 import { useMediaQuery } from '@mui/material'
-
-import React from 'react'
-
 import { useLocation } from 'react-router-dom'
 
 //components
@@ -38,7 +35,6 @@ export default function Navbar() {
          ) : (
             <>
                <header>{/* <NavbarHeadersPc /> */}</header>
-               <footer></footer>
             </>
          )}
       </div>

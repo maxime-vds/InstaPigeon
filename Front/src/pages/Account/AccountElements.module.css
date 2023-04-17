@@ -1,11 +1,60 @@
 .account-state {
     display: flex;
+    justify-content: center;
     flex-wrap: nowrap;
     margin: 10px;
+    font-size: 25px;
 }
 
 .account-state>div {
     text-align: center;
     margin: 0px 14px;
+
+}
+
+.account-bio {
+    margin: 20px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* .account-bio > p {
+    margin: 10px; 
+} */
+
+.circle-icon {
+    font-size: 1500px;
+}
+
+@media screen and (max-width: 1024px) {
+    .account-state {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 10px;
+    }
+
+    .account-state>div {
+        text-align: center;
+        margin: 0px 14px;
+        font-size: 16px;
+    }
+
+    .account-bio>p {
+        font-size: 15px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+        margin: 10px 20px 10px 10px;
+    }
 
 }

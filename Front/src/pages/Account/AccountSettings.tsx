@@ -13,7 +13,7 @@ interface IsettingsNavProp {
 
 export const AccountSettings = ({ setSettingsNav }: IsettingsNavProp) => {
    function handleClick(): void {
-      setSettingsNav(false)
+      setSettingsNav(true)
    }
    async function handleSubmit(): Promise<void> {
       // call update hook to API here
@@ -85,9 +85,7 @@ export const AccountSettings = ({ setSettingsNav }: IsettingsNavProp) => {
                <p>
                   <Link to="/account">Edit change profile picture</Link>
                </p>
-               <p>
-                  <Link to="/account">Edit change profile picture</Link>
-               </p>
+          
             </div> */}
          </Container>
       </>
