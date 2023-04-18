@@ -102,22 +102,8 @@ function LoginPage() {
                </Box>
             </div>
             <div className={styles['images-login']}>
-               <RickyPigeon
-                  sx={{
-                     position: 'absolute',
-                     width: '200%',
-                     left: '30rem',
-                     top: '13rem',
-                  }}
-               />
-               <VeronicaPigeon
-                  sx={{
-                     position: 'absolute',
-                     width: '580%',
-                     top: '20rem',
-                     right: '33.5rem',
-                  }}
-               />
+               <RickyPigeon width={1200} />
+               <VeronicaPigeon width={1200} />
 
                {/* <img src="/public/RickyPigeon.png" alt="RickyPigeon" />
                <img
