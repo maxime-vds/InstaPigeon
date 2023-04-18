@@ -1,0 +1,25 @@
+.singleCard {
+    min-width: 36%;
+    min-height: 100%;
+    text-align: center;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    margin: 4px;
+}
+
+.cardbar {
+    margin: 0 32%;
+}
+
+/* might have to remove the background color too  */
+/* remove these stylings when using actual pictures */
+img {
+    margin-top: 10px;
+    align-self: center;
+}
+
+/* @media screen and (max-width: 1024px) {
+    .cardbar {
+        margin: 0 0rem;
+    }
+} */

@@ -10,11 +10,14 @@ import RootLayout from './layout/RootLayout'
 import RegisterPage from './pages/Registerform/RegisterPage'
 import LoginPage from './pages/LoginForm/LoginPage'
 import CreatePage from './pages/Create/CreatePage'
-import Posts from './pages/FotoGrid/Posts'
+import Posts from './pages/Grid/Posts'
 import { AccountPage } from './pages/Account/AccountPage'
+import CreatePost from './pages/Create/CreatePage'
 
 import Landing from './pages/Landing'
-import FotoGrid from './pages/FotoGrid/FotoGrid'
+import Grid from './pages/Grid/Grid'
+
+import Home from './pages/Home/Home'
 
 //context
 import { RequireAuth } from './components/RequireAuth'
@@ -23,10 +26,8 @@ import { RequireAuth } from './components/RequireAuth'
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material/styles'
 import { StyledEngineProvider } from '@mui/material/styles'
-import Home from './pages/Home/Home'
-import CommentSection from './components/comment'
-import CommentSectionTWo from './components/comments/testcmmt'
-{/*import Toast from './components/toast/toast'**/}
+import CommentSectionTest from './components/comments/deletest'
+
 
 const theme = createTheme({
    palette: {
@@ -37,6 +38,9 @@ const theme = createTheme({
          main: '#D9D9D9',
          dark: '#5C5C5C',
       },
+      warning: {
+         main: '#7F96FF',
+      },
    },
 })
 
@@ -45,22 +49,23 @@ function App() {
       createRoutesFromElements(
          <Route element={<RootLayout />}>
             <Route index element={<Landing />} />
-            <Route path="/Register" element={<RegisterPage />} />
-            <Route path="/Login" element={<LoginPage />} />
-            <Route path="/posts/:id" element={<Posts />} />
-
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            {/* <Route path="/posts/:id" element={<Posts setPostModal={{}} />} /> */}
             <Route
-               path="/Grid"
+               path="/grid"
                element={
                   // <RequireAuth>
-                  <FotoGrid />
+                  <Grid />
                   // </RequireAuth>
                }
             />
-            <Route path="/Account" element={<AccountPage />} />
-            <Route path="/create" element={<CreatePage />} />
+
+            <Route path="/account" element={<AccountPage />} />
+            <Route path="/create" element={<CreatePost />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/toast" element={<CommentSectionTWo />} />
+            {/*<Route path="/toast" element={<Toast />} />*/}
+            <Route path="/test" element={<CommentSectionTest />} />
          </Route>
       )
    )

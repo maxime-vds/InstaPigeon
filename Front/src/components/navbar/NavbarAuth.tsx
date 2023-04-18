@@ -1,97 +1,77 @@
-import * as React from "react"
-import AppBar from "@mui/material/AppBar"
-import Box from "@mui/material/Box"
-import Toolbar from "@mui/material/Toolbar"
-import Typography from "@mui/material/Typography"
-import IconButton from "@mui/material/IconButton"
-import MenuIcon from "@mui/icons-material/Menu"
-import Menu from "@mui/material/Menu"
-import MenuItem from "@mui/material/MenuItem"
-import Fade from "@mui/material/Fade"
+import * as React from 'react'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import { useMediaQuery } from '@mui/material'
+import { Link as RouterLink } from 'react-router-dom'
+import { Link } from '@mui/material'
 
-import { Button } from "../button/Button"
+import { Button } from '../button/Button'
 
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from 'react-router-dom'
+import { BurgerMenu } from './BurgerMenu'
 
-//userAuth= true
+import styles from './NavbarAuth.module.css'
 
 export default function NavbarAuth() {
-  const authed = ["/"]
-  const { pathname } = useLocation()
-  const navigate = useNavigate()
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-  const open = Boolean(anchorEl)
+   const authed = ['/']
+   const navigate = useNavigate()
+   const { pathname } = useLocation()
+   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+   const open = Boolean(anchorEl)
 
-  const toolbarStyles = {
-    backgroundColor: "#5C5C5C",
-    display: "flex",
-    justifyContent: "space-between",
-  }
+   const isTabletScreen = useMediaQuery('(max-width: 1024px)')
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
+   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+      setAnchorEl(event.currentTarget)
+   }
+   const handleClose = () => {
+      setAnchorEl(null)
+   }
 
-  const navigateToLogin = () => {
-    navigate("/login")
-  }
+   const navigateToLogin = () => {
+      navigate('/login')
+   }
 
-  return (
-    <>
-      <AppBar position="relative" elevation={0} sx={{ margin: "0" }}>
-        
-        <Toolbar style={toolbarStyles}>
-          <h2 style={{ fontSize: "28px", color: "#D9D9D9" }}>InstaPigeon</h2>
-
-          <div>
-            <IconButton
-              id="fade-button"
-              aria-controls={open ? "fade-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
-              size="large"
-              edge="start"
-              color="secondary"
-            >
-              <MenuIcon />
-
-            </IconButton>
-            <Menu
-              id="fade-menu"
-              MenuListProps={{
-                "aria-labelledby": "fade-button",
-              }}
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              TransitionComponent={Fade}
-            >
-              <MenuItem
-                onClick={handleClose}
-                style={{ height: open ? "80px" : "auto", fontSize: "24px " }}
-              >
-                Profile
-              </MenuItem>
-              <MenuItem
-                onClick={handleClose}
-                style={{ height: open ? "80px" : "auto", fontSize: "24px" }}
-              >
-                Setting
-              </MenuItem>
-              <MenuItem
-                onClick={handleClose}
-                style={{ height: open ? "80px" : "auto", fontSize: "24px" }}
-              >
-               Logout
-              </MenuItem>
-            </Menu>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </>
-  )
+   return (
+      <>
+         <AppBar position="relative" elevation={0} sx={{ margin: '0' }}>
+            <Toolbar className={styles.toolbar}>
+               <Link underline="none" component={RouterLink} to="/grid">
+                  <h2>InstaPigeon</h2>
+               </Link>
+               <div>
+                  {isTabletScreen ? (
+                     <BurgerMenu
+                        handleClick={handleClick}
+                        handleClose={handleClose}
+                        pathname={pathname}
+                        open={open}
+                        anchorEl={anchorEl}
+                        color="secondary"
+                     />
+                  ) : (
+                     <ul className={styles['desktop-links']}>
+                        <span>
+                           <Link underline="none" component={RouterLink} to="/">
+                              <li>Home</li>
+                           </Link>
+                           <Link underline="none" component={RouterLink} to="/">
+                              <li>Profile</li>
+                           </Link>
+                        </span>
+                        <RouterLink to="/create">
+                           <Button
+                              buttonText="create post"
+                              backgroundColor="#BD9B45"
+                              color="primary"
+                              disableElevation={true}
+                           ></Button>
+                        </RouterLink>
+                     </ul>
+                  )}
+               </div>
+            </Toolbar>
+         </AppBar>
+      </>
+   )
 }

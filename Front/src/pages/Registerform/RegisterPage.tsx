@@ -13,7 +13,7 @@ function RegisterPage() {
    //inputStates
    const [firstname, setFirstname] = useState<string>('')
    const [lastname, setLastname] = useState<string>('')
-   const [username, setUsername] = useState<string>('')
+   const [name, setUsername] = useState<string>('')
    const [email, setEmail] = useState<string>('')
    const [password, setPassword] = useState<string>('')
    const [passwordAgain, setPasswordAgain] = useState<string>('')
@@ -27,27 +27,37 @@ function RegisterPage() {
    const [passwordAgainErr, setPasswordAgainErr] = useState<boolean>(false)
 
    const fetchAccount = async () => {
-      const settings = {
+      fetch('http://localhost:5000/signup', {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({
-            firstname,
-            lastname,
-            username,
+            name,
             email,
             password,
          }),
-      }
-      try {
-         const response = await fetch(
-            'https://apilogin.herokuapp.com/api/auth/signup',
-            settings
-         )
-      } catch (err) {
-         console.log(err)
-      }
-      navigate('/login')
+      })
+         .then((res) => res.json())
+         .then((data) => {
+            console.log(data);
+            
+            if (data.error) {
+               console.log(data.error)
+            }
+
+         })
+         navigate('/login')
+
    }
+
+   //    try {
+   //       const response = await fetch('http://localhost:5000/signup', settings)
+   //       localStorage.setItem("jwt",data.token)
+
+   //    } catch (err) {
+   //       console.log(err)
+   //    }
+   //    navigate('/login')
+   // }
 
    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
@@ -66,7 +76,7 @@ function RegisterPage() {
       if (lastname === '') {
          setLastnameErr(true)
       }
-      if (username === '') {
+      if (name === '') {
          setUsernameErr(true)
       }
       if (password === '') {

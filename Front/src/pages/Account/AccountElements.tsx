@@ -10,64 +10,44 @@ interface IsettingsNavProp {
 }
 
 export const AccountElements = ({ setSettingsNav }: IsettingsNavProp) => {
-   function handleSettingsClick(){
-      setSettingsNav(true)
+   function handleSettingsClick() {
+      setSettingsNav(false)
    }
+
+   // all of these inputs are supposed to be dynamic obviously
 
    return (
       <>
-         <div
-            style={{
-               margin: '10px 10px',
-               display: 'flex',
-            }}
-         >
-            {/*flexbox / text / flexbox  */}
-
+         {/*flexbox / text / flexbox  */}
+         <div className={styles['account-state']}>
             <div>
                <CircleIcon sx={{ fontSize: '500%' }} />
                <p>Ricky Matato</p>
             </div>
 
-            <div className={styles['account-state']}>
-               <div style={{ margin: '0px 14px' }}>
-                  <p>69</p>
-                  <p>posts</p>
-               </div>
-               <div style={{ margin: '0px 14px', textAlign: 'center' }}>
-                  <p>569</p>
-                  <p>followers</p>
-               </div>
-               <div style={{ textAlign: 'center' }}>
-                  <p>558</p>
-                  <p>following</p>
-               </div>
+            <div>
+               <p>69</p>
+               <p>posts</p>
+            </div>
+            <div>
+               <p>569</p>
+               <p>followers</p>
+            </div>
+            <div>
+               <p>558</p>
+               <p>following</p>
             </div>
          </div>
-
-         <div
-            style={{
-               display: 'flex',
-               flexDirection: 'column',
-               justifyContent: 'space-between',
-               margin: '0px 10px',
-            }}
-         >
+         <div className={styles['account-bio']}>
             <p>I like stuff, but also junk and some things</p>
             <p>rickymatato.com</p>
             <p>rickymatato@gmail.com</p>
          </div>
 
-         <div
-            style={{
-               display: 'flex',
-               gap: '10px',
-               margin: '10px 20px 10px 5px',
-            }}
-         >
+         <div className={styles.buttons}>
             <Button buttonText="Settings" onClick={handleSettingsClick} />
 
-            <Button buttonText="Search" />
+            {/* <Button buttonText="Search" /> */}
          </div>
       </>
    )
