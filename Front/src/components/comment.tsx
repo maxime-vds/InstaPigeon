@@ -7,7 +7,7 @@ interface Comment {
   replies: { text: string, date: string }[];
 }
 
-const CommentSection = () => {
+export const CommentSection = () => {
   const [comments, setComments] = useState <Comment[]>([]);
   const [newComment, setNewComment] = useState ("");
 
@@ -65,10 +65,10 @@ const CommentSection = () => {
             {showReplyFormIndex === index && (
               <form onSubmit={(event) => {
                 event.preventDefault();
-                const reply = (event.target as HTMLFormElement).elements.reply.value;
+                const reply = (event.target as any).elements.reply.value;
                 if (reply !== "") {
                   handleReply(index, reply);
-                  (event.target as HTMLFormElement).elements.reply.value = "";
+                  (event.target as any).elements.reply.value = "";
                 }
               }}>
                 <input type="text" placeholder="Répondre..." name="reply" />
