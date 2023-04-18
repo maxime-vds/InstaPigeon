@@ -77,6 +77,7 @@ router.put('/like', requireLogin, async (req, res) => {
     }
   });
   
+  // with callback, no longer valid for mongo 
 
 // router.put('/like',requireLogin,(req,res)=>{
 //     Post.findByIdAndUpdate(req.body.postId,{

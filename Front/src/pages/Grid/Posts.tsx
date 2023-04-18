@@ -5,7 +5,6 @@ import Cardbar from '../../components/cardbar/Cardbar'
 import { Box } from '@mui/system'
 //components
 import { usePostComment } from '../../hooks/usePostComment'
-import { useFetch } from '../../hooks/useFetch'
 //styles
 import styles from './Posts.module.css'
 
