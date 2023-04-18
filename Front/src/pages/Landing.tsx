@@ -50,7 +50,6 @@ export default function Landing() {
             </div>
             <div className={styles['purple-bg']}>
                <div className={styles['illustration-wrap']}>
-                  {/* <div className={styles['purple-bg']}> */}
                   <div>
                      <RickyPigeon height={isMobileScreen ? 300 : 500} />
                      <p>
@@ -61,9 +60,7 @@ export default function Landing() {
                         bird covid
                      </p>
                   </div>
-                  {/* </div> */}
 
-                  {/* <div className={isTabletScreen ? '' : styles['purple-bg']}> */}
                   <div>
                      <VeronicaPigeon height={isMobileScreen ? 300 : 500} />
 
@@ -74,9 +71,7 @@ export default function Landing() {
                         show, like ever.. in her life
                      </p>
                   </div>
-                  {/* </div> */}
 
-                  {/* <div className={styles['purple-bg']}> */}
                   <div>
                      <FreddyPigeon height={isMobileScreen ? 300 : 500} />
 
@@ -87,15 +82,13 @@ export default function Landing() {
                         permanent sugar rush!
                      </p>
                   </div>
-                  {/* </div> */}
                </div>
             </div>
 
-            <div style={{backgroundColor: '#7F96FF', height: '65vh'}}></div>
+            <div style={{ backgroundColor: '#7F96FF', height: '65vh' }}></div>
 
+            <div className={isTabletScreen ? styles['purple-bg'] : ''} />
 
-            <div className={isTabletScreen ? styles['purple-bg'] : ''}/>
-            
             {/* <div className={styles.footer} style={{ marginTop: '20px' }}> */}
             {/* <h2 className={styles.h2} style={{ textAlign: 'center' }}>
                   Where we're going we don't need no roads

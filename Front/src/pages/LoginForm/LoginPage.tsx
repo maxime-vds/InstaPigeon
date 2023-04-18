@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { LoginForm } from './LoginForm'
 import { useAuthStore } from '../../context/authStore'
 import { Box } from '@mui/system'
+import { RickyPigeon, VeronicaPigeon } from '../../components/graphics/Pigeons'
 
 //styles
 import styles from './LoginPage.module.css'
@@ -101,11 +102,28 @@ function LoginPage() {
                </Box>
             </div>
             <div className={styles['images-login']}>
-               <img src="/public/RickyPigeon.png" alt="RickyPigeon" />
+               <RickyPigeon
+                  sx={{
+                     position: 'absolute',
+                     width: '200%',
+                     left: '30rem',
+                     top: '13rem',
+                  }}
+               />
+               <VeronicaPigeon
+                  sx={{
+                     position: 'absolute',
+                     width: '580%',
+                     top: '20rem',
+                     right: '33.5rem',
+                  }}
+               />
+
+               {/* <img src="/public/RickyPigeon.png" alt="RickyPigeon" />
                <img
                   src="/public/VeronicaPigeon.png"
                   alt="VeronicaPigeon"
-               />
+               /> */}
             </div>
          </Box>
          <ToastContainer />
