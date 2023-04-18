@@ -1,13 +1,10 @@
-import { useFetch } from '../../hooks/useFetch'
-// import {Likes} from './Likes'
-import Likes from '@mui/icons-material/FavoriteBorderSharp'
-import Comments from '@mui/icons-material/MapsUgcRounded'
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { Box } from '@mui/system'
-import { Account } from './Account'
-// import { Comments } from './Comments'
+//hooks
+import { useLikes } from '../../hooks/useLikes'
+import { useFollow } from '../../hooks/useFollow'
+
 import { Button } from '../button/Button'
+import Comments from '@mui/icons-material/MapsUgcRounded'
+import Likes from '@mui/icons-material/FavoriteBorderSharp'
 
 import styles from './Cardbar.module.css'
 
@@ -17,42 +14,19 @@ interface ICardbarProps {
 }
 
 const Cardbar = ({ post, setUpdatePost }: ICardbarProps) => {
-   function postLikes(e: React.MouseEvent<SVGSVGElement>, like: string) {
-      e.preventDefault()
-      console.log('click like')
-      console.log(like)
-
-      // this fetch request is crashing the server
-      fetch('http://localhost:5000/like', {
-         method: 'put',
-         headers: {
-            'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + localStorage.getItem('jwt'),
-         },
-         body: JSON.stringify({
-            postId: like,
-         }),
-      })
-         .then((res) => res.json())
-         .then((result) => {
-            console.log(result)
-            setUpdatePost(true)
-         })
-   }
-
-   function postFollows() {
-      console.log('click follows')
-   }
+   const { addLikes } = useLikes()
+   const { followUser } = useFollow()
 
    return (
       <div className={styles['card-wrapper']}>
          <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
             <Button
+               onClick={() => followUser(post.postedBy._id, setUpdatePost)}
                buttonText="follow"
                size="small"
-               backgroundColor='transparent'
+               backgroundColor="transparent"
                disableElevation
-            ></Button>
+            />
          </div>
          <div className={styles.icons}>
             <p
@@ -63,7 +37,10 @@ const Cardbar = ({ post, setUpdatePost }: ICardbarProps) => {
             >
                {post.likes.length}
             </p>
-               <Likes className={styles.likes} onClick={(e) => postLikes(e, post._id)} />
+            <Likes
+               className={styles.likes}
+               onClick={() => addLikes(post._id, setUpdatePost)}
+            />
             <Comments />
          </div>
       </div>

@@ -17,10 +17,11 @@ import styles from './Landing.module.css'
 
 export default function Landing() {
    // toggle modal on authed state
+
    const [showModal, setShowModal] = useState<boolean | null>(true)
    const navigate = useNavigate()
    const isTabletScreen = useMediaQuery('(max-width: 1024px)')
-   const isMobileScreen = useMediaQuery('(max-width: 600px)') 
+   const isMobileScreen = useMediaQuery('(max-width: 600px)')
    return (
       <div className={styles.Landing}>
          {showModal ? (
@@ -47,51 +48,60 @@ export default function Landing() {
                   backgroundColor="#BD9B45"
                />
             </div>
+            <div className={styles['purple-bg']}>
+               <div className={styles['illustration-wrap']}>
+                  {/* <div className={styles['purple-bg']}> */}
+                  <div>
+                     <RickyPigeon height={isMobileScreen ? 300 : 500} />
+                     <p>
+                        This is Ricky, raised on greasy pizza found in the trash
+                        and monster energy mixed with starbucks coffee Don’t let
+                        the scar over his eye fool you, he’s actually a really
+                        nice pigeon even though he’s carrying a new strain of
+                        bird covid
+                     </p>
+                  </div>
+                  {/* </div> */}
 
-            <div className={styles['illustration-wrap']}>
-               <div className={styles['purple-bg']}>
-                  <RickyPigeon height={isMobileScreen ? 300 : 500}/>
-                  <p>
-                     This is Ricky, raised on greasy pizza found in the trash
-                     and monster energy mixed with starbucks coffee Don’t let
-                     the scar over his eye fool you, he’s actually a really nice
-                     pigeon even though he’s carrying a new strain of bird covid
-                  </p>
-               </div>
+                  {/* <div className={isTabletScreen ? '' : styles['purple-bg']}> */}
+                  <div>
+                     <VeronicaPigeon height={isMobileScreen ? 300 : 500} />
 
-               <div className={isTabletScreen ? '' : styles['purple-bg']}>
-                  <VeronicaPigeon height={isMobileScreen ? 300 : 500}/>
+                     <p className={styles['veronica-text']}>
+                        It's veronica! She likes to dance when she's not eating
+                        dead rats in the streets, she's single and ready to
+                        mingle! though I wouldn't, because she's not taken a
+                        show, like ever.. in her life
+                     </p>
+                  </div>
+                  {/* </div> */}
 
-                  <p className={styles['veronica-text']}>
-                     this is veronica, she likes to dance when she's not eating
-                     dead rats in the streets, she's single and ready to mingle!
-                     though I wouldn't, because she's not taken a show, like
-                     ever.. in her life
-                  </p>
-               </div>
+                  {/* <div className={styles['purple-bg']}> */}
+                  <div>
+                     <FreddyPigeon height={isMobileScreen ? 300 : 500} />
 
-               <div className={styles['purple-bg']}>
-                  <FreddyPigeon height={isMobileScreen ? 290 : 500}/>
-
-                  <p>
-                     Freddy, really likes candy for some reason. You'd think
-                     pigeons would just eat whatever they can find but Freddy
-                     really has a sweet tooth! That's why he's always on a
-                     permanent sugar rush!
-                  </p>
+                     <p>
+                        Freddy, really likes candy for some reason. You'd think
+                        pigeons would just eat whatever they can find but Freddy
+                        really has a sweet tooth! That's why he's always on a
+                        permanent sugar rush!
+                     </p>
+                  </div>
+                  {/* </div> */}
                </div>
             </div>
 
+            <div style={{backgroundColor: '#7F96FF', height: '65vh'}}></div>
 
 
-
-
+            <div className={isTabletScreen ? styles['purple-bg'] : ''}/>
+            
             {/* <div className={styles.footer} style={{ marginTop: '20px' }}> */}
-               {/* <h2 className={styles.h2} style={{ textAlign: 'center' }}>
+            {/* <h2 className={styles.h2} style={{ textAlign: 'center' }}>
                   Where we're going we don't need no roads
                </h2> */}
 
-               {/* <div
+            {/* <div
                   className={styles['footer-list']}
                   style={{
                      marginTop: '20px',
@@ -134,9 +144,6 @@ export default function Landing() {
                   </div>
                </div> */}
             {/* </div> */}
-
-
-
          </Box>
       </div>
    )
