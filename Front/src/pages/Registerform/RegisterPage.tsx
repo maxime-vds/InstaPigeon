@@ -1,7 +1,9 @@
-import { TextField, Typography } from '@mui/material'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 import { Box } from '@mui/material'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RegisterForm } from './RegisterForm'
 
@@ -26,6 +28,19 @@ function RegisterPage() {
    const [passwordErr, setPasswordErr] = useState<boolean>(false)
    const [passwordAgainErr, setPasswordAgainErr] = useState<boolean>(false)
 
+   const launchToast = () => {
+      toast.error(
+         `please fill in all the fields, use your imagination, you can do it!`,
+         {
+            theme: 'colored',
+            hideProgressBar: true,
+            autoClose: 1000,
+         }
+      )
+   }
+
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
    const fetchAccount = async () => {
       fetch('http://localhost:5000/signup', {
          method: 'POST',
@@ -38,26 +53,29 @@ function RegisterPage() {
       })
          .then((res) => res.json())
          .then((data) => {
-            console.log(data);
-            
+            console.log(data)
+
             if (data.error) {
                console.log(data.error)
+
+               toast.error(data.error, {
+                  theme: 'colored',
+                  hideProgressBar: true,
+                  autoClose: 1000,
+               })
+            } else {
+               // succes!
+               toast.success(`Getting you signed in!`, {
+                  theme: 'colored',
+                  hideProgressBar: true,
+                  autoClose: 500,
+               })
+               setTimeout(() => {
+                  navigate('/login')
+               }, 1500)
             }
-
          })
-         navigate('/login')
-
    }
-
-   //    try {
-   //       const response = await fetch('http://localhost:5000/signup', settings)
-   //       localStorage.setItem("jwt",data.token)
-
-   //    } catch (err) {
-   //       console.log(err)
-   //    }
-   //    navigate('/login')
-   // }
 
    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
@@ -88,23 +106,48 @@ function RegisterPage() {
       if (email === '') {
          setEmailErr(true)
       }
-      if (firstname && lastname && email && password && passwordAgain) {
-         if (password !== passwordAgain) {
-            setPassword('')
-            setPasswordAgain('')
-            setPasswordErr(true)
 
+      // if (
+      //    firstname === '' ||
+      //    lastname === '' ||
+      //    name === ''||
+      //    password === ''  ||
+      //    passwordAgain === ''||
+      //    email === ''
+      // ) {
+      //    launchToast()
+      // }
+
+      if (
+         [firstname, lastname, name, password, passwordAgain, email].some(
+            (value) => value === ''
+         )
+      ) {
+         launchToast()
+      }
+
+      if (firstname && lastname && email && password && passwordAgain) {
+         if (!emailRegex.test(email)) {
+            toast.error(`That's not a valid email, buddy`, {
+               theme: 'colored',
+               hideProgressBar: true,
+               autoClose: 500,
+            })
+         } else if (password !== passwordAgain) {
+            setPasswordErr(true)
+            setPasswordAgainErr(true)
+            toast.error(`your passwords don't match`, {
+               theme: 'colored',
+               hideProgressBar: true,
+               autoClose: 500,
+            })
             console.log('something went wrong')
          } else if (password === passwordAgain) {
             console.log('trying to create user')
             fetchAccount()
-         } else {
-            console.log('nope')
          }
       }
    }
-
-   // this logic seems crap too
 
    return (
       <div className={styles['register-page']}>
@@ -136,6 +179,7 @@ function RegisterPage() {
                </Box>
             </div>
          </Box>
+         <ToastContainer />
       </div>
    )
 }
