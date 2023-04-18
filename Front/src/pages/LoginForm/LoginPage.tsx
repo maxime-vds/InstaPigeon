@@ -101,9 +101,9 @@ function LoginPage() {
                </Box>
             </div>
             <div className={styles['images-login']}>
-               <img src="../../public/RickyPigeon.png" alt="RickyPigeon" />
+               <img src="/public/RickyPigeon.png" alt="RickyPigeon" />
                <img
-                  src="../../public/VeronicaPigeon.png"
+                  src="/public/VeronicaPigeon.png"
                   alt="VeronicaPigeon"
                />
             </div>
