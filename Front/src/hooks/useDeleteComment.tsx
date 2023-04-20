@@ -5,7 +5,7 @@ export const useDeleteComment = (url: string) => {
   const [isPending, setIsPending] = useState<boolean>(false);
   const [deletedData, setDeletedData] = useState<any>(null);
 
-  const deleteData = async (id: string) => {
+  const deleteData = async (postedBy: string, id: string) => {
     setIsPending(true);
     try {
       const response = await fetch(`${url}/${id}`, {
@@ -14,6 +14,10 @@ export const useDeleteComment = (url: string) => {
           'Content-Type': 'application/json',
           Authorization: 'Bearer ' + localStorage.getItem('jwt'),
         },
+        body: JSON.stringify({
+          postedBy,
+          _id: id
+       }),
       });
       const data = await response.json();
       setDeletedData(data);

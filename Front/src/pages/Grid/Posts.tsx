@@ -22,20 +22,16 @@ const Posts = ({ setPostModal, setUpdatePost, post }: postProps) => {
    const { addComment, comments, setComments, error, isPending } =
       usePostComment()
 
+   // console.log(post);
 
-      console.log(post.comments[0]._id);
-      console.log(comments);
-      
-      
-   const { deleteData } = useDeleteComment('http://localhost:5000/deletepost/:postId')
-
+   const { deleteData } = useDeleteComment(
+      'http://localhost:5000/deletepost'
+   )
 
    useEffect(() => {
       const getText = post.comments.map((item: any) => item.text)
       setComments(getText)
    }, [post, localUpdate])
-
- 
 
    const submitHandler = (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault()
@@ -65,9 +61,19 @@ const Posts = ({ setPostModal, setUpdatePost, post }: postProps) => {
       //    document.body.style.overflow = 'scroll'
       // }
    }
-   const handleDelete = (post:any) => {
-         console.log(post._id);
-         deleteData(post._id)         
+   const handleDelete = (post: any) => {
+      // console.log('post' + post)
+      // console.log('posted by' + post.postedBy._id)
+
+      // console.log(post._id)
+
+      // deleteData(post.postedBy._id, post._id)
+
+      // fetch('http://localhost:5000/deletepost', {
+      //    {method:"delete",
+      // headers:{Authorization:"Bearer " + localStorage.getItem('jwt')}}
+
+      // })
    }
 
    return (
@@ -85,8 +91,12 @@ const Posts = ({ setPostModal, setUpdatePost, post }: postProps) => {
                      <div>
                         <img src={post.photo} />
                         {comments.map((comment: any) => (
-                           <p key={post.comments._id} onClick={() => handleDelete(post)}>{comment}</p>
-                           
+                           <p
+                              key={post.comments._id}
+                              onClick={() => handleDelete(post)}
+                           >
+                              {comment}
+                           </p>
                         ))}
                      </div>
                   </div>
