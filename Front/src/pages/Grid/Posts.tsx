@@ -24,8 +24,10 @@ const Posts = ({ setPostModal, setUpdatePost, post }: postProps) => {
 
 
       console.log(post.comments[0]._id);
+      console.log(comments);
       
-   const { deleteData } = useDeleteComment('http://localhost:5000//deletepost/:postId')
+      
+   const { deleteData } = useDeleteComment('http://localhost:5000/deletepost/:postId')
 
 
    useEffect(() => {
@@ -63,10 +65,9 @@ const Posts = ({ setPostModal, setUpdatePost, post }: postProps) => {
       //    document.body.style.overflow = 'scroll'
       // }
    }
-   const handleDelete = (id:string) => {
-         console.log(id);
-         console.log('delete clicked!');
-         
+   const handleDelete = (post:any) => {
+         console.log(post._id);
+         deleteData(post._id)         
    }
 
    return (
@@ -84,7 +85,7 @@ const Posts = ({ setPostModal, setUpdatePost, post }: postProps) => {
                      <div>
                         <img src={post.photo} />
                         {comments.map((comment: any) => (
-                           <p key={post.comments._id} onClick={() => handleDelete(comment._id)}>{comment}</p>
+                           <p key={post.comments._id} onClick={() => handleDelete(post)}>{comment}</p>
                            
                         ))}
                      </div>
