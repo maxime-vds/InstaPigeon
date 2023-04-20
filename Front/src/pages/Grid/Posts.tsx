@@ -7,6 +7,7 @@ import { Box } from '@mui/system'
 import { usePostComment } from '../../hooks/usePostComment'
 //styles
 import styles from './Posts.module.css'
+import { useDeleteComment } from '../../hooks/useDeleteComment'
 
 type postProps = {
    setPostModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -21,10 +22,18 @@ const Posts = ({ setPostModal, setUpdatePost, post }: postProps) => {
    const { addComment, comments, setComments, error, isPending } =
       usePostComment()
 
+
+      console.log(post.comments[0]._id);
+      
+   const { deleteData } = useDeleteComment('http://localhost:5000//deletepost/:postId')
+
+
    useEffect(() => {
       const getText = post.comments.map((item: any) => item.text)
       setComments(getText)
    }, [post, localUpdate])
+
+ 
 
    const submitHandler = (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault()
@@ -54,6 +63,11 @@ const Posts = ({ setPostModal, setUpdatePost, post }: postProps) => {
       //    document.body.style.overflow = 'scroll'
       // }
    }
+   const handleDelete = (id:string) => {
+         console.log(id);
+         console.log('delete clicked!');
+         
+   }
 
    return (
       <>
@@ -70,7 +84,8 @@ const Posts = ({ setPostModal, setUpdatePost, post }: postProps) => {
                      <div>
                         <img src={post.photo} />
                         {comments.map((comment: any) => (
-                           <p key={post.comments._id}>{comment}</p>
+                           <p key={post.comments._id} onClick={() => handleDelete(comment._id)}>{comment}</p>
+                           
                         ))}
                      </div>
                   </div>

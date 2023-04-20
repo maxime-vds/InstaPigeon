@@ -17,7 +17,7 @@ export const useDeleteComment = (url: string) => {
       });
       const data = await response.json();
       setDeletedData(data);
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message);
     } finally {
       setIsPending(false);
