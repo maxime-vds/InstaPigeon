@@ -4,6 +4,7 @@ an instagram for pigeons
 
 ##Demo live :
 https://instapigeon.herokuapp.com/
+[live](https://instapigeon.herokuapp.com/)
 
 ## description of the project :
 
