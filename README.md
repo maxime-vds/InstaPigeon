@@ -2,8 +2,7 @@
 
 an instagram for pigeons
 
-##Demo live :
-https://instapigeon.herokuapp.com/
+## Demo live :
 [live](https://instapigeon.herokuapp.com/)
 
 ## description of the project :
