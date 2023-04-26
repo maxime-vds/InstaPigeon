@@ -2,6 +2,9 @@
 
 an instagram for pigeons
 
+##Demo live :
+https://instapigeon.herokuapp.com/
+
 ## description of the project :
 
 -  a picture sharing platform for sharing pictures of pigeons you see in the street ;
